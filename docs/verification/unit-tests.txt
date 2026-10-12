@@ -1,0 +1,208 @@
+TAP version 13
+# Subtest: AT01 landing and N1 reveal no diagnosis, imaging result, operation, complication, or outcome
+ok 1 - AT01 landing and N1 reveal no diagnosis, imaging result, operation, complication, or outcome
+  ---
+  duration_ms: 3.743136
+  type: 'test'
+  ...
+# Subtest: AT02 rationale alone cannot release a study
+ok 2 - AT02 rationale alone cannot release a study
+  ---
+  duration_ms: 1.291168
+  type: 'test'
+  ...
+# Subtest: AT03 expectation alone cannot release a study
+ok 3 - AT03 expectation alone cannot release a study
+  ---
+  duration_ms: 0.576406
+  type: 'test'
+  ...
+# Subtest: AT04 rationale and expectation persist as distinct ordered events before release
+ok 4 - AT04 rationale and expectation persist as distinct ordered events before release
+  ---
+  duration_ms: 2.193621
+  type: 'test'
+  ...
+# Subtest: AT05 imaging reports and annotations stay locked until interpretation commitment
+ok 5 - AT05 imaging reports and annotations stay locked until interpretation commitment
+  ---
+  duration_ms: 1.858411
+  type: 'test'
+  ...
+# Subtest: AT06 non-imaging results follow their gate without an image step
+ok 6 - AT06 non-imaging results follow their gate without an image step
+  ---
+  duration_ms: 0.565519
+  type: 'test'
+  ...
+# Subtest: AT07 integrated report includes only released and interpreted imaging
+ok 7 - AT07 integrated report includes only released and interpreted imaging
+  ---
+  duration_ms: 0.75517
+  type: 'test'
+  ...
+# Subtest: AT08 unusual or unavailable requests preserve text and generate no findings
+ok 8 - AT08 unusual or unavailable requests preserve text and generate no findings
+  ---
+  duration_ms: 2.156356
+  type: 'test'
+  ...
+# Subtest: AT09 previously revealed studies reopen without a duplicate order
+ok 9 - AT09 previously revealed studies reopen without a duplicate order
+  ---
+  duration_ms: 0.707458
+  type: 'test'
+  ...
+# Subtest: AT10 revisions preserve original committed reasoning and version links
+ok 10 - AT10 revisions preserve original committed reasoning and version links
+  ---
+  duration_ms: 1.124081
+  type: 'test'
+  ...
+# Subtest: AT11 fusion and nonoperative recommendations remain distinct from canonical decompression
+ok 11 - AT11 fusion and nonoperative recommendations remain distinct from canonical decompression
+  ---
+  duration_ms: 3.623305
+  type: 'test'
+  ...
+# Subtest: AT12 canonical continuation requires explicit acknowledgement
+ok 12 - AT12 canonical continuation requires explicit acknowledgement
+  ---
+  duration_ms: 0.920424
+  type: 'test'
+  ...
+# Subtest: AT13 durotomy proposal is committed before the canonical repair is disclosed
+ok 13 - AT13 durotomy proposal is committed before the canonical repair is disclosed
+  ---
+  duration_ms: 1.202312
+  type: 'test'
+  ...
+# Subtest: AT14 postoperative images and notes remain free of instrumentation
+ok 14 - AT14 postoperative images and notes remain free of instrumentation
+  ---
+  duration_ms: 1.09162
+  type: 'test'
+  ...
+# Subtest: AT15 B1 resolves after 72-hour drainage with no forced recurrence or reoperation
+ok 15 - AT15 B1 resolves after 72-hour drainage with no forced recurrence or reoperation
+  ---
+  duration_ms: 4.457986
+  type: 'test'
+  ...
+# Subtest: AT16 B2 exposes persistence and the drain rescue only after a second commitment
+ok 16 - AT16 B2 exposes persistence and the drain rescue only after a second commitment
+  ---
+  duration_ms: 1.944161
+  type: 'test'
+  ...
+# Subtest: AT16b B2 repeated observation pauses for review instead of inventing an outcome
+ok 17 - AT16b B2 repeated observation pauses for review instead of inventing an outcome
+  ---
+  duration_ms: 1.759924
+  type: 'test'
+  ...
+# Subtest: AT17 B3 resolves with added operative burden and no unauthored operative findings
+ok 18 - AT17 B3 resolves with added operative burden and no unauthored operative findings
+  ---
+  duration_ms: 1.785365
+  type: 'test'
+  ...
+# Subtest: AT18 B4 exposes persistence and enters review for an unauthored rescue outcome
+ok 19 - AT18 B4 exposes persistence and enters review for an unauthored rescue outcome
+  ---
+  duration_ms: 2.240888
+  type: 'test'
+  ...
+# Subtest: AT19 an unsupported clinical action pauses without new harm, success, or probabilities
+ok 20 - AT19 an unsupported clinical action pauses without new harm, success, or probabilities
+  ---
+  duration_ms: 2.405881
+  type: 'test'
+  ...
+# Subtest: AT20 tutor actions cannot mutate clinical state, order a study, or select a branch
+ok 21 - AT20 tutor actions cannot mutate clinical state, order a study, or select a branch
+  ---
+  duration_ms: 1.303089
+  type: 'test'
+  ...
+# Subtest: AT21 selectors, reducer, tutor and UI never import hidden content; N2 catalogue shows no results
+ok 22 - AT21 selectors, reducer, tutor and UI never import hidden content; N2 catalogue shows no results
+  ---
+  duration_ms: 3.667159
+  type: 'test'
+  ...
+# Subtest: AT22 text-only demonstration route and asset notices are explicit in export
+ok 23 - AT22 text-only demonstration route and asset notices are explicit in export
+  ---
+  duration_ms: 3.066223
+  type: 'test'
+  ...
+# Subtest: AT23 refresh restores release gates, committed versions, state and event order
+ok 24 - AT23 refresh restores release gates, committed versions, state and event order
+  ---
+  duration_ms: 2.114813
+  type: 'test'
+  ...
+# Subtest: AT24 persistence failure prevents an unrecorded reveal and allows retry
+ok 25 - AT24 persistence failure prevents an unrecorded reveal and allows retry
+  ---
+  duration_ms: 0.637446
+  type: 'test'
+  ...
+# Subtest: AT25 export contains the experienced trace and excludes hidden future payloads
+ok 26 - AT25 export contains the experienced trace and excludes hidden future payloads
+  ---
+  duration_ms: 3.396012
+  type: 'test'
+  ...
+# Subtest: AT26 replay reproduces the committed sequence and released consequences
+ok 27 - AT26 replay reproduces the committed sequence and released consequences
+  ---
+  duration_ms: 32.646684
+  type: 'test'
+  ...
+# Subtest: AT27 restart produces a distinct session and preserves the prior record
+ok 28 - AT27 restart produces a distinct session and preserves the prior record
+  ---
+  duration_ms: 1.426872
+  type: 'test'
+  ...
+# Subtest: AT28 simulated clinical time is distinct from real elapsed time
+ok 29 - AT28 simulated clinical time is distinct from real elapsed time
+  ---
+  duration_ms: 1.543363
+  type: 'test'
+  ...
+# Subtest: AT29 B1 six-week measures match frozen values; other branches inherit no numbers
+ok 30 - AT29 B1 six-week measures match frozen values; other branches inherit no numbers
+  ---
+  duration_ms: 3.305642
+  type: 'test'
+  ...
+# Subtest: AT30 debrief has no grading, competence labels, or fabricated evidence claims
+ok 31 - AT30 debrief has no grading, competence labels, or fabricated evidence claims
+  ---
+  duration_ms: 2.679267
+  type: 'test'
+  ...
+# Subtest: AT32 case content contains only the latest patient and imaging facts
+ok 32 - AT32 case content contains only the latest patient and imaging facts
+  ---
+  duration_ms: 0.895794
+  type: 'test'
+  ...
+# Subtest: Export round trip: replay of a stored reference export reconstructs state
+ok 33 - Export round trip: replay of a stored reference export reconstructs state
+  ---
+  duration_ms: 2.436213
+  type: 'test'
+  ...
+1..33
+# tests 33
+# suites 0
+# pass 33
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 513.53641

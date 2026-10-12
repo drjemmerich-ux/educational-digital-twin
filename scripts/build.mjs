@@ -4,7 +4,7 @@
 //   dist/artifact.html             (same app, body-only markup for a claude.ai Artifact)
 // Usage: node scripts/build.mjs [--serve] [--port 5173]
 import { build } from 'esbuild';
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { extname, join } from 'node:path';
 
@@ -37,6 +37,8 @@ async function bundle() {
     `<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<title>${TITLE}</title>\n${meta}\n<style>\n${css}\n</style>\n</head>\n<body>\n${body}\n<script>\n${js}\n</script>\n</body>\n</html>\n`,
   );
   writeFileSync(join(out, 'artifact.html'), `<title>${TITLE}</title>\n<style>\n${css}\n</style>\n${body}\n<script>\n${js}\n</script>\n`);
+  // Approved image frames live in public/assets and are referenced by manifest frame_paths.
+  if (existsSync(join(root, 'public/assets'))) cpSync(join(root, 'public/assets'), join(out, 'assets'), { recursive: true });
   const kb = (f) => Math.round(readFileSync(join(out, f)).length / 1024);
   console.log(`built dist/index.html (${kb('index.html')} KB), dist/artifact.html (${kb('artifact.html')} KB)`);
 }
@@ -49,7 +51,7 @@ if (process.argv.includes('--serve')) {
   createServer((req, res) => {
     const path = req.url === '/' ? '/index.html' : decodeURIComponent((req.url ?? '/').split('?')[0]);
     try {
-      const file = path.startsWith('/assets/') ? join(root, 'public', path) : join(out, path);
+      const file = join(out, path);
       res.writeHead(200, { 'content-type': types[extname(file)] ?? 'application/octet-stream' });
       res.end(readFileSync(file));
     } catch {

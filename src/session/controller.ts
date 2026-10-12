@@ -227,6 +227,7 @@ export class SessionController {
     this.repo.append(sid, events, 0);
     this.events = events;
     this._state = foldEvents(events);
+    if (this.repo.kind === 'local') this._saveStatus = 'saved';
     this.writeMeta();
     this.notify();
   }

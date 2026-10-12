@@ -1,5 +1,5 @@
 /* Educational Digital Twin — clinical workspace.
-   Layout: 24% chart | 52% clinical task | 24% tutor, desktop-first 16:9, drawers below 1100px.
+   Layout: 24% chart | 52% clinical task | 24% tutor, desktop-first 16:9, drawers below 1024px.
    Single light theme by explicit project requirement (white interface, Arial). The image viewer
    is intentionally dark. Colour never encodes clinical correctness. */
 :root {
@@ -102,7 +102,7 @@ button:disabled { cursor: not-allowed; opacity: 0.55; }
 .banner-phone { display: none; background: var(--surface); color: var(--navy); }
 
 /* Workspace grid */
-.workspace { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: 24fr 52fr 24fr; position: relative; }
+.workspace { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: 24fr 52fr 24fr; position: relative; overflow: hidden; }
 .workspace.tutor-collapsed { grid-template-columns: 24fr 72fr 48px; }
 .col { min-height: 0; overflow-y: auto; min-width: 0; }
 .col-chart { background: var(--surface-2); border-right: 1px solid var(--line); }
@@ -363,8 +363,8 @@ figcaption { font-size: 13px; margin-top: 6px; }
 .table-scroll { overflow-x: auto; }
 .cmp-table textarea { min-width: 140px; font-size: 13px; }
 
-/* Responsive: drawers below 1100px */
-@media (max-width: 1100px) {
+/* Responsive: drawers below 1024px */
+@media (max-width: 1023px) {
   .workspace, .workspace.tutor-collapsed { grid-template-columns: 1fr; }
   .drawer-toggle { display: inline-block; }
   .col-chart, .col-tutor { position: absolute; top: 0; bottom: 0; width: min(360px, 88vw); z-index: 30; transform: translateX(-105%); transition: transform 0.18s ease; box-shadow: 4px 0 16px rgba(20, 41, 75, 0.15); }
@@ -377,13 +377,15 @@ figcaption { font-size: 13px; margin-top: 6px; }
   .synthetic-chip { display: none; }
   .collapse-btn { display: none; }
 }
-@media (max-width: 1100px) and (min-width: 0px) {
+@media (max-width: 1023px) and (min-width: 0px) {
   .tutor.collapsed { padding: var(--s2); }
 }
-@media (max-width: 860px) {
+@media (max-width: 1023px) {
   .topbar { height: auto; flex-wrap: wrap; padding-block: 8px; }
   .topbar-stage { margin-left: 0; }
   .topbar-actions { flex-wrap: wrap; margin-left: 0; }
+}
+@media (max-width: 860px) {
   .doc-grid, .field-grid, .request-recap, .start-grid, .two-col { grid-template-columns: 1fr; }
   .cmp-grid { grid-template-columns: 1fr 1fr; }
   .viewer-panes.split { grid-template-columns: 1fr; }
@@ -393,4 +395,13 @@ figcaption { font-size: 13px; margin-top: 6px; }
   .col-center { padding: var(--s2); }
   .cmp-grid { grid-template-columns: 1fr; }
   .save-status { display: none; }
+}
+
+/* 1024-1366: keep three columns; tighten the center */
+@media (max-width: 1366px) and (min-width: 1024px) {
+  .col-center { padding: var(--s2); }
+  .field-grid, .request-recap, .doc-grid { grid-template-columns: 1fr; }
+  .presentation, .update-card, .model-card, .task-block, .committed-block, .ack-block, .boundary-block, .study-panel { padding: var(--s2); }
+  .synthetic-chip { display: none; }
+  .topbar-stage { margin-left: var(--s2); }
 }
