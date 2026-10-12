@@ -38,7 +38,7 @@
 - The published claude.ai Artifact preview was not opened from this session.
 - Full five-node keyboard-only journey (keyboard tested through the first investigation cycle).
 - Screen readers, non-Chromium browsers, phones.
-- No GitHub repository is connected; source is delivered as a zip with local git history.
+- No GitHub repository is connected. Source is delivered as a zip; commit history exists only in the build workspace.
 
 ## Tests
 
