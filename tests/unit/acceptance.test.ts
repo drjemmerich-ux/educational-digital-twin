@@ -54,7 +54,7 @@ test('AT04 rationale and expectation persist as distinct ordered events before r
   assert.ok(r.ok);
   const stored = repo.loadEvents('session-wu');
   const txn = stored[stored.length - 1]!.transaction_id;
-  const tail = stored.filter((e) => e.transaction_id === txn).slice(0, 4);
+  const tail = stored.filter((e) => e.transaction_id === txn && e.event_type !== 'clock_advanced').slice(0, 4);
   assert.deepEqual(tail.map((e) => e.event_type), ['investigation_requested', 'rationale_committed', 'expectation_committed', 'raw_data_released']);
   assert.equal(new Set(tail.map((e) => e.transaction_id)).size, 1);
   assert.ok(tail[0]!.sequence < tail[1]!.sequence && tail[1]!.sequence < tail[2]!.sequence && tail[2]!.sequence < tail[3]!.sequence);

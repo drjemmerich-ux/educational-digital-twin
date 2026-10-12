@@ -129,7 +129,7 @@ export function runJourney(ctl: SessionController, o: JourneyOptions): void {
       }),
       'second decision',
     );
-    if (ctl.state.stage === 'REVIEW.pause') {
+    if ((ctl.state.stage as string) === 'REVIEW.pause') {
       must(ctl.dispatch(C.enterDebrief, undefined), 'debrief from review');
       return;
     }

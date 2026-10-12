@@ -15,7 +15,7 @@
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
-    "types": []
+    "types": ["node"]
   },
   "include": ["src", "tests/unit", "scripts/*.ts"]
 }

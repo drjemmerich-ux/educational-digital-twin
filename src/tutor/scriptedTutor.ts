@@ -73,7 +73,8 @@ export class ScriptedTutor implements TutorAdapter {
       case 'boundary':
         return out('boundary', BOUNDARY, ctx);
       case 'report_released':
-        if (ctx.preference !== 'auto' || !withinBudget(ctx)) return null;
+        // Restraint: at most one unrequested prompt per node; later results get silence.
+        if (ctx.preference !== 'auto' || !withinBudget(ctx) || ctx.probesInNode > 0) return null;
         if (t.variant === 'image_gate') {
           return out('integrate', 'Compare the report with your own reading. Where do they differ, and does any difference matter for your working model?', ctx);
         }

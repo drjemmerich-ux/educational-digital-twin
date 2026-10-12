@@ -212,6 +212,8 @@ export function commitRequest(
     learner('rationale_committed', { investigation_id: def.id, text: input.rationale.trim(), reasoning_version_id: ctx.newId('rv') }),
     learner('expectation_committed', { investigation_id: def.id, text: input.expectation.trim(), reasoning_version_id: ctx.newId('rv'), confidence: input.confidence }),
   ];
+  // Advance the simulated clock first so the release is stamped at its acquisition time.
+  drafts.push(...clockIfLater(state, result.acquiredAt, `${def.title} result available`));
   const imaging = def.kind === 'imaging';
   if (imaging && state.imagingRoute === 'image_gate_placeholder') {
     drafts.push(engine('raw_data_released', { investigation_id: def.id, series: releasedSeries(def.id), acquired_at: result.acquiredAt, variant: 'image_gate' }));
@@ -226,7 +228,6 @@ export function commitRequest(
   } else {
     drafts.push(engine('report_released', { investigation_id: def.id, report: releasedReport(def.id), variant: 'non_imaging' }));
   }
-  drafts.push(...clockIfLater(state, result.acquiredAt, `${def.title} result available`));
   return ok(drafts);
 }
 

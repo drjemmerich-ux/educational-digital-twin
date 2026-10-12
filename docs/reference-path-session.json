@@ -1,0 +1,3810 @@
+{
+  "export_schema_version": "edt-session-export-1.0",
+  "exported_at_utc": "2026-10-12T13:30:00.000Z",
+  "notice": [
+    "Fictional, fully synthetic educational case. Not real patient data. Not clinical decision support.",
+    "Formative prototype: no grading, scoring, or competence classification.",
+    "Image studies used clearly labelled technical placeholders; no validated diagnostic images were shown.",
+    "DEMONSTRATION SESSION with prefilled sample reasoning. Not a participant record."
+  ],
+  "versions": {
+    "case_id": "EDT-LUM-DUMMY-001",
+    "content_version": "edt-lum-dummy-001-handoff-1.0",
+    "ui_version": "ui-1.5.0",
+    "engine_version": "engine-1.5.0",
+    "asset_manifest_version": "manifest-1.0 (Visual Bible v0.1, 2026-09-29)",
+    "tutor_policy_version": "scripted-tutor-policy-1.0"
+  },
+  "session": {
+    "session_id": "session-reference-b1",
+    "participant_code": "DEMO",
+    "session_kind": "demonstration",
+    "imaging_route": "image_gate_placeholder",
+    "status": "completed",
+    "completion_status": "clinical_pathway_completed",
+    "current_stage": "N5.debrief",
+    "simulated_time_now": "Six weeks after surgery",
+    "started_at_utc": "2026-10-12T12:00:00.000Z",
+    "last_event_at_utc": "2026-10-12T12:14:40.000Z",
+    "real_elapsed_seconds": 880
+  },
+  "released_content": {
+    "presentation": {
+      "patient": {
+        "displayName": "Patient A",
+        "ageYears": 64,
+        "sex": "Female",
+        "occupation": "Architect, professionally active part-time",
+        "activity": "Independent and active; values walking, travel, and continued professional engagement",
+        "heightCm": 164,
+        "weightKg": 72,
+        "bmi": 26.8,
+        "portraitAssetId": "CLIN-N1-001"
+      },
+      "history": {
+        "chiefConcern": "Progressive bilateral leg pain with walking, right greater than left. Leg symptoms limit her function more than her low-back pain.",
+        "duration": "14 months, progressive",
+        "walkingTolerance": "Approximately 180 m",
+        "aggravating": [
+          "Standing",
+          "Lumbar extension",
+          "Walking for more than 5 to 7 minutes"
+        ],
+        "relieving": [
+          "Sitting",
+          "Forward trunk flexion",
+          "Leaning on a shopping cart"
+        ],
+        "priorManagement": [
+          {
+            "when": "Since symptom onset",
+            "what": "Anti-inflammatory medication and simple analgesics with partial benefit"
+          },
+          {
+            "when": "About 9 months before entry",
+            "what": "Twelve weeks of supervised physical therapy and exercise"
+          },
+          {
+            "when": "About 6 months before entry",
+            "what": "Technically adequate right L5 selective nerve-root block with substantial but temporary relief of leg pain"
+          },
+          {
+            "when": "Ongoing",
+            "what": "Activity modification without restoration of walking tolerance"
+          }
+        ],
+        "preference": "She prefers a durable improvement but is concerned about an extensive operation and wants to understand reasonable alternatives.",
+        "redFlagsAbsent": [
+          "Bladder or bowel dysfunction",
+          "Saddle anesthesia",
+          "Fever",
+          "Weight loss",
+          "Nonmechanical night pain",
+          "Active cancer history"
+        ]
+      },
+      "examination": [
+        {
+          "domain": "Gait",
+          "finding": "Independent, with mild difficulty during right heel walking"
+        },
+        {
+          "domain": "Hip flexion",
+          "finding": "5/5 bilaterally"
+        },
+        {
+          "domain": "Knee extension",
+          "finding": "5/5 bilaterally"
+        },
+        {
+          "domain": "Ankle dorsiflexion",
+          "finding": "5/5 bilaterally"
+        },
+        {
+          "domain": "Extensor hallucis longus",
+          "finding": "4+/5 right, 5/5 left"
+        },
+        {
+          "domain": "Plantar flexion",
+          "finding": "5/5 bilaterally"
+        },
+        {
+          "domain": "Sensation",
+          "finding": "Mild intermittent hypoesthesia over the dorsum of the right foot"
+        },
+        {
+          "domain": "Patellar reflexes",
+          "finding": "2+ and symmetric"
+        },
+        {
+          "domain": "Achilles reflexes",
+          "finding": "1+ and symmetric"
+        },
+        {
+          "domain": "Straight-leg raise",
+          "finding": "Negative bilaterally"
+        },
+        {
+          "domain": "Distal pulses",
+          "finding": "Present and symmetric"
+        },
+        {
+          "domain": "Upper motor neuron signs",
+          "finding": "Absent"
+        }
+      ],
+      "baselineMeasures": [
+        {
+          "label": "Oswestry Disability Index (ODI)",
+          "value": "42%"
+        },
+        {
+          "label": "Back pain",
+          "value": "6/10"
+        },
+        {
+          "label": "Right leg pain",
+          "value": "8/10"
+        },
+        {
+          "label": "Left leg pain",
+          "value": "5/10"
+        },
+        {
+          "label": "Walking tolerance",
+          "value": "Approximately 180 m"
+        },
+        {
+          "label": "Patient's reported confidence in current management",
+          "value": "35/100",
+          "note": "This is the patient's own rating. It is separate from your confidence in a hypothesis or plan."
+        }
+      ]
+    },
+    "investigations": [
+      {
+        "investigation_id": "lumbar_mri",
+        "title": "Lumbar MRI",
+        "kind": "imaging",
+        "route_encountered": "image_gate",
+        "status": "MODEL_UPDATED",
+        "acquired_at": {
+          "code": "T+10d",
+          "label": "Day 10 after case entry"
+        },
+        "series": [
+          {
+            "asset_id": "MRI-N2-001",
+            "title": "Sagittal T1",
+            "planned_frames": 14,
+            "frame_paths": null,
+            "placeholder": true,
+            "approval_state": "Planned"
+          },
+          {
+            "asset_id": "MRI-N2-002",
+            "title": "Sagittal T2",
+            "planned_frames": 16,
+            "frame_paths": null,
+            "placeholder": true,
+            "approval_state": "Planned"
+          },
+          {
+            "asset_id": "MRI-N2-003",
+            "title": "Axial T2, L3-L4",
+            "planned_frames": 14,
+            "frame_paths": null,
+            "placeholder": true,
+            "approval_state": "Planned"
+          },
+          {
+            "asset_id": "MRI-N2-004",
+            "title": "Axial T2, L4-L5",
+            "planned_frames": 18,
+            "frame_paths": null,
+            "placeholder": true,
+            "approval_state": "Planned"
+          },
+          {
+            "asset_id": "MRI-N2-005",
+            "title": "Axial T2, L5-S1",
+            "planned_frames": 14,
+            "frame_paths": null,
+            "placeholder": true,
+            "approval_state": "Planned"
+          }
+        ],
+        "rationale": "Sample: why lumbar_mri is requested now",
+        "expectation": "Sample: what lumbar_mri is expected to show",
+        "interpretations": [
+          {
+            "text": "Sample: interpretation of lumbar_mri",
+            "reasoning_version_id": "rv-0038",
+            "predecessor_id": null,
+            "confidence": 60,
+            "sequence": 22
+          }
+        ],
+        "image_interpretation_unavailable_reason": null,
+        "report": {
+          "title": "Lumbar MRI report",
+          "sections": [
+            {
+              "heading": "Technique",
+              "lines": [
+                "Supine MRI of the lumbar spine: sagittal T1 and T2; axial T2 at L3-L4, L4-L5, and L5-S1."
+              ]
+            },
+            {
+              "heading": "Findings",
+              "lines": [
+                "L4-L5: grade I degenerative spondylolisthesis. Translation measures approximately 2.5 mm on this supine study.",
+                "L4-L5: a broad disc bulge, advanced facet hypertrophy, and ligamentum flavum thickening produce severe central and bilateral lateral-recess stenosis, right greater than left.",
+                "L4-L5: dural sac cross-sectional area approximately 58 mm².",
+                "L4-L5 facet joint effusions: right approximately 2.5 mm, left approximately 1.8 mm.",
+                "No synovial cyst. No dominant foraminal stenosis.",
+                "L3-L4: mild degeneration without clinically significant stenosis.",
+                "L5-S1: mild degeneration without clinically relevant stenosis.",
+                "No tumor, infection, or fracture."
+              ]
+            },
+            {
+              "heading": "Impression",
+              "lines": [
+                "Severe multifactorial L4-L5 central and bilateral lateral-recess stenosis, right greater than left, with grade I degenerative spondylolisthesis (approximately 2.5 mm on supine imaging).",
+                "Mild, non-dominant degeneration at L3-L4 and L5-S1."
+              ]
+            }
+          ],
+          "accessibleSummary": "Supine lumbar MRI: severe L4-L5 central and bilateral lateral-recess stenosis, right greater than left; grade I spondylolisthesis measuring about 2.5 mm supine; dural sac area about 58 mm²; facet effusions 2.5 mm right and 1.8 mm left; mild degeneration at L3-L4 and L5-S1.",
+          "acquiredAt": {
+            "code": "T+10d",
+            "label": "Day 10 after case entry"
+          },
+          "annotation": {
+            "available": false,
+            "reason": "Annotated teaching copy (PLAN-N3-002) is planned but awaiting expert validation."
+          }
+        },
+        "model_update": {
+          "investigation_id": "lumbar_mri",
+          "effect": "supports",
+          "explanation": "Sample: how lumbar_mri changed the model",
+          "decision": "maintain",
+          "confidence": 62,
+          "management_thinking": "unchanged",
+          "resulting_model_id": "model-0008",
+          "sequence": 24
+        },
+        "reopened_views": 0,
+        "repeat_requests": []
+      },
+      {
+        "investigation_id": "standing_lumbar_xr",
+        "title": "Standing lumbar AP and lateral radiographs",
+        "kind": "imaging",
+        "route_encountered": "image_gate",
+        "status": "MODEL_UPDATED",
+        "acquired_at": {
+          "code": "T+7d",
+          "label": "Day 7 after case entry"
+        },
+        "series": [
+          {
+            "asset_id": "XR-N2-001",
+            "title": "Standing lumbar AP",
+            "planned_frames": 1,
+            "frame_paths": null,
+            "placeholder": true,
+            "approval_state": "Planned"
+          },
+          {
+            "asset_id": "XR-N2-002",
+            "title": "Standing lumbar lateral",
+            "planned_frames": 1,
+            "frame_paths": null,
+            "placeholder": true,
+            "approval_state": "Planned"
+          }
+        ],
+        "rationale": "Sample: why standing_lumbar_xr is requested now",
+        "expectation": "Sample: what standing_lumbar_xr is expected to show",
+        "interpretations": [
+          {
+            "text": "Sample: interpretation of standing_lumbar_xr",
+            "reasoning_version_id": "rv-0024",
+            "predecessor_id": null,
+            "confidence": 60,
+            "sequence": 14
+          }
+        ],
+        "image_interpretation_unavailable_reason": null,
+        "report": {
+          "title": "Standing lumbar radiograph report",
+          "sections": [
+            {
+              "heading": "AP view",
+              "lines": [
+                "Coronal balance is preserved. Mild degenerative change. No destructive lesion."
+              ]
+            },
+            {
+              "heading": "Lateral view",
+              "lines": [
+                "Grade I degenerative spondylolisthesis at L4-L5 with translation of approximately 4.5 mm on standing.",
+                "L4-L5 disc height is partially preserved. Facet degeneration.",
+                "No fracture."
+              ]
+            }
+          ],
+          "accessibleSummary": "Standing lumbar radiographs: preserved coronal balance; grade I L4-L5 spondylolisthesis with about 4.5 mm standing translation; partially preserved disc height; facet degeneration.",
+          "acquiredAt": {
+            "code": "T+7d",
+            "label": "Day 7 after case entry"
+          },
+          "annotation": {
+            "available": false,
+            "reason": "No validated annotation copy is planned for this study."
+          }
+        },
+        "model_update": {
+          "investigation_id": "standing_lumbar_xr",
+          "effect": "supports",
+          "explanation": "Sample: how standing_lumbar_xr changed the model",
+          "decision": "maintain",
+          "confidence": 62,
+          "management_thinking": "unchanged",
+          "resulting_model_id": "model-0008",
+          "sequence": 16
+        },
+        "reopened_views": 0,
+        "repeat_requests": []
+      },
+      {
+        "investigation_id": "dynamic_xr",
+        "title": "Flexion and extension lateral radiographs",
+        "kind": "imaging",
+        "route_encountered": "image_gate",
+        "status": "MODEL_UPDATED",
+        "acquired_at": {
+          "code": "T+7d",
+          "label": "Day 7 after case entry"
+        },
+        "series": [
+          {
+            "asset_id": "XR-N2-003",
+            "title": "Lateral flexion",
+            "planned_frames": 1,
+            "frame_paths": null,
+            "placeholder": true,
+            "approval_state": "Planned"
+          },
+          {
+            "asset_id": "XR-N2-004",
+            "title": "Lateral extension",
+            "planned_frames": 1,
+            "frame_paths": null,
+            "placeholder": true,
+            "approval_state": "Planned"
+          }
+        ],
+        "rationale": "Sample: why dynamic_xr is requested now",
+        "expectation": "Sample: what dynamic_xr is expected to show",
+        "interpretations": [
+          {
+            "text": "Sample: interpretation of dynamic_xr",
+            "reasoning_version_id": "rv-0051",
+            "predecessor_id": null,
+            "confidence": 60,
+            "sequence": 29
+          }
+        ],
+        "image_interpretation_unavailable_reason": null,
+        "report": {
+          "title": "Flexion and extension radiograph report",
+          "sections": [
+            {
+              "heading": "Findings",
+              "lines": [
+                "L4-L5 translation: approximately 6.0 mm in flexion.",
+                "L4-L5 translation: approximately 3.0 mm in extension.",
+                "L4-L5 angular change across flexion and extension: approximately 8 degrees."
+              ]
+            }
+          ],
+          "accessibleSummary": "Dynamic radiographs: L4-L5 translation about 6.0 mm in flexion and 3.0 mm in extension; angular change about 8 degrees.",
+          "acquiredAt": {
+            "code": "T+7d",
+            "label": "Day 7 after case entry"
+          },
+          "annotation": {
+            "available": false,
+            "reason": "Annotated teaching copy (PLAN-N3-003) is planned but awaiting expert validation."
+          }
+        },
+        "model_update": {
+          "investigation_id": "dynamic_xr",
+          "effect": "supports",
+          "explanation": "Sample: how dynamic_xr changed the model",
+          "decision": "maintain",
+          "confidence": 62,
+          "management_thinking": "unchanged",
+          "resulting_model_id": "model-0008",
+          "sequence": 31
+        },
+        "reopened_views": 0,
+        "repeat_requests": []
+      },
+      {
+        "investigation_id": "emg_ncs",
+        "title": "EMG and nerve conduction studies",
+        "kind": "non_imaging",
+        "route_encountered": "non_imaging",
+        "status": "MODEL_UPDATED",
+        "acquired_at": {
+          "code": "T+12d",
+          "label": "Day 12 after case entry"
+        },
+        "series": [],
+        "rationale": "Sample: why emg_ncs is requested now",
+        "expectation": "Sample: what emg_ncs is expected to show",
+        "interpretations": [
+          {
+            "text": "Sample: interpretation of emg_ncs",
+            "reasoning_version_id": "rv-0065",
+            "predecessor_id": null,
+            "confidence": 60,
+            "sequence": 37
+          }
+        ],
+        "image_interpretation_unavailable_reason": null,
+        "report": {
+          "title": "EMG and nerve conduction report",
+          "sections": [
+            {
+              "heading": "Conclusion",
+              "lines": [
+                "Findings consistent with a mild chronic right L5 radiculopathy.",
+                "No evidence of active denervation.",
+                "No electrophysiological evidence of polyneuropathy."
+              ]
+            }
+          ],
+          "accessibleSummary": "Mild chronic right L5 radiculopathy without active denervation; no polyneuropathy.",
+          "acquiredAt": {
+            "code": "T+12d",
+            "label": "Day 12 after case entry"
+          },
+          "annotation": {
+            "available": false,
+            "reason": "No validated annotation copy is planned for this study."
+          }
+        },
+        "model_update": {
+          "investigation_id": "emg_ncs",
+          "effect": "supports",
+          "explanation": "Sample: how emg_ncs changed the model",
+          "decision": "maintain",
+          "confidence": 62,
+          "management_thinking": "unchanged",
+          "resulting_model_id": "model-0008",
+          "sequence": 38
+        },
+        "reopened_views": 0,
+        "repeat_requests": []
+      },
+      {
+        "investigation_id": "postop_mri",
+        "title": "Lumbar MRI (postoperative)",
+        "kind": "imaging",
+        "route_encountered": "image_gate",
+        "status": "MODEL_UPDATED",
+        "acquired_at": {
+          "code": "POD4",
+          "label": "Postoperative day 4"
+        },
+        "series": [
+          {
+            "asset_id": "MRI-N4-001",
+            "title": "Sagittal T2",
+            "planned_frames": 18,
+            "frame_paths": null,
+            "placeholder": true,
+            "approval_state": "Planned"
+          },
+          {
+            "asset_id": "MRI-N4-002",
+            "title": "Axial T2, L4-L5",
+            "planned_frames": 18,
+            "frame_paths": null,
+            "placeholder": true,
+            "approval_state": "Planned"
+          },
+          {
+            "asset_id": "MRI-N4-003",
+            "title": "Coronal T2",
+            "planned_frames": 14,
+            "frame_paths": null,
+            "placeholder": true,
+            "approval_state": "Planned"
+          }
+        ],
+        "rationale": "Sample: why postop_mri is requested now",
+        "expectation": "Sample: what postop_mri is expected to show",
+        "interpretations": [
+          {
+            "text": "Sample: interpretation of postop_mri",
+            "reasoning_version_id": "rv-0127",
+            "predecessor_id": null,
+            "confidence": 60,
+            "sequence": 73
+          }
+        ],
+        "image_interpretation_unavailable_reason": null,
+        "report": {
+          "title": "Postoperative lumbar MRI report",
+          "sections": [
+            {
+              "heading": "Technique",
+              "lines": [
+                "Lumbar MRI: sagittal T2, axial T2 at L4-L5, and coronal T2."
+              ]
+            },
+            {
+              "heading": "Findings",
+              "lines": [
+                "Postoperative changes of decompression at L4-L5.",
+                "A dorsal epidural and subfascial collection of CSF signal intensity on T2-weighted images communicates with the decompression bed.",
+                "The collection measures approximately 48 x 18 x 55 mm.",
+                "Mild mass effect without severe neural compression.",
+                "No compressive hematoma. No abscess pattern. No severe cauda equina compression."
+              ]
+            },
+            {
+              "heading": "Impression",
+              "lines": [
+                "Communicating postoperative pseudomeningocele without severe neural compression, hematoma, or abscess pattern."
+              ]
+            }
+          ],
+          "accessibleSummary": "Postoperative MRI: communicating CSF-intensity dorsal epidural and subfascial collection about 48 x 18 x 55 mm with mild mass effect; no severe compression, hematoma, or abscess pattern.",
+          "acquiredAt": {
+            "code": "POD4",
+            "label": "Postoperative day 4"
+          },
+          "annotation": {
+            "available": false,
+            "reason": "No validated annotation copy is planned for this study."
+          }
+        },
+        "model_update": {
+          "investigation_id": "postop_mri",
+          "effect": "supports",
+          "explanation": "Sample: how postop_mri changed the model",
+          "decision": "maintain",
+          "confidence": 62,
+          "management_thinking": "unchanged",
+          "resulting_model_id": "model-0101",
+          "sequence": 75
+        },
+        "reopened_views": 0,
+        "repeat_requests": []
+      },
+      {
+        "investigation_id": "postop_labs",
+        "title": "Postoperative laboratory studies",
+        "kind": "non_imaging",
+        "route_encountered": "non_imaging",
+        "status": "MODEL_UPDATED",
+        "acquired_at": {
+          "code": "POD3",
+          "label": "Postoperative day 3"
+        },
+        "series": [],
+        "rationale": "Sample: why postop_labs is requested now",
+        "expectation": "Sample: what postop_labs is expected to show",
+        "interpretations": [
+          {
+            "text": "Sample: interpretation of postop_labs",
+            "reasoning_version_id": "rv-0112",
+            "predecessor_id": null,
+            "confidence": 60,
+            "sequence": 65
+          }
+        ],
+        "image_interpretation_unavailable_reason": null,
+        "report": {
+          "title": "Postoperative laboratory trend since surgery",
+          "sections": [
+            {
+              "heading": "Trend",
+              "lines": [
+                "Mild postoperative leukocytosis, trending downward.",
+                "No laboratory pattern of infection."
+              ]
+            },
+            {
+              "heading": "Note",
+              "lines": [
+                "Individual numeric values are not specified in this synthetic case record."
+              ]
+            }
+          ],
+          "accessibleSummary": "Expected mild postoperative leukocytosis trending downward; no laboratory pattern of infection.",
+          "acquiredAt": {
+            "code": "POD3",
+            "label": "Postoperative day 3"
+          },
+          "annotation": {
+            "available": false,
+            "reason": "No validated annotation copy is planned for this study."
+          }
+        },
+        "model_update": {
+          "investigation_id": "postop_labs",
+          "effect": "supports",
+          "explanation": "Sample: how postop_labs changed the model",
+          "decision": "maintain",
+          "confidence": 62,
+          "management_thinking": "unchanged",
+          "resulting_model_id": "model-0101",
+          "sequence": 67
+        },
+        "reopened_views": 0,
+        "repeat_requests": []
+      },
+      {
+        "investigation_id": "followup_xr",
+        "title": "Standing lumbar AP and lateral radiographs (follow-up)",
+        "kind": "imaging",
+        "route_encountered": "image_gate",
+        "status": "MODEL_UPDATED",
+        "acquired_at": {
+          "code": "W6",
+          "label": "Six weeks after surgery"
+        },
+        "series": [
+          {
+            "asset_id": "XR-N5-001",
+            "title": "Standing lumbar AP",
+            "planned_frames": 1,
+            "frame_paths": null,
+            "placeholder": true,
+            "approval_state": "Planned"
+          },
+          {
+            "asset_id": "XR-N5-002",
+            "title": "Standing lumbar lateral",
+            "planned_frames": 1,
+            "frame_paths": null,
+            "placeholder": true,
+            "approval_state": "Planned"
+          }
+        ],
+        "rationale": "Sample: why followup_xr is requested now",
+        "expectation": "Sample: what followup_xr is expected to show",
+        "interpretations": [
+          {
+            "text": "Sample: interpretation of followup_xr",
+            "reasoning_version_id": "rv-0154",
+            "predecessor_id": null,
+            "confidence": 60,
+            "sequence": 89
+          }
+        ],
+        "image_interpretation_unavailable_reason": null,
+        "report": {
+          "title": "Six-week standing lumbar radiograph report",
+          "sections": [
+            {
+              "heading": "AP view",
+              "lines": [
+                "Postoperative decompression changes. No new coronal deformity. No hardware."
+              ]
+            },
+            {
+              "heading": "Lateral view",
+              "lines": [
+                "Persistent grade I L4-L5 slip without clear early progression. No instrumentation."
+              ]
+            }
+          ],
+          "accessibleSummary": "Six-week radiographs: persistent grade I L4-L5 slip without clear early progression; no instrumentation.",
+          "acquiredAt": {
+            "code": "W6",
+            "label": "Six weeks after surgery"
+          },
+          "annotation": {
+            "available": false,
+            "reason": "No validated annotation copy is planned for this study."
+          }
+        },
+        "model_update": {
+          "investigation_id": "followup_xr",
+          "effect": "supports",
+          "explanation": "Sample: how followup_xr changed the model",
+          "decision": "maintain",
+          "confidence": 62,
+          "management_thinking": "unchanged",
+          "resulting_model_id": "model-0101",
+          "sequence": 92
+        },
+        "reopened_views": 0,
+        "repeat_requests": []
+      }
+    ],
+    "working_models": [
+      {
+        "version_id": "model-0008",
+        "chain": "preop",
+        "version": 1,
+        "predecessor_id": null,
+        "trigger": "initial_assessment",
+        "problem_representation": "Sample: 64-year-old active woman with 14 months of progressive bilateral leg-dominant neurogenic claudication, right worse than left, with a subtle right L5 deficit.",
+        "hypotheses": [
+          "Sample: lumbar spinal stenosis with right L5 involvement",
+          "Sample: vascular claudication (less likely)",
+          "Sample: hip pathology contributing"
+        ],
+        "priorities": "Sample: define the level and mechanism of compression; assess mobility; confirm absence of red flags",
+        "confidence": 55,
+        "sequence": 5
+      },
+      {
+        "version_id": "model-0070",
+        "chain": "preop",
+        "version": 2,
+        "predecessor_id": "model-0008",
+        "trigger": "workup_conclusion",
+        "problem_representation": "Sample: integrated model summarizing released findings and remaining uncertainty",
+        "hypotheses": [
+          "Sample: lumbar spinal stenosis with right L5 involvement",
+          "Sample: vascular claudication (less likely)",
+          "Sample: hip pathology contributing"
+        ],
+        "priorities": "Sample: define the level and mechanism of compression; assess mobility; confirm absence of red flags",
+        "confidence": 65,
+        "sequence": 39
+      },
+      {
+        "version_id": "model-0101",
+        "chain": "postop",
+        "version": 1,
+        "predecessor_id": null,
+        "trigger": "postop_reassessment",
+        "problem_representation": "Sample: new postoperative problem representation",
+        "hypotheses": [
+          "Sample: first explanation",
+          "Sample: second explanation",
+          "Sample: third explanation"
+        ],
+        "priorities": "Sample: immediate priorities",
+        "confidence": 60,
+        "sequence": 59
+      }
+    ],
+    "workup_conclusion": {
+      "integrated_model": "Sample: integrated model summarizing released findings and remaining uncertainty",
+      "confidence": 65,
+      "enough_information": true,
+      "open_cycles": [],
+      "model_id": "model-0070",
+      "sequence": 40
+    },
+    "recommendation": {
+      "recommendation": {
+        "category": "decompression",
+        "other_strategy": "",
+        "strategy_summary": "Sample: decompression strategy summary entered for demonstration",
+        "indication": "Sample: leg-dominant symptoms limiting walking despite nonoperative care",
+        "symptom_target": "Sample: right-greater-than-left leg symptoms with walking",
+        "level_extent": "Sample: level and extent as reasoned from released imaging",
+        "approach": "Sample: approach entered for demonstration",
+        "facet_preservation": "Sample: facet preservation considered",
+        "fusion_rationale": "Sample: reasoning about including or excluding fusion",
+        "expected_benefit": "Sample: improved walking tolerance",
+        "risks": "Sample: dural tear, infection, persistent symptoms",
+        "alternative": "Sample: a reasonable alternative strategy",
+        "patient_preference": "Sample: concern about an extensive operation",
+        "uncertainty": "Sample: significance of the dynamic findings",
+        "change_threshold": "Sample: a development that would change this recommendation",
+        "confidence": 60,
+        "comparison": []
+      },
+      "reasoning_version_id": "rv-0077",
+      "sequence": 43
+    },
+    "recommendation_flag": null,
+    "canonical_continuation": {
+      "explained": "For this first prototype, your recommendation has been saved. The simulated clinical course now follows a predefined decompression procedure so that we can examine the same intraoperative and postoperative reasoning tasks. This continuation does not classify your recommendation as correct or incorrect.",
+      "acknowledged": true
+    },
+    "operative": {
+      "procedure": [
+        "Predefined demonstration procedure: complete L4-L5 decompression with bilateral lateral-recess decompression and limited cranial extension into L3-L4.",
+        "No fusion and no instrumentation are performed."
+      ],
+      "checkpoint": {
+        "id": "intraop_checkpoint",
+        "time": {
+          "code": "POD0",
+          "label": "Operative day (day 28 after case entry)"
+        },
+        "title": "Intraoperative checkpoint",
+        "lines": [
+          "During decompression of the right lateral recess, the team recognizes a dural defect of approximately 4 mm.",
+          "Cerebrospinal fluid is visible at the defect."
+        ],
+        "images": [
+          {
+            "assetId": "OR-N4-002",
+            "title": "Operative field at the checkpoint",
+            "caption": "Synthetic operative illustration pending production."
+          }
+        ]
+      },
+      "participant_proposal": {
+        "immediate": "Sample: immediate management proposal",
+        "checks": "Sample: checks before closure",
+        "postop_considerations": "Sample: postoperative considerations",
+        "confidence": 70,
+        "sequence": 51
+      },
+      "team_action": {
+        "team_action": [
+          "The simulated team performs a primary suture repair with adjunctive sealant.",
+          "A Valsalva test at closure is negative."
+        ],
+        "operative_report": {
+          "title": "Operative report",
+          "sections": [
+            {
+              "heading": "Procedure",
+              "lines": [
+                "Complete L4-L5 decompression with bilateral lateral-recess decompression and limited cranial extension into L3-L4. No fusion or instrumentation."
+              ]
+            },
+            {
+              "heading": "Intraoperative event",
+              "lines": [
+                "Recognized dural defect of approximately 4 mm in the right lateral recess."
+              ]
+            },
+            {
+              "heading": "Management",
+              "lines": [
+                "Primary suture repair with adjunctive sealant. Negative Valsalva test at closure."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "clinical_updates": [
+      {
+        "id": "pod1",
+        "time": {
+          "code": "POD1",
+          "label": "Postoperative day 1"
+        },
+        "title": "Postoperative day 1",
+        "lines": [
+          "Leg pain has improved.",
+          "Mobilization has begun."
+        ],
+        "notes": [
+          {
+            "time": "POD1",
+            "author": "Nursing",
+            "text": "Leg pain improved compared with before surgery. Mobilizing."
+          }
+        ]
+      },
+      {
+        "id": "pod3",
+        "time": {
+          "code": "POD3",
+          "label": "Postoperative day 3"
+        },
+        "title": "New postoperative findings",
+        "lines": [
+          "Headache that is worse when upright (orthostatic).",
+          "Clear fluid draining from the wound.",
+          "No fever.",
+          "No new neurologic deficit."
+        ],
+        "notes": [
+          {
+            "time": "POD3",
+            "author": "Nursing",
+            "text": "Postural headache reported. Increased clear drainage on the dressing with mobilization."
+          }
+        ],
+        "images": [
+          {
+            "assetId": "CLIN-N4-001",
+            "title": "Wound dressing photograph",
+            "caption": "Small clear serous stain without marked erythema, purulence, or dehiscence."
+          }
+        ]
+      }
+    ],
+    "postop_differential": [
+      "Sample: first explanation",
+      "Sample: second explanation",
+      "Sample: third explanation"
+    ],
+    "postop_plans": [
+      {
+        "plan": {
+          "plan": "Sample: postoperative management plan",
+          "rationale": "Sample: rationale",
+          "monitoring": "Sample: monitoring",
+          "threshold": "Sample: escalation threshold",
+          "confidence": 65
+        },
+        "plan_version_id": "plan-0133",
+        "predecessor_id": null,
+        "decision_point": "initial_postoperative_plan",
+        "sequence": 76
+      }
+    ],
+    "branch_decisions": [
+      {
+        "option_id": "opt_drain",
+        "branch_id": "B1",
+        "postop_mri_released_before_choice": true,
+        "decision_point": "initial_postoperative_plan",
+        "sequence": 78,
+        "kind": "confirmed"
+      }
+    ],
+    "branch_steps": [
+      {
+        "id": "B1_start",
+        "time": {
+          "code": "POD4",
+          "label": "Postoperative day 4"
+        },
+        "title": "Lumbar CSF drainage",
+        "lines": [
+          "Lumbar CSF drainage has started. It will be maintained for 72 hours according to the prescribed course."
+        ],
+        "notes": [
+          {
+            "time": "POD4",
+            "author": "Nursing",
+            "text": "Lumbar drainage started."
+          }
+        ]
+      },
+      {
+        "id": "B1_resolved",
+        "time": {
+          "code": "POD7",
+          "label": "Postoperative day 7"
+        },
+        "title": "After 72 hours of lumbar drainage",
+        "lines": [
+          "Headache and wound drainage have resolved.",
+          "The drain was removed on postoperative day 7 after symptom and wound-dryness criteria were met.",
+          "No re-exploration was performed."
+        ],
+        "notes": [
+          {
+            "time": "POD7",
+            "author": "Nursing",
+            "text": "No headache. Wound dry. Drain removed."
+          }
+        ]
+      }
+    ],
+    "review_pause": null,
+    "follow_up": {
+      "branch_id": "B1",
+      "followup": {
+        "time": {
+          "code": "W6",
+          "label": "Six weeks after surgery"
+        },
+        "title": "Six-week follow-up",
+        "measures": [
+          {
+            "label": "Walking tolerance",
+            "baseline": "Approximately 180 m",
+            "followUp": "900 m"
+          },
+          {
+            "label": "Back pain",
+            "baseline": "6/10",
+            "followUp": "3/10"
+          },
+          {
+            "label": "Right leg pain",
+            "baseline": "8/10",
+            "followUp": "2/10"
+          },
+          {
+            "label": "Left leg pain",
+            "baseline": "5/10",
+            "followUp": "Not recorded in this case"
+          },
+          {
+            "label": "ODI",
+            "baseline": "42%",
+            "followUp": "24%"
+          },
+          {
+            "label": "Right EHL strength",
+            "baseline": "4+/5",
+            "followUp": "5/5"
+          }
+        ],
+        "lines": [
+          "CSF leak: resolved.",
+          "Wound: healed, without drainage.",
+          "Headache: no recurrence."
+        ],
+        "unavailable": [
+          "Repeat translation measurement, time to return to work, and long-term stability are not specified in this case."
+        ]
+      }
+    },
+    "comparisons": {
+      "experienced_branch": "B1",
+      "reference": null,
+      "others": [
+        {
+          "label": "Other authored scenario",
+          "branch_id": "B2",
+          "action": "Short monitored period of recumbency and wound observation",
+          "consequence": "Symptoms and drainage persist and a second decision is required; subsequent lumbar drainage resolves the leak with a modestly longer stay."
+        },
+        {
+          "label": "Other authored scenario",
+          "branch_id": "B3",
+          "action": "Early operative re-exploration and reinforced repair",
+          "consequence": "The leak resolves; the course includes the additional operative burden."
+        },
+        {
+          "label": "Other authored scenario",
+          "branch_id": "B4",
+          "action": "Defer targeted treatment despite continuing drainage",
+          "consequence": "The collection and symptoms persist, requiring reassessment. A detailed outcome after reassessment is not authored in this case."
+        }
+      ]
+    },
+    "reflections": [
+      {
+        "answers": {
+          "r1": "Sample: reflection on the evidence that changed the model",
+          "r6": "Sample: what I would do differently"
+        },
+        "reflection_version_id": "refl-0165",
+        "sequence": 95
+      }
+    ],
+    "unsupported_requests": [],
+    "boundary_messages": [],
+    "asset_notices": []
+  },
+  "tutor_interactions": [
+    {
+      "sequence": 4,
+      "role": "tutor",
+      "mode": "orientation",
+      "text": "I am a scripted tutor prototype. I ask one question at a time and will often stay silent. I cannot see unreleased information, order studies, or change the patient’s course. Use “Ask for a prompt” whenever a question would help.",
+      "trigger": "session_started"
+    },
+    {
+      "sequence": 7,
+      "role": "system",
+      "mode": "discriminate",
+      "text": "Prompt requested",
+      "trigger": "learner_selected"
+    },
+    {
+      "sequence": 8,
+      "role": "tutor",
+      "mode": "discriminate",
+      "text": "What finding would make you reconsider that hypothesis?",
+      "trigger": "support_requested:discriminate"
+    },
+    {
+      "sequence": 42,
+      "role": "tutor",
+      "mode": "alternative",
+      "text": "Which patient-specific features support your strategy over a reasonable alternative?",
+      "trigger": "stage_entered:N3.recommendation"
+    },
+    {
+      "sequence": 66,
+      "role": "tutor",
+      "mode": "integrate",
+      "text": "How much weight should this result carry relative to the clinical picture, and why?",
+      "trigger": "report_released:postop_labs"
+    },
+    {
+      "sequence": 91,
+      "role": "tutor",
+      "mode": "integrate",
+      "text": "Compare the report with your own reading. Where do they differ, and does any difference matter for your working model?",
+      "trigger": "report_released:followup_xr"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "evt-0003",
+      "session_id": "session-reference-b1",
+      "sequence": 1,
+      "transaction_id": "txn-0002",
+      "event_type": "session_started",
+      "source": "system",
+      "timestamp_utc": "2026-10-12T12:00:00.000Z",
+      "simulated_time": "none",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "START",
+      "state_after": "START",
+      "payload": {
+        "participant_code": "DEMO",
+        "imaging_route": "image_gate_placeholder",
+        "session_kind": "demonstration",
+        "versions": {
+          "case_id": "EDT-LUM-DUMMY-001",
+          "content_version": "edt-lum-dummy-001-handoff-1.0",
+          "ui_version": "ui-1.5.0",
+          "engine_version": "engine-1.5.0",
+          "asset_manifest_version": "manifest-1.0 (Visual Bible v0.1, 2026-09-29)",
+          "tutor_policy_version": "scripted-tutor-policy-1.0"
+        }
+      }
+    },
+    {
+      "event_id": "evt-0004",
+      "session_id": "session-reference-b1",
+      "sequence": 2,
+      "transaction_id": "txn-0002",
+      "event_type": "presentation_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:00:00.000Z",
+      "simulated_time": "T0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "START",
+      "state_after": "START",
+      "payload": {
+        "presentation": {
+          "patient": {
+            "displayName": "Patient A",
+            "ageYears": 64,
+            "sex": "Female",
+            "occupation": "Architect, professionally active part-time",
+            "activity": "Independent and active; values walking, travel, and continued professional engagement",
+            "heightCm": 164,
+            "weightKg": 72,
+            "bmi": 26.8,
+            "portraitAssetId": "CLIN-N1-001"
+          },
+          "history": {
+            "chiefConcern": "Progressive bilateral leg pain with walking, right greater than left. Leg symptoms limit her function more than her low-back pain.",
+            "duration": "14 months, progressive",
+            "walkingTolerance": "Approximately 180 m",
+            "aggravating": [
+              "Standing",
+              "Lumbar extension",
+              "Walking for more than 5 to 7 minutes"
+            ],
+            "relieving": [
+              "Sitting",
+              "Forward trunk flexion",
+              "Leaning on a shopping cart"
+            ],
+            "priorManagement": [
+              {
+                "when": "Since symptom onset",
+                "what": "Anti-inflammatory medication and simple analgesics with partial benefit"
+              },
+              {
+                "when": "About 9 months before entry",
+                "what": "Twelve weeks of supervised physical therapy and exercise"
+              },
+              {
+                "when": "About 6 months before entry",
+                "what": "Technically adequate right L5 selective nerve-root block with substantial but temporary relief of leg pain"
+              },
+              {
+                "when": "Ongoing",
+                "what": "Activity modification without restoration of walking tolerance"
+              }
+            ],
+            "preference": "She prefers a durable improvement but is concerned about an extensive operation and wants to understand reasonable alternatives.",
+            "redFlagsAbsent": [
+              "Bladder or bowel dysfunction",
+              "Saddle anesthesia",
+              "Fever",
+              "Weight loss",
+              "Nonmechanical night pain",
+              "Active cancer history"
+            ]
+          },
+          "examination": [
+            {
+              "domain": "Gait",
+              "finding": "Independent, with mild difficulty during right heel walking"
+            },
+            {
+              "domain": "Hip flexion",
+              "finding": "5/5 bilaterally"
+            },
+            {
+              "domain": "Knee extension",
+              "finding": "5/5 bilaterally"
+            },
+            {
+              "domain": "Ankle dorsiflexion",
+              "finding": "5/5 bilaterally"
+            },
+            {
+              "domain": "Extensor hallucis longus",
+              "finding": "4+/5 right, 5/5 left"
+            },
+            {
+              "domain": "Plantar flexion",
+              "finding": "5/5 bilaterally"
+            },
+            {
+              "domain": "Sensation",
+              "finding": "Mild intermittent hypoesthesia over the dorsum of the right foot"
+            },
+            {
+              "domain": "Patellar reflexes",
+              "finding": "2+ and symmetric"
+            },
+            {
+              "domain": "Achilles reflexes",
+              "finding": "1+ and symmetric"
+            },
+            {
+              "domain": "Straight-leg raise",
+              "finding": "Negative bilaterally"
+            },
+            {
+              "domain": "Distal pulses",
+              "finding": "Present and symmetric"
+            },
+            {
+              "domain": "Upper motor neuron signs",
+              "finding": "Absent"
+            }
+          ],
+          "baselineMeasures": [
+            {
+              "label": "Oswestry Disability Index (ODI)",
+              "value": "42%"
+            },
+            {
+              "label": "Back pain",
+              "value": "6/10"
+            },
+            {
+              "label": "Right leg pain",
+              "value": "8/10"
+            },
+            {
+              "label": "Left leg pain",
+              "value": "5/10"
+            },
+            {
+              "label": "Walking tolerance",
+              "value": "Approximately 180 m"
+            },
+            {
+              "label": "Patient's reported confidence in current management",
+              "value": "35/100",
+              "note": "This is the patient's own rating. It is separate from your confidence in a hypothesis or plan."
+            }
+          ]
+        },
+        "sim_time": {
+          "code": "T0",
+          "label": "Case entry (T0)"
+        }
+      }
+    },
+    {
+      "event_id": "evt-0005",
+      "session_id": "session-reference-b1",
+      "sequence": 3,
+      "transaction_id": "txn-0002",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:00:00.000Z",
+      "simulated_time": "T0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "START",
+      "state_after": "N1.assessment",
+      "payload": {
+        "from": "START",
+        "to": "N1.assessment",
+        "sim_time": {
+          "code": "T0",
+          "label": "Case entry (T0)"
+        }
+      }
+    },
+    {
+      "event_id": "evt-0007",
+      "session_id": "session-reference-b1",
+      "sequence": 4,
+      "transaction_id": "txn-0006",
+      "event_type": "tutor_message",
+      "source": "tutor",
+      "timestamp_utc": "2026-10-12T12:00:20.000Z",
+      "simulated_time": "T0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N1.assessment",
+      "state_after": "N1.assessment",
+      "payload": {
+        "mode": "orientation",
+        "message": "I am a scripted tutor prototype. I ask one question at a time and will often stay silent. I cannot see unreleased information, order studies, or change the patient’s course. Use “Ask for a prompt” whenever a question would help.",
+        "grounding_ids": [
+          "stage:N1.assessment"
+        ],
+        "requires_human_review": false,
+        "trigger": "session_started",
+        "budget_override_reason": null
+      }
+    },
+    {
+      "event_id": "evt-0010",
+      "session_id": "session-reference-b1",
+      "sequence": 5,
+      "transaction_id": "txn-0009",
+      "event_type": "initial_assessment_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:00:40.000Z",
+      "simulated_time": "T0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N1.assessment",
+      "state_after": "N1.assessment",
+      "payload": {
+        "model": {
+          "version_id": "model-0008",
+          "chain": "preop",
+          "version": 1,
+          "predecessor_id": null,
+          "trigger": "initial_assessment",
+          "problem_representation": "Sample: 64-year-old active woman with 14 months of progressive bilateral leg-dominant neurogenic claudication, right worse than left, with a subtle right L5 deficit.",
+          "hypotheses": [
+            "Sample: lumbar spinal stenosis with right L5 involvement",
+            "Sample: vascular claudication (less likely)",
+            "Sample: hip pathology contributing"
+          ],
+          "priorities": "Sample: define the level and mechanism of compression; assess mobility; confirm absence of red flags",
+          "confidence": 55
+        }
+      }
+    },
+    {
+      "event_id": "evt-0011",
+      "session_id": "session-reference-b1",
+      "sequence": 6,
+      "transaction_id": "txn-0009",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:00:40.000Z",
+      "simulated_time": "T0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N1.assessment",
+      "state_after": "N2.workup",
+      "payload": {
+        "from": "N1.assessment",
+        "to": "N2.workup",
+        "sim_time": {
+          "code": "T0",
+          "label": "Case entry (T0)"
+        }
+      }
+    },
+    {
+      "event_id": "evt-0013",
+      "session_id": "session-reference-b1",
+      "sequence": 7,
+      "transaction_id": "txn-0012",
+      "event_type": "tutor_support_requested",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:01:00.000Z",
+      "simulated_time": "T0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "mode": "discriminate",
+        "trigger": "learner_selected"
+      }
+    },
+    {
+      "event_id": "evt-0015",
+      "session_id": "session-reference-b1",
+      "sequence": 8,
+      "transaction_id": "txn-0014",
+      "event_type": "tutor_message",
+      "source": "tutor",
+      "timestamp_utc": "2026-10-12T12:01:20.000Z",
+      "simulated_time": "T0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "mode": "discriminate",
+        "message": "What finding would make you reconsider that hypothesis?",
+        "grounding_ids": [
+          "stage:N2.workup"
+        ],
+        "requires_human_review": false,
+        "trigger": "support_requested:discriminate",
+        "budget_override_reason": null
+      }
+    },
+    {
+      "event_id": "evt-0019",
+      "session_id": "session-reference-b1",
+      "sequence": 9,
+      "transaction_id": "txn-0018",
+      "event_type": "investigation_requested",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:01:40.000Z",
+      "simulated_time": "T0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "standing_lumbar_xr",
+        "title": "Standing lumbar AP and lateral radiographs",
+        "repeat": false
+      }
+    },
+    {
+      "event_id": "evt-0020",
+      "session_id": "session-reference-b1",
+      "sequence": 10,
+      "transaction_id": "txn-0018",
+      "event_type": "rationale_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:01:40.000Z",
+      "simulated_time": "T0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "standing_lumbar_xr",
+        "text": "Sample: why standing_lumbar_xr is requested now",
+        "reasoning_version_id": "rv-0016"
+      }
+    },
+    {
+      "event_id": "evt-0021",
+      "session_id": "session-reference-b1",
+      "sequence": 11,
+      "transaction_id": "txn-0018",
+      "event_type": "expectation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:01:40.000Z",
+      "simulated_time": "T0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "standing_lumbar_xr",
+        "text": "Sample: what standing_lumbar_xr is expected to show",
+        "reasoning_version_id": "rv-0017",
+        "confidence": null
+      }
+    },
+    {
+      "event_id": "evt-0022",
+      "session_id": "session-reference-b1",
+      "sequence": 12,
+      "transaction_id": "txn-0018",
+      "event_type": "clock_advanced",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:01:40.000Z",
+      "simulated_time": "T+7d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "sim_time": {
+          "code": "T+7d",
+          "label": "Day 7 after case entry"
+        },
+        "reason": "Standing lumbar AP and lateral radiographs result available"
+      }
+    },
+    {
+      "event_id": "evt-0023",
+      "session_id": "session-reference-b1",
+      "sequence": 13,
+      "transaction_id": "txn-0018",
+      "event_type": "raw_data_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:01:40.000Z",
+      "simulated_time": "T+7d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "standing_lumbar_xr",
+        "series": [
+          {
+            "assetId": "XR-N2-001",
+            "title": "Standing lumbar AP",
+            "plane": "Coronal projection",
+            "sequence": null,
+            "plannedFrameCount": 1,
+            "framePaths": null,
+            "approvalState": "Planned",
+            "placeholder": true
+          },
+          {
+            "assetId": "XR-N2-002",
+            "title": "Standing lumbar lateral",
+            "plane": "Lateral projection",
+            "sequence": null,
+            "plannedFrameCount": 1,
+            "framePaths": null,
+            "approvalState": "Planned",
+            "placeholder": true
+          }
+        ],
+        "acquired_at": {
+          "code": "T+7d",
+          "label": "Day 7 after case entry"
+        },
+        "variant": "image_gate"
+      }
+    },
+    {
+      "event_id": "evt-0026",
+      "session_id": "session-reference-b1",
+      "sequence": 14,
+      "transaction_id": "txn-0025",
+      "event_type": "interpretation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:02:00.000Z",
+      "simulated_time": "T+7d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "standing_lumbar_xr",
+        "text": "Sample: interpretation of standing_lumbar_xr",
+        "reasoning_version_id": "rv-0024",
+        "confidence": 60
+      }
+    },
+    {
+      "event_id": "evt-0027",
+      "session_id": "session-reference-b1",
+      "sequence": 15,
+      "transaction_id": "txn-0025",
+      "event_type": "report_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:02:00.000Z",
+      "simulated_time": "T+7d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "standing_lumbar_xr",
+        "report": {
+          "title": "Standing lumbar radiograph report",
+          "sections": [
+            {
+              "heading": "AP view",
+              "lines": [
+                "Coronal balance is preserved. Mild degenerative change. No destructive lesion."
+              ]
+            },
+            {
+              "heading": "Lateral view",
+              "lines": [
+                "Grade I degenerative spondylolisthesis at L4-L5 with translation of approximately 4.5 mm on standing.",
+                "L4-L5 disc height is partially preserved. Facet degeneration.",
+                "No fracture."
+              ]
+            }
+          ],
+          "accessibleSummary": "Standing lumbar radiographs: preserved coronal balance; grade I L4-L5 spondylolisthesis with about 4.5 mm standing translation; partially preserved disc height; facet degeneration.",
+          "acquiredAt": {
+            "code": "T+7d",
+            "label": "Day 7 after case entry"
+          },
+          "annotation": {
+            "available": false,
+            "reason": "No validated annotation copy is planned for this study."
+          }
+        },
+        "variant": "image_gate"
+      }
+    },
+    {
+      "event_id": "evt-0029",
+      "session_id": "session-reference-b1",
+      "sequence": 16,
+      "transaction_id": "txn-0028",
+      "event_type": "model_update_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:02:20.000Z",
+      "simulated_time": "T+7d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "standing_lumbar_xr",
+        "effect": "supports",
+        "explanation": "Sample: how standing_lumbar_xr changed the model",
+        "decision": "maintain",
+        "confidence": 62,
+        "management_thinking": "unchanged",
+        "resulting_model_id": "model-0008"
+      }
+    },
+    {
+      "event_id": "evt-0033",
+      "session_id": "session-reference-b1",
+      "sequence": 17,
+      "transaction_id": "txn-0032",
+      "event_type": "investigation_requested",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:02:40.000Z",
+      "simulated_time": "T+7d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "lumbar_mri",
+        "title": "Lumbar MRI",
+        "repeat": false
+      }
+    },
+    {
+      "event_id": "evt-0034",
+      "session_id": "session-reference-b1",
+      "sequence": 18,
+      "transaction_id": "txn-0032",
+      "event_type": "rationale_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:02:40.000Z",
+      "simulated_time": "T+7d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "lumbar_mri",
+        "text": "Sample: why lumbar_mri is requested now",
+        "reasoning_version_id": "rv-0030"
+      }
+    },
+    {
+      "event_id": "evt-0035",
+      "session_id": "session-reference-b1",
+      "sequence": 19,
+      "transaction_id": "txn-0032",
+      "event_type": "expectation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:02:40.000Z",
+      "simulated_time": "T+7d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "lumbar_mri",
+        "text": "Sample: what lumbar_mri is expected to show",
+        "reasoning_version_id": "rv-0031",
+        "confidence": null
+      }
+    },
+    {
+      "event_id": "evt-0036",
+      "session_id": "session-reference-b1",
+      "sequence": 20,
+      "transaction_id": "txn-0032",
+      "event_type": "clock_advanced",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:02:40.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "sim_time": {
+          "code": "T+10d",
+          "label": "Day 10 after case entry"
+        },
+        "reason": "Lumbar MRI result available"
+      }
+    },
+    {
+      "event_id": "evt-0037",
+      "session_id": "session-reference-b1",
+      "sequence": 21,
+      "transaction_id": "txn-0032",
+      "event_type": "raw_data_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:02:40.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "lumbar_mri",
+        "series": [
+          {
+            "assetId": "MRI-N2-001",
+            "title": "Sagittal T1",
+            "plane": "Sagittal",
+            "sequence": "T1",
+            "plannedFrameCount": 14,
+            "framePaths": null,
+            "approvalState": "Planned",
+            "placeholder": true
+          },
+          {
+            "assetId": "MRI-N2-002",
+            "title": "Sagittal T2",
+            "plane": "Sagittal",
+            "sequence": "T2",
+            "plannedFrameCount": 16,
+            "framePaths": null,
+            "approvalState": "Planned",
+            "placeholder": true
+          },
+          {
+            "assetId": "MRI-N2-003",
+            "title": "Axial T2, L3-L4",
+            "plane": "Axial",
+            "sequence": "T2",
+            "plannedFrameCount": 14,
+            "framePaths": null,
+            "approvalState": "Planned",
+            "placeholder": true
+          },
+          {
+            "assetId": "MRI-N2-004",
+            "title": "Axial T2, L4-L5",
+            "plane": "Axial",
+            "sequence": "T2",
+            "plannedFrameCount": 18,
+            "framePaths": null,
+            "approvalState": "Planned",
+            "placeholder": true
+          },
+          {
+            "assetId": "MRI-N2-005",
+            "title": "Axial T2, L5-S1",
+            "plane": "Axial",
+            "sequence": "T2",
+            "plannedFrameCount": 14,
+            "framePaths": null,
+            "approvalState": "Planned",
+            "placeholder": true
+          }
+        ],
+        "acquired_at": {
+          "code": "T+10d",
+          "label": "Day 10 after case entry"
+        },
+        "variant": "image_gate"
+      }
+    },
+    {
+      "event_id": "evt-0040",
+      "session_id": "session-reference-b1",
+      "sequence": 22,
+      "transaction_id": "txn-0039",
+      "event_type": "interpretation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:03:00.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "lumbar_mri",
+        "text": "Sample: interpretation of lumbar_mri",
+        "reasoning_version_id": "rv-0038",
+        "confidence": 60
+      }
+    },
+    {
+      "event_id": "evt-0041",
+      "session_id": "session-reference-b1",
+      "sequence": 23,
+      "transaction_id": "txn-0039",
+      "event_type": "report_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:03:00.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "lumbar_mri",
+        "report": {
+          "title": "Lumbar MRI report",
+          "sections": [
+            {
+              "heading": "Technique",
+              "lines": [
+                "Supine MRI of the lumbar spine: sagittal T1 and T2; axial T2 at L3-L4, L4-L5, and L5-S1."
+              ]
+            },
+            {
+              "heading": "Findings",
+              "lines": [
+                "L4-L5: grade I degenerative spondylolisthesis. Translation measures approximately 2.5 mm on this supine study.",
+                "L4-L5: a broad disc bulge, advanced facet hypertrophy, and ligamentum flavum thickening produce severe central and bilateral lateral-recess stenosis, right greater than left.",
+                "L4-L5: dural sac cross-sectional area approximately 58 mm².",
+                "L4-L5 facet joint effusions: right approximately 2.5 mm, left approximately 1.8 mm.",
+                "No synovial cyst. No dominant foraminal stenosis.",
+                "L3-L4: mild degeneration without clinically significant stenosis.",
+                "L5-S1: mild degeneration without clinically relevant stenosis.",
+                "No tumor, infection, or fracture."
+              ]
+            },
+            {
+              "heading": "Impression",
+              "lines": [
+                "Severe multifactorial L4-L5 central and bilateral lateral-recess stenosis, right greater than left, with grade I degenerative spondylolisthesis (approximately 2.5 mm on supine imaging).",
+                "Mild, non-dominant degeneration at L3-L4 and L5-S1."
+              ]
+            }
+          ],
+          "accessibleSummary": "Supine lumbar MRI: severe L4-L5 central and bilateral lateral-recess stenosis, right greater than left; grade I spondylolisthesis measuring about 2.5 mm supine; dural sac area about 58 mm²; facet effusions 2.5 mm right and 1.8 mm left; mild degeneration at L3-L4 and L5-S1.",
+          "acquiredAt": {
+            "code": "T+10d",
+            "label": "Day 10 after case entry"
+          },
+          "annotation": {
+            "available": false,
+            "reason": "Annotated teaching copy (PLAN-N3-002) is planned but awaiting expert validation."
+          }
+        },
+        "variant": "image_gate"
+      }
+    },
+    {
+      "event_id": "evt-0043",
+      "session_id": "session-reference-b1",
+      "sequence": 24,
+      "transaction_id": "txn-0042",
+      "event_type": "model_update_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:03:20.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "lumbar_mri",
+        "effect": "supports",
+        "explanation": "Sample: how lumbar_mri changed the model",
+        "decision": "maintain",
+        "confidence": 62,
+        "management_thinking": "unchanged",
+        "resulting_model_id": "model-0008"
+      }
+    },
+    {
+      "event_id": "evt-0047",
+      "session_id": "session-reference-b1",
+      "sequence": 25,
+      "transaction_id": "txn-0046",
+      "event_type": "investigation_requested",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:03:40.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "dynamic_xr",
+        "title": "Flexion and extension lateral radiographs",
+        "repeat": false
+      }
+    },
+    {
+      "event_id": "evt-0048",
+      "session_id": "session-reference-b1",
+      "sequence": 26,
+      "transaction_id": "txn-0046",
+      "event_type": "rationale_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:03:40.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "dynamic_xr",
+        "text": "Sample: why dynamic_xr is requested now",
+        "reasoning_version_id": "rv-0044"
+      }
+    },
+    {
+      "event_id": "evt-0049",
+      "session_id": "session-reference-b1",
+      "sequence": 27,
+      "transaction_id": "txn-0046",
+      "event_type": "expectation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:03:40.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "dynamic_xr",
+        "text": "Sample: what dynamic_xr is expected to show",
+        "reasoning_version_id": "rv-0045",
+        "confidence": null
+      }
+    },
+    {
+      "event_id": "evt-0050",
+      "session_id": "session-reference-b1",
+      "sequence": 28,
+      "transaction_id": "txn-0046",
+      "event_type": "raw_data_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:03:40.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "dynamic_xr",
+        "series": [
+          {
+            "assetId": "XR-N2-003",
+            "title": "Lateral flexion",
+            "plane": "Lateral projection",
+            "sequence": null,
+            "plannedFrameCount": 1,
+            "framePaths": null,
+            "approvalState": "Planned",
+            "placeholder": true
+          },
+          {
+            "assetId": "XR-N2-004",
+            "title": "Lateral extension",
+            "plane": "Lateral projection",
+            "sequence": null,
+            "plannedFrameCount": 1,
+            "framePaths": null,
+            "approvalState": "Planned",
+            "placeholder": true
+          }
+        ],
+        "acquired_at": {
+          "code": "T+7d",
+          "label": "Day 7 after case entry"
+        },
+        "variant": "image_gate"
+      }
+    },
+    {
+      "event_id": "evt-0053",
+      "session_id": "session-reference-b1",
+      "sequence": 29,
+      "transaction_id": "txn-0052",
+      "event_type": "interpretation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:04:00.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "dynamic_xr",
+        "text": "Sample: interpretation of dynamic_xr",
+        "reasoning_version_id": "rv-0051",
+        "confidence": 60
+      }
+    },
+    {
+      "event_id": "evt-0054",
+      "session_id": "session-reference-b1",
+      "sequence": 30,
+      "transaction_id": "txn-0052",
+      "event_type": "report_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:04:00.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "dynamic_xr",
+        "report": {
+          "title": "Flexion and extension radiograph report",
+          "sections": [
+            {
+              "heading": "Findings",
+              "lines": [
+                "L4-L5 translation: approximately 6.0 mm in flexion.",
+                "L4-L5 translation: approximately 3.0 mm in extension.",
+                "L4-L5 angular change across flexion and extension: approximately 8 degrees."
+              ]
+            }
+          ],
+          "accessibleSummary": "Dynamic radiographs: L4-L5 translation about 6.0 mm in flexion and 3.0 mm in extension; angular change about 8 degrees.",
+          "acquiredAt": {
+            "code": "T+7d",
+            "label": "Day 7 after case entry"
+          },
+          "annotation": {
+            "available": false,
+            "reason": "Annotated teaching copy (PLAN-N3-003) is planned but awaiting expert validation."
+          }
+        },
+        "variant": "image_gate"
+      }
+    },
+    {
+      "event_id": "evt-0056",
+      "session_id": "session-reference-b1",
+      "sequence": 31,
+      "transaction_id": "txn-0055",
+      "event_type": "model_update_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:04:20.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "dynamic_xr",
+        "effect": "supports",
+        "explanation": "Sample: how dynamic_xr changed the model",
+        "decision": "maintain",
+        "confidence": 62,
+        "management_thinking": "unchanged",
+        "resulting_model_id": "model-0008"
+      }
+    },
+    {
+      "event_id": "evt-0060",
+      "session_id": "session-reference-b1",
+      "sequence": 32,
+      "transaction_id": "txn-0059",
+      "event_type": "investigation_requested",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:04:40.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "emg_ncs",
+        "title": "EMG and nerve conduction studies",
+        "repeat": false
+      }
+    },
+    {
+      "event_id": "evt-0061",
+      "session_id": "session-reference-b1",
+      "sequence": 33,
+      "transaction_id": "txn-0059",
+      "event_type": "rationale_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:04:40.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "emg_ncs",
+        "text": "Sample: why emg_ncs is requested now",
+        "reasoning_version_id": "rv-0057"
+      }
+    },
+    {
+      "event_id": "evt-0062",
+      "session_id": "session-reference-b1",
+      "sequence": 34,
+      "transaction_id": "txn-0059",
+      "event_type": "expectation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:04:40.000Z",
+      "simulated_time": "T+10d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "emg_ncs",
+        "text": "Sample: what emg_ncs is expected to show",
+        "reasoning_version_id": "rv-0058",
+        "confidence": null
+      }
+    },
+    {
+      "event_id": "evt-0063",
+      "session_id": "session-reference-b1",
+      "sequence": 35,
+      "transaction_id": "txn-0059",
+      "event_type": "clock_advanced",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:04:40.000Z",
+      "simulated_time": "T+12d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "sim_time": {
+          "code": "T+12d",
+          "label": "Day 12 after case entry"
+        },
+        "reason": "EMG and nerve conduction studies result available"
+      }
+    },
+    {
+      "event_id": "evt-0064",
+      "session_id": "session-reference-b1",
+      "sequence": 36,
+      "transaction_id": "txn-0059",
+      "event_type": "report_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:04:40.000Z",
+      "simulated_time": "T+12d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "emg_ncs",
+        "report": {
+          "title": "EMG and nerve conduction report",
+          "sections": [
+            {
+              "heading": "Conclusion",
+              "lines": [
+                "Findings consistent with a mild chronic right L5 radiculopathy.",
+                "No evidence of active denervation.",
+                "No electrophysiological evidence of polyneuropathy."
+              ]
+            }
+          ],
+          "accessibleSummary": "Mild chronic right L5 radiculopathy without active denervation; no polyneuropathy.",
+          "acquiredAt": {
+            "code": "T+12d",
+            "label": "Day 12 after case entry"
+          },
+          "annotation": {
+            "available": false,
+            "reason": "No validated annotation copy is planned for this study."
+          }
+        },
+        "variant": "non_imaging"
+      }
+    },
+    {
+      "event_id": "evt-0067",
+      "session_id": "session-reference-b1",
+      "sequence": 37,
+      "transaction_id": "txn-0066",
+      "event_type": "interpretation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:05:00.000Z",
+      "simulated_time": "T+12d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "emg_ncs",
+        "text": "Sample: interpretation of emg_ncs",
+        "reasoning_version_id": "rv-0065",
+        "confidence": 60
+      }
+    },
+    {
+      "event_id": "evt-0069",
+      "session_id": "session-reference-b1",
+      "sequence": 38,
+      "transaction_id": "txn-0068",
+      "event_type": "model_update_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:05:20.000Z",
+      "simulated_time": "T+12d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "investigation_id": "emg_ncs",
+        "effect": "supports",
+        "explanation": "Sample: how emg_ncs changed the model",
+        "decision": "maintain",
+        "confidence": 62,
+        "management_thinking": "unchanged",
+        "resulting_model_id": "model-0008"
+      }
+    },
+    {
+      "event_id": "evt-0072",
+      "session_id": "session-reference-b1",
+      "sequence": 39,
+      "transaction_id": "txn-0071",
+      "event_type": "working_model_revised",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:05:40.000Z",
+      "simulated_time": "T+12d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "model": {
+          "version_id": "model-0070",
+          "chain": "preop",
+          "version": 2,
+          "predecessor_id": "model-0008",
+          "trigger": "workup_conclusion",
+          "problem_representation": "Sample: integrated model summarizing released findings and remaining uncertainty",
+          "hypotheses": [
+            "Sample: lumbar spinal stenosis with right L5 involvement",
+            "Sample: vascular claudication (less likely)",
+            "Sample: hip pathology contributing"
+          ],
+          "priorities": "Sample: define the level and mechanism of compression; assess mobility; confirm absence of red flags",
+          "confidence": 65
+        },
+        "reason": "Integrated working model at the end of the work-up"
+      }
+    },
+    {
+      "event_id": "evt-0073",
+      "session_id": "session-reference-b1",
+      "sequence": 40,
+      "transaction_id": "txn-0071",
+      "event_type": "workup_concluded",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:05:40.000Z",
+      "simulated_time": "T+12d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N2.workup",
+      "payload": {
+        "integrated_model": "Sample: integrated model summarizing released findings and remaining uncertainty",
+        "confidence": 65,
+        "enough_information": true,
+        "open_cycles": [],
+        "model_id": "model-0070"
+      }
+    },
+    {
+      "event_id": "evt-0074",
+      "session_id": "session-reference-b1",
+      "sequence": 41,
+      "transaction_id": "txn-0071",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:05:40.000Z",
+      "simulated_time": "T+14d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N2.workup",
+      "state_after": "N3.recommendation",
+      "payload": {
+        "from": "N2.workup",
+        "to": "N3.recommendation",
+        "sim_time": {
+          "code": "T+14d",
+          "label": "Day 14 after case entry"
+        }
+      }
+    },
+    {
+      "event_id": "evt-0076",
+      "session_id": "session-reference-b1",
+      "sequence": 42,
+      "transaction_id": "txn-0075",
+      "event_type": "tutor_message",
+      "source": "tutor",
+      "timestamp_utc": "2026-10-12T12:06:00.000Z",
+      "simulated_time": "T+14d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N3.recommendation",
+      "state_after": "N3.recommendation",
+      "payload": {
+        "mode": "alternative",
+        "message": "Which patient-specific features support your strategy over a reasonable alternative?",
+        "grounding_ids": [
+          "stage:N3.recommendation"
+        ],
+        "requires_human_review": false,
+        "trigger": "stage_entered:N3.recommendation",
+        "budget_override_reason": null
+      }
+    },
+    {
+      "event_id": "evt-0079",
+      "session_id": "session-reference-b1",
+      "sequence": 43,
+      "transaction_id": "txn-0078",
+      "event_type": "recommendation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:06:20.000Z",
+      "simulated_time": "T+14d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N3.recommendation",
+      "state_after": "N3.recommendation",
+      "payload": {
+        "recommendation": {
+          "category": "decompression",
+          "other_strategy": "",
+          "strategy_summary": "Sample: decompression strategy summary entered for demonstration",
+          "indication": "Sample: leg-dominant symptoms limiting walking despite nonoperative care",
+          "symptom_target": "Sample: right-greater-than-left leg symptoms with walking",
+          "level_extent": "Sample: level and extent as reasoned from released imaging",
+          "approach": "Sample: approach entered for demonstration",
+          "facet_preservation": "Sample: facet preservation considered",
+          "fusion_rationale": "Sample: reasoning about including or excluding fusion",
+          "expected_benefit": "Sample: improved walking tolerance",
+          "risks": "Sample: dural tear, infection, persistent symptoms",
+          "alternative": "Sample: a reasonable alternative strategy",
+          "patient_preference": "Sample: concern about an extensive operation",
+          "uncertainty": "Sample: significance of the dynamic findings",
+          "change_threshold": "Sample: a development that would change this recommendation",
+          "confidence": 60,
+          "comparison": []
+        },
+        "reasoning_version_id": "rv-0077"
+      }
+    },
+    {
+      "event_id": "evt-0080",
+      "session_id": "session-reference-b1",
+      "sequence": 44,
+      "transaction_id": "txn-0078",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:06:20.000Z",
+      "simulated_time": "T+14d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N3.recommendation",
+      "state_after": "N3.canonical_ack",
+      "payload": {
+        "from": "N3.recommendation",
+        "to": "N3.canonical_ack"
+      }
+    },
+    {
+      "event_id": "evt-0081",
+      "session_id": "session-reference-b1",
+      "sequence": 45,
+      "transaction_id": "txn-0078",
+      "event_type": "canonical_continuation_explained",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:06:20.000Z",
+      "simulated_time": "T+14d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N3.canonical_ack",
+      "state_after": "N3.canonical_ack",
+      "payload": {
+        "copy": "For this first prototype, your recommendation has been saved. The simulated clinical course now follows a predefined decompression procedure so that we can examine the same intraoperative and postoperative reasoning tasks. This continuation does not classify your recommendation as correct or incorrect."
+      }
+    },
+    {
+      "event_id": "evt-0083",
+      "session_id": "session-reference-b1",
+      "sequence": 46,
+      "transaction_id": "txn-0082",
+      "event_type": "canonical_continuation_acknowledged",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:06:40.000Z",
+      "simulated_time": "T+14d",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N3.canonical_ack",
+      "state_after": "N3.canonical_ack",
+      "payload": {
+        "participant_category": "decompression",
+        "canonical": "Complete L4-L5 decompression with bilateral lateral-recess decompression and limited cranial extension into L3-L4, without fusion or instrumentation."
+      }
+    },
+    {
+      "event_id": "evt-0084",
+      "session_id": "session-reference-b1",
+      "sequence": 47,
+      "transaction_id": "txn-0082",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:06:40.000Z",
+      "simulated_time": "POD0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N3.canonical_ack",
+      "state_after": "N4.procedure",
+      "payload": {
+        "from": "N3.canonical_ack",
+        "to": "N4.procedure",
+        "sim_time": {
+          "code": "POD0",
+          "label": "Operative day (day 28 after case entry)"
+        }
+      }
+    },
+    {
+      "event_id": "evt-0085",
+      "session_id": "session-reference-b1",
+      "sequence": 48,
+      "transaction_id": "txn-0082",
+      "event_type": "procedure_started",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:06:40.000Z",
+      "simulated_time": "POD0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.procedure",
+      "state_after": "N4.procedure",
+      "payload": {
+        "description": [
+          "Predefined demonstration procedure: complete L4-L5 decompression with bilateral lateral-recess decompression and limited cranial extension into L3-L4.",
+          "No fusion and no instrumentation are performed."
+        ],
+        "sim_time": {
+          "code": "POD0",
+          "label": "Operative day (day 28 after case entry)"
+        }
+      }
+    },
+    {
+      "event_id": "evt-0087",
+      "session_id": "session-reference-b1",
+      "sequence": 49,
+      "transaction_id": "txn-0086",
+      "event_type": "intraop_checkpoint_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:07:00.000Z",
+      "simulated_time": "POD0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.procedure",
+      "state_after": "N4.procedure",
+      "payload": {
+        "checkpoint": {
+          "id": "intraop_checkpoint",
+          "time": {
+            "code": "POD0",
+            "label": "Operative day (day 28 after case entry)"
+          },
+          "title": "Intraoperative checkpoint",
+          "lines": [
+            "During decompression of the right lateral recess, the team recognizes a dural defect of approximately 4 mm.",
+            "Cerebrospinal fluid is visible at the defect."
+          ],
+          "images": [
+            {
+              "assetId": "OR-N4-002",
+              "title": "Operative field at the checkpoint",
+              "caption": "Synthetic operative illustration pending production."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "evt-0088",
+      "session_id": "session-reference-b1",
+      "sequence": 50,
+      "transaction_id": "txn-0086",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:07:00.000Z",
+      "simulated_time": "POD0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.procedure",
+      "state_after": "N4.durotomy_proposal",
+      "payload": {
+        "from": "N4.procedure",
+        "to": "N4.durotomy_proposal"
+      }
+    },
+    {
+      "event_id": "evt-0090",
+      "session_id": "session-reference-b1",
+      "sequence": 51,
+      "transaction_id": "txn-0089",
+      "event_type": "intraop_proposal_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:07:20.000Z",
+      "simulated_time": "POD0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.durotomy_proposal",
+      "state_after": "N4.durotomy_proposal",
+      "payload": {
+        "immediate": "Sample: immediate management proposal",
+        "checks": "Sample: checks before closure",
+        "postop_considerations": "Sample: postoperative considerations",
+        "confidence": 70
+      }
+    },
+    {
+      "event_id": "evt-0091",
+      "session_id": "session-reference-b1",
+      "sequence": 52,
+      "transaction_id": "txn-0089",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:07:20.000Z",
+      "simulated_time": "POD0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.durotomy_proposal",
+      "state_after": "N4.durotomy_proposal_committed",
+      "payload": {
+        "from": "N4.durotomy_proposal",
+        "to": "N4.durotomy_proposal_committed"
+      }
+    },
+    {
+      "event_id": "evt-0093",
+      "session_id": "session-reference-b1",
+      "sequence": 53,
+      "transaction_id": "txn-0092",
+      "event_type": "team_action_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:07:40.000Z",
+      "simulated_time": "POD0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.durotomy_proposal_committed",
+      "state_after": "N4.durotomy_proposal_committed",
+      "payload": {
+        "team_action": [
+          "The simulated team performs a primary suture repair with adjunctive sealant.",
+          "A Valsalva test at closure is negative."
+        ],
+        "operative_report": {
+          "title": "Operative report",
+          "sections": [
+            {
+              "heading": "Procedure",
+              "lines": [
+                "Complete L4-L5 decompression with bilateral lateral-recess decompression and limited cranial extension into L3-L4. No fusion or instrumentation."
+              ]
+            },
+            {
+              "heading": "Intraoperative event",
+              "lines": [
+                "Recognized dural defect of approximately 4 mm in the right lateral recess."
+              ]
+            },
+            {
+              "heading": "Management",
+              "lines": [
+                "Primary suture repair with adjunctive sealant. Negative Valsalva test at closure."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "evt-0094",
+      "session_id": "session-reference-b1",
+      "sequence": 54,
+      "transaction_id": "txn-0092",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:07:40.000Z",
+      "simulated_time": "POD0",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.durotomy_proposal_committed",
+      "state_after": "N4.repair_revealed",
+      "payload": {
+        "from": "N4.durotomy_proposal_committed",
+        "to": "N4.repair_revealed"
+      }
+    },
+    {
+      "event_id": "evt-0096",
+      "session_id": "session-reference-b1",
+      "sequence": 55,
+      "transaction_id": "txn-0095",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:08:00.000Z",
+      "simulated_time": "POD1",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.repair_revealed",
+      "state_after": "N4.pod1",
+      "payload": {
+        "from": "N4.repair_revealed",
+        "to": "N4.pod1",
+        "sim_time": {
+          "code": "POD1",
+          "label": "Postoperative day 1"
+        }
+      }
+    },
+    {
+      "event_id": "evt-0097",
+      "session_id": "session-reference-b1",
+      "sequence": 56,
+      "transaction_id": "txn-0095",
+      "event_type": "clinical_update_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:08:00.000Z",
+      "simulated_time": "POD1",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.pod1",
+      "state_after": "N4.pod1",
+      "payload": {
+        "update": {
+          "id": "pod1",
+          "time": {
+            "code": "POD1",
+            "label": "Postoperative day 1"
+          },
+          "title": "Postoperative day 1",
+          "lines": [
+            "Leg pain has improved.",
+            "Mobilization has begun."
+          ],
+          "notes": [
+            {
+              "time": "POD1",
+              "author": "Nursing",
+              "text": "Leg pain improved compared with before surgery. Mobilizing."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "evt-0099",
+      "session_id": "session-reference-b1",
+      "sequence": 57,
+      "transaction_id": "txn-0098",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:08:20.000Z",
+      "simulated_time": "POD3",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.pod1",
+      "state_after": "N4.pod3_reassessment",
+      "payload": {
+        "from": "N4.pod1",
+        "to": "N4.pod3_reassessment",
+        "sim_time": {
+          "code": "POD3",
+          "label": "Postoperative day 3"
+        }
+      }
+    },
+    {
+      "event_id": "evt-0100",
+      "session_id": "session-reference-b1",
+      "sequence": 58,
+      "transaction_id": "txn-0098",
+      "event_type": "clinical_update_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:08:20.000Z",
+      "simulated_time": "POD3",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.pod3_reassessment",
+      "state_after": "N4.pod3_reassessment",
+      "payload": {
+        "update": {
+          "id": "pod3",
+          "time": {
+            "code": "POD3",
+            "label": "Postoperative day 3"
+          },
+          "title": "New postoperative findings",
+          "lines": [
+            "Headache that is worse when upright (orthostatic).",
+            "Clear fluid draining from the wound.",
+            "No fever.",
+            "No new neurologic deficit."
+          ],
+          "notes": [
+            {
+              "time": "POD3",
+              "author": "Nursing",
+              "text": "Postural headache reported. Increased clear drainage on the dressing with mobilization."
+            }
+          ],
+          "images": [
+            {
+              "assetId": "CLIN-N4-001",
+              "title": "Wound dressing photograph",
+              "caption": "Small clear serous stain without marked erythema, purulence, or dehiscence."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "evt-0103",
+      "session_id": "session-reference-b1",
+      "sequence": 59,
+      "transaction_id": "txn-0102",
+      "event_type": "postop_reassessment_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:08:40.000Z",
+      "simulated_time": "POD3",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.pod3_reassessment",
+      "state_after": "N4.pod3_reassessment",
+      "payload": {
+        "model": {
+          "version_id": "model-0101",
+          "chain": "postop",
+          "version": 1,
+          "predecessor_id": null,
+          "trigger": "postop_reassessment",
+          "problem_representation": "Sample: new postoperative problem representation",
+          "hypotheses": [
+            "Sample: first explanation",
+            "Sample: second explanation",
+            "Sample: third explanation"
+          ],
+          "priorities": "Sample: immediate priorities",
+          "confidence": 60
+        },
+        "differential": [
+          "Sample: first explanation",
+          "Sample: second explanation",
+          "Sample: third explanation"
+        ]
+      }
+    },
+    {
+      "event_id": "evt-0104",
+      "session_id": "session-reference-b1",
+      "sequence": 60,
+      "transaction_id": "txn-0102",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:08:40.000Z",
+      "simulated_time": "POD3",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.pod3_reassessment",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "from": "N4.pod3_reassessment",
+        "to": "N4.postop_workup"
+      }
+    },
+    {
+      "event_id": "evt-0108",
+      "session_id": "session-reference-b1",
+      "sequence": 61,
+      "transaction_id": "txn-0107",
+      "event_type": "investigation_requested",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:09:00.000Z",
+      "simulated_time": "POD3",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "investigation_id": "postop_labs",
+        "title": "Postoperative laboratory studies",
+        "repeat": false
+      }
+    },
+    {
+      "event_id": "evt-0109",
+      "session_id": "session-reference-b1",
+      "sequence": 62,
+      "transaction_id": "txn-0107",
+      "event_type": "rationale_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:09:00.000Z",
+      "simulated_time": "POD3",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "investigation_id": "postop_labs",
+        "text": "Sample: why postop_labs is requested now",
+        "reasoning_version_id": "rv-0105"
+      }
+    },
+    {
+      "event_id": "evt-0110",
+      "session_id": "session-reference-b1",
+      "sequence": 63,
+      "transaction_id": "txn-0107",
+      "event_type": "expectation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:09:00.000Z",
+      "simulated_time": "POD3",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "investigation_id": "postop_labs",
+        "text": "Sample: what postop_labs is expected to show",
+        "reasoning_version_id": "rv-0106",
+        "confidence": null
+      }
+    },
+    {
+      "event_id": "evt-0111",
+      "session_id": "session-reference-b1",
+      "sequence": 64,
+      "transaction_id": "txn-0107",
+      "event_type": "report_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:09:00.000Z",
+      "simulated_time": "POD3",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "investigation_id": "postop_labs",
+        "report": {
+          "title": "Postoperative laboratory trend since surgery",
+          "sections": [
+            {
+              "heading": "Trend",
+              "lines": [
+                "Mild postoperative leukocytosis, trending downward.",
+                "No laboratory pattern of infection."
+              ]
+            },
+            {
+              "heading": "Note",
+              "lines": [
+                "Individual numeric values are not specified in this synthetic case record."
+              ]
+            }
+          ],
+          "accessibleSummary": "Expected mild postoperative leukocytosis trending downward; no laboratory pattern of infection.",
+          "acquiredAt": {
+            "code": "POD3",
+            "label": "Postoperative day 3"
+          },
+          "annotation": {
+            "available": false,
+            "reason": "No validated annotation copy is planned for this study."
+          }
+        },
+        "variant": "non_imaging"
+      }
+    },
+    {
+      "event_id": "evt-0114",
+      "session_id": "session-reference-b1",
+      "sequence": 65,
+      "transaction_id": "txn-0113",
+      "event_type": "interpretation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:09:20.000Z",
+      "simulated_time": "POD3",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "investigation_id": "postop_labs",
+        "text": "Sample: interpretation of postop_labs",
+        "reasoning_version_id": "rv-0112",
+        "confidence": 60
+      }
+    },
+    {
+      "event_id": "evt-0116",
+      "session_id": "session-reference-b1",
+      "sequence": 66,
+      "transaction_id": "txn-0115",
+      "event_type": "tutor_message",
+      "source": "tutor",
+      "timestamp_utc": "2026-10-12T12:09:40.000Z",
+      "simulated_time": "POD3",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "mode": "integrate",
+        "message": "How much weight should this result carry relative to the clinical picture, and why?",
+        "grounding_ids": [
+          "stage:N4.postop_workup",
+          "cycle:postop_labs"
+        ],
+        "requires_human_review": false,
+        "trigger": "report_released:postop_labs",
+        "budget_override_reason": null
+      }
+    },
+    {
+      "event_id": "evt-0118",
+      "session_id": "session-reference-b1",
+      "sequence": 67,
+      "transaction_id": "txn-0117",
+      "event_type": "model_update_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:10:00.000Z",
+      "simulated_time": "POD3",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "investigation_id": "postop_labs",
+        "effect": "supports",
+        "explanation": "Sample: how postop_labs changed the model",
+        "decision": "maintain",
+        "confidence": 62,
+        "management_thinking": "unchanged",
+        "resulting_model_id": "model-0101"
+      }
+    },
+    {
+      "event_id": "evt-0122",
+      "session_id": "session-reference-b1",
+      "sequence": 68,
+      "transaction_id": "txn-0121",
+      "event_type": "investigation_requested",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:10:20.000Z",
+      "simulated_time": "POD3",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "investigation_id": "postop_mri",
+        "title": "Lumbar MRI (postoperative)",
+        "repeat": false
+      }
+    },
+    {
+      "event_id": "evt-0123",
+      "session_id": "session-reference-b1",
+      "sequence": 69,
+      "transaction_id": "txn-0121",
+      "event_type": "rationale_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:10:20.000Z",
+      "simulated_time": "POD3",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "investigation_id": "postop_mri",
+        "text": "Sample: why postop_mri is requested now",
+        "reasoning_version_id": "rv-0119"
+      }
+    },
+    {
+      "event_id": "evt-0124",
+      "session_id": "session-reference-b1",
+      "sequence": 70,
+      "transaction_id": "txn-0121",
+      "event_type": "expectation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:10:20.000Z",
+      "simulated_time": "POD3",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "investigation_id": "postop_mri",
+        "text": "Sample: what postop_mri is expected to show",
+        "reasoning_version_id": "rv-0120",
+        "confidence": null
+      }
+    },
+    {
+      "event_id": "evt-0125",
+      "session_id": "session-reference-b1",
+      "sequence": 71,
+      "transaction_id": "txn-0121",
+      "event_type": "clock_advanced",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:10:20.000Z",
+      "simulated_time": "POD4",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "sim_time": {
+          "code": "POD4",
+          "label": "Postoperative day 4"
+        },
+        "reason": "Lumbar MRI (postoperative) result available"
+      }
+    },
+    {
+      "event_id": "evt-0126",
+      "session_id": "session-reference-b1",
+      "sequence": 72,
+      "transaction_id": "txn-0121",
+      "event_type": "raw_data_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:10:20.000Z",
+      "simulated_time": "POD4",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "investigation_id": "postop_mri",
+        "series": [
+          {
+            "assetId": "MRI-N4-001",
+            "title": "Sagittal T2",
+            "plane": "Sagittal",
+            "sequence": "T2",
+            "plannedFrameCount": 18,
+            "framePaths": null,
+            "approvalState": "Planned",
+            "placeholder": true
+          },
+          {
+            "assetId": "MRI-N4-002",
+            "title": "Axial T2, L4-L5",
+            "plane": "Axial",
+            "sequence": "T2",
+            "plannedFrameCount": 18,
+            "framePaths": null,
+            "approvalState": "Planned",
+            "placeholder": true
+          },
+          {
+            "assetId": "MRI-N4-003",
+            "title": "Coronal T2",
+            "plane": "Coronal",
+            "sequence": "T2",
+            "plannedFrameCount": 14,
+            "framePaths": null,
+            "approvalState": "Planned",
+            "placeholder": true
+          }
+        ],
+        "acquired_at": {
+          "code": "POD4",
+          "label": "Postoperative day 4"
+        },
+        "variant": "image_gate"
+      }
+    },
+    {
+      "event_id": "evt-0129",
+      "session_id": "session-reference-b1",
+      "sequence": 73,
+      "transaction_id": "txn-0128",
+      "event_type": "interpretation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:10:40.000Z",
+      "simulated_time": "POD4",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "investigation_id": "postop_mri",
+        "text": "Sample: interpretation of postop_mri",
+        "reasoning_version_id": "rv-0127",
+        "confidence": 60
+      }
+    },
+    {
+      "event_id": "evt-0130",
+      "session_id": "session-reference-b1",
+      "sequence": 74,
+      "transaction_id": "txn-0128",
+      "event_type": "report_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:10:40.000Z",
+      "simulated_time": "POD4",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "investigation_id": "postop_mri",
+        "report": {
+          "title": "Postoperative lumbar MRI report",
+          "sections": [
+            {
+              "heading": "Technique",
+              "lines": [
+                "Lumbar MRI: sagittal T2, axial T2 at L4-L5, and coronal T2."
+              ]
+            },
+            {
+              "heading": "Findings",
+              "lines": [
+                "Postoperative changes of decompression at L4-L5.",
+                "A dorsal epidural and subfascial collection of CSF signal intensity on T2-weighted images communicates with the decompression bed.",
+                "The collection measures approximately 48 x 18 x 55 mm.",
+                "Mild mass effect without severe neural compression.",
+                "No compressive hematoma. No abscess pattern. No severe cauda equina compression."
+              ]
+            },
+            {
+              "heading": "Impression",
+              "lines": [
+                "Communicating postoperative pseudomeningocele without severe neural compression, hematoma, or abscess pattern."
+              ]
+            }
+          ],
+          "accessibleSummary": "Postoperative MRI: communicating CSF-intensity dorsal epidural and subfascial collection about 48 x 18 x 55 mm with mild mass effect; no severe compression, hematoma, or abscess pattern.",
+          "acquiredAt": {
+            "code": "POD4",
+            "label": "Postoperative day 4"
+          },
+          "annotation": {
+            "available": false,
+            "reason": "No validated annotation copy is planned for this study."
+          }
+        },
+        "variant": "image_gate"
+      }
+    },
+    {
+      "event_id": "evt-0132",
+      "session_id": "session-reference-b1",
+      "sequence": 75,
+      "transaction_id": "txn-0131",
+      "event_type": "model_update_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:11:00.000Z",
+      "simulated_time": "POD4",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "investigation_id": "postop_mri",
+        "effect": "supports",
+        "explanation": "Sample: how postop_mri changed the model",
+        "decision": "maintain",
+        "confidence": 62,
+        "management_thinking": "unchanged",
+        "resulting_model_id": "model-0101"
+      }
+    },
+    {
+      "event_id": "evt-0135",
+      "session_id": "session-reference-b1",
+      "sequence": 76,
+      "transaction_id": "txn-0134",
+      "event_type": "postop_plan_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:11:20.000Z",
+      "simulated_time": "POD4",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.postop_workup",
+      "payload": {
+        "plan": {
+          "plan": "Sample: postoperative management plan",
+          "rationale": "Sample: rationale",
+          "monitoring": "Sample: monitoring",
+          "threshold": "Sample: escalation threshold",
+          "confidence": 65
+        },
+        "plan_version_id": "plan-0133",
+        "predecessor_id": null,
+        "decision_point": "initial_postoperative_plan"
+      }
+    },
+    {
+      "event_id": "evt-0136",
+      "session_id": "session-reference-b1",
+      "sequence": 77,
+      "transaction_id": "txn-0134",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:11:20.000Z",
+      "simulated_time": "POD4",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.postop_workup",
+      "state_after": "N4.branch_selection",
+      "payload": {
+        "from": "N4.postop_workup",
+        "to": "N4.branch_selection"
+      }
+    },
+    {
+      "event_id": "evt-0138",
+      "session_id": "session-reference-b1",
+      "sequence": 78,
+      "transaction_id": "txn-0137",
+      "event_type": "postop_branch_confirmed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:11:40.000Z",
+      "simulated_time": "POD4",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.branch_selection",
+      "state_after": "N4.branch_selection",
+      "payload": {
+        "option_id": "opt_drain",
+        "branch_id": "B1",
+        "postop_mri_released_before_choice": true,
+        "decision_point": "initial_postoperative_plan"
+      }
+    },
+    {
+      "event_id": "evt-0139",
+      "session_id": "session-reference-b1",
+      "sequence": 79,
+      "transaction_id": "txn-0137",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:11:40.000Z",
+      "simulated_time": "POD4",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.branch_selection",
+      "state_after": "N4.B1.drainage",
+      "payload": {
+        "from": "N4.branch_selection",
+        "to": "N4.B1.drainage",
+        "sim_time": {
+          "code": "POD4",
+          "label": "Postoperative day 4"
+        }
+      }
+    },
+    {
+      "event_id": "evt-0140",
+      "session_id": "session-reference-b1",
+      "sequence": 80,
+      "transaction_id": "txn-0137",
+      "event_type": "branch_consequence_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:11:40.000Z",
+      "simulated_time": "POD4",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.B1.drainage",
+      "state_after": "N4.B1.drainage",
+      "payload": {
+        "branch_id": "B1",
+        "step": {
+          "id": "B1_start",
+          "time": {
+            "code": "POD4",
+            "label": "Postoperative day 4"
+          },
+          "title": "Lumbar CSF drainage",
+          "lines": [
+            "Lumbar CSF drainage has started. It will be maintained for 72 hours according to the prescribed course."
+          ],
+          "notes": [
+            {
+              "time": "POD4",
+              "author": "Nursing",
+              "text": "Lumbar drainage started."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "evt-0142",
+      "session_id": "session-reference-b1",
+      "sequence": 81,
+      "transaction_id": "txn-0141",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:12:00.000Z",
+      "simulated_time": "POD4",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.B1.drainage",
+      "state_after": "N4.B1.resolved",
+      "payload": {
+        "from": "N4.B1.drainage",
+        "to": "N4.B1.resolved"
+      }
+    },
+    {
+      "event_id": "evt-0143",
+      "session_id": "session-reference-b1",
+      "sequence": 82,
+      "transaction_id": "txn-0141",
+      "event_type": "branch_consequence_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:12:00.000Z",
+      "simulated_time": "POD7",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.B1.resolved",
+      "state_after": "N4.B1.resolved",
+      "payload": {
+        "branch_id": "B1",
+        "step": {
+          "id": "B1_resolved",
+          "time": {
+            "code": "POD7",
+            "label": "Postoperative day 7"
+          },
+          "title": "After 72 hours of lumbar drainage",
+          "lines": [
+            "Headache and wound drainage have resolved.",
+            "The drain was removed on postoperative day 7 after symptom and wound-dryness criteria were met.",
+            "No re-exploration was performed."
+          ],
+          "notes": [
+            {
+              "time": "POD7",
+              "author": "Nursing",
+              "text": "No headache. Wound dry. Drain removed."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "evt-0145",
+      "session_id": "session-reference-b1",
+      "sequence": 83,
+      "transaction_id": "txn-0144",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:12:20.000Z",
+      "simulated_time": "W6",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N4.B1.resolved",
+      "state_after": "N5.followup",
+      "payload": {
+        "from": "N4.B1.resolved",
+        "to": "N5.followup",
+        "sim_time": {
+          "code": "W6",
+          "label": "Six weeks after surgery"
+        }
+      }
+    },
+    {
+      "event_id": "evt-0146",
+      "session_id": "session-reference-b1",
+      "sequence": 84,
+      "transaction_id": "txn-0144",
+      "event_type": "followup_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:12:20.000Z",
+      "simulated_time": "W6",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N5.followup",
+      "state_after": "N5.followup",
+      "payload": {
+        "branch_id": "B1",
+        "followup": {
+          "time": {
+            "code": "W6",
+            "label": "Six weeks after surgery"
+          },
+          "title": "Six-week follow-up",
+          "measures": [
+            {
+              "label": "Walking tolerance",
+              "baseline": "Approximately 180 m",
+              "followUp": "900 m"
+            },
+            {
+              "label": "Back pain",
+              "baseline": "6/10",
+              "followUp": "3/10"
+            },
+            {
+              "label": "Right leg pain",
+              "baseline": "8/10",
+              "followUp": "2/10"
+            },
+            {
+              "label": "Left leg pain",
+              "baseline": "5/10",
+              "followUp": "Not recorded in this case"
+            },
+            {
+              "label": "ODI",
+              "baseline": "42%",
+              "followUp": "24%"
+            },
+            {
+              "label": "Right EHL strength",
+              "baseline": "4+/5",
+              "followUp": "5/5"
+            }
+          ],
+          "lines": [
+            "CSF leak: resolved.",
+            "Wound: healed, without drainage.",
+            "Headache: no recurrence."
+          ],
+          "unavailable": [
+            "Repeat translation measurement, time to return to work, and long-term stability are not specified in this case."
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "evt-0150",
+      "session_id": "session-reference-b1",
+      "sequence": 85,
+      "transaction_id": "txn-0149",
+      "event_type": "investigation_requested",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:12:40.000Z",
+      "simulated_time": "W6",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N5.followup",
+      "state_after": "N5.followup",
+      "payload": {
+        "investigation_id": "followup_xr",
+        "title": "Standing lumbar AP and lateral radiographs (follow-up)",
+        "repeat": false
+      }
+    },
+    {
+      "event_id": "evt-0151",
+      "session_id": "session-reference-b1",
+      "sequence": 86,
+      "transaction_id": "txn-0149",
+      "event_type": "rationale_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:12:40.000Z",
+      "simulated_time": "W6",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N5.followup",
+      "state_after": "N5.followup",
+      "payload": {
+        "investigation_id": "followup_xr",
+        "text": "Sample: why followup_xr is requested now",
+        "reasoning_version_id": "rv-0147"
+      }
+    },
+    {
+      "event_id": "evt-0152",
+      "session_id": "session-reference-b1",
+      "sequence": 87,
+      "transaction_id": "txn-0149",
+      "event_type": "expectation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:12:40.000Z",
+      "simulated_time": "W6",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N5.followup",
+      "state_after": "N5.followup",
+      "payload": {
+        "investigation_id": "followup_xr",
+        "text": "Sample: what followup_xr is expected to show",
+        "reasoning_version_id": "rv-0148",
+        "confidence": null
+      }
+    },
+    {
+      "event_id": "evt-0153",
+      "session_id": "session-reference-b1",
+      "sequence": 88,
+      "transaction_id": "txn-0149",
+      "event_type": "raw_data_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:12:40.000Z",
+      "simulated_time": "W6",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N5.followup",
+      "state_after": "N5.followup",
+      "payload": {
+        "investigation_id": "followup_xr",
+        "series": [
+          {
+            "assetId": "XR-N5-001",
+            "title": "Standing lumbar AP",
+            "plane": "Coronal projection",
+            "sequence": null,
+            "plannedFrameCount": 1,
+            "framePaths": null,
+            "approvalState": "Planned",
+            "placeholder": true
+          },
+          {
+            "assetId": "XR-N5-002",
+            "title": "Standing lumbar lateral",
+            "plane": "Lateral projection",
+            "sequence": null,
+            "plannedFrameCount": 1,
+            "framePaths": null,
+            "approvalState": "Planned",
+            "placeholder": true
+          }
+        ],
+        "acquired_at": {
+          "code": "W6",
+          "label": "Six weeks after surgery"
+        },
+        "variant": "image_gate"
+      }
+    },
+    {
+      "event_id": "evt-0156",
+      "session_id": "session-reference-b1",
+      "sequence": 89,
+      "transaction_id": "txn-0155",
+      "event_type": "interpretation_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:13:00.000Z",
+      "simulated_time": "W6",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N5.followup",
+      "state_after": "N5.followup",
+      "payload": {
+        "investigation_id": "followup_xr",
+        "text": "Sample: interpretation of followup_xr",
+        "reasoning_version_id": "rv-0154",
+        "confidence": 60
+      }
+    },
+    {
+      "event_id": "evt-0157",
+      "session_id": "session-reference-b1",
+      "sequence": 90,
+      "transaction_id": "txn-0155",
+      "event_type": "report_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:13:00.000Z",
+      "simulated_time": "W6",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N5.followup",
+      "state_after": "N5.followup",
+      "payload": {
+        "investigation_id": "followup_xr",
+        "report": {
+          "title": "Six-week standing lumbar radiograph report",
+          "sections": [
+            {
+              "heading": "AP view",
+              "lines": [
+                "Postoperative decompression changes. No new coronal deformity. No hardware."
+              ]
+            },
+            {
+              "heading": "Lateral view",
+              "lines": [
+                "Persistent grade I L4-L5 slip without clear early progression. No instrumentation."
+              ]
+            }
+          ],
+          "accessibleSummary": "Six-week radiographs: persistent grade I L4-L5 slip without clear early progression; no instrumentation.",
+          "acquiredAt": {
+            "code": "W6",
+            "label": "Six weeks after surgery"
+          },
+          "annotation": {
+            "available": false,
+            "reason": "No validated annotation copy is planned for this study."
+          }
+        },
+        "variant": "image_gate"
+      }
+    },
+    {
+      "event_id": "evt-0159",
+      "session_id": "session-reference-b1",
+      "sequence": 91,
+      "transaction_id": "txn-0158",
+      "event_type": "tutor_message",
+      "source": "tutor",
+      "timestamp_utc": "2026-10-12T12:13:20.000Z",
+      "simulated_time": "W6",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N5.followup",
+      "state_after": "N5.followup",
+      "payload": {
+        "mode": "integrate",
+        "message": "Compare the report with your own reading. Where do they differ, and does any difference matter for your working model?",
+        "grounding_ids": [
+          "stage:N5.followup",
+          "cycle:followup_xr"
+        ],
+        "requires_human_review": false,
+        "trigger": "report_released:followup_xr",
+        "budget_override_reason": null
+      }
+    },
+    {
+      "event_id": "evt-0161",
+      "session_id": "session-reference-b1",
+      "sequence": 92,
+      "transaction_id": "txn-0160",
+      "event_type": "model_update_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:13:40.000Z",
+      "simulated_time": "W6",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N5.followup",
+      "state_after": "N5.followup",
+      "payload": {
+        "investigation_id": "followup_xr",
+        "effect": "supports",
+        "explanation": "Sample: how followup_xr changed the model",
+        "decision": "maintain",
+        "confidence": 62,
+        "management_thinking": "unchanged",
+        "resulting_model_id": "model-0101"
+      }
+    },
+    {
+      "event_id": "evt-0163",
+      "session_id": "session-reference-b1",
+      "sequence": 93,
+      "transaction_id": "txn-0162",
+      "event_type": "comparisons_released",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:14:00.000Z",
+      "simulated_time": "W6",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N5.followup",
+      "state_after": "N5.followup",
+      "payload": {
+        "experienced_branch": "B1",
+        "reference": null,
+        "others": [
+          {
+            "label": "Other authored scenario",
+            "branch_id": "B2",
+            "action": "Short monitored period of recumbency and wound observation",
+            "consequence": "Symptoms and drainage persist and a second decision is required; subsequent lumbar drainage resolves the leak with a modestly longer stay."
+          },
+          {
+            "label": "Other authored scenario",
+            "branch_id": "B3",
+            "action": "Early operative re-exploration and reinforced repair",
+            "consequence": "The leak resolves; the course includes the additional operative burden."
+          },
+          {
+            "label": "Other authored scenario",
+            "branch_id": "B4",
+            "action": "Defer targeted treatment despite continuing drainage",
+            "consequence": "The collection and symptoms persist, requiring reassessment. A detailed outcome after reassessment is not authored in this case."
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "evt-0164",
+      "session_id": "session-reference-b1",
+      "sequence": 94,
+      "transaction_id": "txn-0162",
+      "event_type": "stage_transition",
+      "source": "engine",
+      "timestamp_utc": "2026-10-12T12:14:00.000Z",
+      "simulated_time": "W6",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N5.followup",
+      "state_after": "N5.debrief",
+      "payload": {
+        "from": "N5.followup",
+        "to": "N5.debrief"
+      }
+    },
+    {
+      "event_id": "evt-0167",
+      "session_id": "session-reference-b1",
+      "sequence": 95,
+      "transaction_id": "txn-0166",
+      "event_type": "reflection_committed",
+      "source": "learner",
+      "timestamp_utc": "2026-10-12T12:14:20.000Z",
+      "simulated_time": "W6",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N5.debrief",
+      "state_after": "N5.debrief",
+      "payload": {
+        "answers": {
+          "r1": "Sample: reflection on the evidence that changed the model",
+          "r6": "Sample: what I would do differently"
+        },
+        "reflection_version_id": "refl-0165"
+      }
+    },
+    {
+      "event_id": "evt-0169",
+      "session_id": "session-reference-b1",
+      "sequence": 96,
+      "transaction_id": "txn-0168",
+      "event_type": "session_completed",
+      "source": "system",
+      "timestamp_utc": "2026-10-12T12:14:40.000Z",
+      "simulated_time": "W6",
+      "case_id": "EDT-LUM-DUMMY-001",
+      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "state_before": "N5.debrief",
+      "state_after": "N5.debrief",
+      "payload": {
+        "completion_status": "clinical_pathway_completed"
+      }
+    }
+  ],
+  "integrity": {
+    "event_count": 96,
+    "first_sequence": 1,
+    "last_sequence": 96,
+    "checksum_fnv1a": "40b8cf73"
+  }
+}
