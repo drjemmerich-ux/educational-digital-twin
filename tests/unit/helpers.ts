@@ -2,6 +2,8 @@ import { MemorySessionRepository } from '../../src/session/memoryRepository.ts';
 import { SessionController, sequentialIds } from '../../src/session/controller.ts';
 import { REFERENCE_JOURNEY, runJourney, type JourneyOptions } from '../../src/session/scriptedJourney.ts';
 import * as C from '../../src/engine/commands.ts';
+import { CONSENT_STATEMENTS } from '../../src/case/publicCatalogue.ts';
+export { CONSENT_STATEMENTS };
 
 export function newController(repo = new MemorySessionRepository()) {
   return new SessionController(repo, sequentialIds());
@@ -15,7 +17,7 @@ export function journey(over: Partial<JourneyOptions> = {}, repo = new MemorySes
 
 export function startedAtWorkup(route: 'image_gate_placeholder' | 'text_only' = 'image_gate_placeholder', repo = new MemorySessionRepository()) {
   const ctl = newController(repo);
-  ctl.dispatch(C.startSession, { participant_code: 'T', imaging_route: route, session_kind: 'participant' }, 'session-wu');
+  ctl.dispatch(C.startSession, { participant_code: 'T', imaging_route: route, session_kind: 'participant', consent_statement_ids: CONSENT_STATEMENTS.map((c) => c.id), training_level: 'fellow' }, 'session-wu');
   const r = ctl.dispatch(C.commitInitialAssessment, { problem_representation: 'p', hypotheses: ['h'], priorities: 'x', confidence: 50 });
   if (!r.ok) throw new Error(r.message);
   return ctl;

@@ -73,6 +73,11 @@ export function narrativeStatements(state: SessionState): string[] {
   for (const d of state.branchDecisions) {
     out.push(`${d.kind === 'confirmed' ? 'You confirmed the action' : 'You recorded an action without an authored consequence'}: ${actionLabel(d.option_id)}.`);
   }
+  // Decision 1 (12 October 2026): state neutrally when drainage started without a postoperative MRI.
+  const drainWithoutMri = state.branchDecisions.some(
+    (d) => d.kind === 'confirmed' && d.option_id === 'opt_drain' && 'postop_mri_released_before_choice' in d && !d.postop_mri_released_before_choice,
+  );
+  if (drainWithoutMri) out.push('You started lumbar drainage without a postoperative MRI.');
   return out;
 }
 

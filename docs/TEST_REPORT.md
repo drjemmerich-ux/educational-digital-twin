@@ -1,15 +1,15 @@
-# Test report · Prototype 1.5
+# Test report · Prototype 1.6
 
-Run on 12 October 2026 in the build environment (Node 22.22, headless Chromium via Playwright 1.56).
+Run on 13 October 2026 in the build environment (Node 22.22, headless Chromium via Playwright 1.56).
 Raw logs: `docs/verification/`. Screenshots: `docs/screenshots/`.
 
 | Check | Result |
 | --- | --- |
 | Type-check (strict TS, offline React shim) | Pass |
 | Type-check against real `@types/react` | **Not run** (package registry unavailable here) |
-| Engine, persistence, export, tutor tests (`npm test`) | 33 of 33 pass |
-| Browser walkthroughs (`npm run test:browser`) | 16 of 16 pass |
-| Reference-path export regenerated and replayed | Pass: 96 events, `clinical_pathway_completed`, checksum `40b8cf73` |
+| Engine, persistence, export, tutor tests (`npm test`) | 38 of 38 pass |
+| Browser walkthroughs (`npm run test:browser`) | 17 of 17 pass |
+| Reference-path export regenerated and replayed | Pass: 96 events, `clinical_pathway_completed`, checksum `f0556768` |
 | Horizontal overflow at 420, 768, 900, 1024, 1280 px | None |
 | Published Artifact preview opened and exercised in claude.ai | **Not verified** from this session |
 
@@ -32,7 +32,8 @@ Raw logs: `docs/verification/`. Screenshots: `docs/screenshots/`.
 | AT15 | Unit; browser B1 walkthrough | Pass |
 | AT16 | Unit (incl. repeated observation pauses); browser B2 rescue walkthrough | Pass |
 | AT17 | Unit; browser B3 walkthrough | Pass |
-| AT18 | Unit; browser B4 review walkthrough | Pass |
+| AT18 | Unit; browser B4 review walkthrough (further deferral after persistence) | Pass |
+| D1, D5, D8-D10, D17 | Unit: drainage-without-MRI statement, authored continuations, debrief-only faculty perspective and references, prompt release conditions and checkpoint silence, consent required; browser: consent screen, B4 then drainage | Pass |
 | AT19 | Unit; browser ("None of these" pauses; uncommitted choice editable) | Pass |
 | AT20 | Unit: tutor cannot append non-tutor events, output contract rejects extra fields, tutor sources import no engine commands or hidden content, clinical state unchanged by tutor activity | Pass |
 | AT21 | Unit static check (only `engine/commands.ts` imports hidden content); browser DOM scans | Pass |

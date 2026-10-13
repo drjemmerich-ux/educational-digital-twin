@@ -38,6 +38,12 @@ export type Stage =
   | 'N4.B3.resolved'
   | 'N4.B4.deferred'
   | 'N4.B4.persistence'
+  | 'N4.B2.rescue_reexploration'
+  | 'N4.B2.resolved_reexplore'
+  | 'N4.B4.rescue_drainage'
+  | 'N4.B4.resolved_drain'
+  | 'N4.B4.rescue_reexploration'
+  | 'N4.B4.resolved_reexplore'
   | 'N5.followup'
   | 'N5.debrief'
   | 'REVIEW.pause';
@@ -121,7 +127,15 @@ export interface PlanInput {
 // Event payloads
 // ---------------------------------------------------------------------------
 export interface EventPayloads {
-  session_started: { participant_code: string; imaging_route: ImagingRoute; session_kind: SessionKind; versions: VersionBundle };
+  session_started: {
+    participant_code: string;
+    imaging_route: ImagingRoute;
+    session_kind: SessionKind;
+    versions: VersionBundle;
+    /** Null only for demonstration sessions, which have no participant. */
+    consent: ConsentRecord | null;
+    training_level: string | null;
+  };
   session_resumed: { tab_id: string };
   presentation_released: { presentation: PresentationSnapshot; sim_time: SimTime };
   stage_transition: { from: Stage; to: Stage; sim_time?: SimTime };
@@ -167,10 +181,12 @@ export interface EventPayloads {
   postop_action_unsupported: { option_id: BranchOptionId | 'other'; plan_version_id: string; decision_point: string };
   branch_consequence_released: { branch_id: BranchId; step: BranchStep };
   review_pause_entered: { reason: string; copy: string; preserved: Record<string, string> };
-  followup_released: { branch_id: 'B1' | 'B2' | 'B3'; followup: FollowUpContent };
+  followup_released: { branch_id: BranchId; course: string; followup: FollowUpContent };
   comparisons_released: {
     experienced_branch: BranchId | null;
     reference: { label: 'Reference course comparison'; summary: { action: string; consequence: string }; followup: FollowUpContent } | null;
+    faculty_perspective: { heading: string; intro: string; sections: { title: string; text: string }[] };
+    reading_list: { citation: string; url: string; note: string }[];
     others: { label: 'Other authored scenario'; branch_id: BranchId; action: string; consequence: string }[];
   };
   reflection_committed: { answers: Record<string, string>; reflection_version_id: string };
@@ -244,7 +260,14 @@ export interface TimelineEntry {
   kind: 'clinical' | 'learner' | 'boundary';
 }
 
+export interface ConsentRecord {
+  consent_version: string;
+  statement_ids: string[];
+  accepted: true;
+}
+
 export interface TutorMessageRecord {
+  promptId: string | null;
   sequence: number;
   role: 'tutor' | 'learner' | 'system';
   mode: string;
@@ -255,6 +278,8 @@ export interface TutorMessageRecord {
 export interface SessionState {
   sessionId: string | null;
   participantCode: string;
+  consent: ConsentRecord | null;
+  trainingLevel: string | null;
   sessionKind: SessionKind;
   imagingRoute: ImagingRoute;
   versions: VersionBundle | null;

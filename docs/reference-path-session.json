@@ -9,11 +9,11 @@
   ],
   "versions": {
     "case_id": "EDT-LUM-DUMMY-001",
-    "content_version": "edt-lum-dummy-001-handoff-1.0",
-    "ui_version": "ui-1.5.0",
-    "engine_version": "engine-1.5.0",
-    "asset_manifest_version": "manifest-1.0 (Visual Bible v0.1, 2026-09-29)",
-    "tutor_policy_version": "scripted-tutor-policy-1.0"
+    "content_version": "edt-lum-dummy-001-handoff-1.1",
+    "ui_version": "ui-1.6.0",
+    "engine_version": "engine-1.6.0",
+    "asset_manifest_version": "manifest-1.1 (Visual Bible v0.1 with amendments of 2026-10-12)",
+    "tutor_policy_version": "scripted-tutor-policy-1.1"
   },
   "session": {
     "session_id": "session-reference-b1",
@@ -31,7 +31,7 @@
   "released_content": {
     "presentation": {
       "patient": {
-        "displayName": "Patient A",
+        "displayName": "Elena Marsh",
         "ageYears": 64,
         "sex": "Female",
         "occupation": "Architect, professionally active part-time",
@@ -555,7 +555,7 @@
               "lines": [
                 "Postoperative changes of decompression at L4-L5.",
                 "A dorsal epidural and subfascial collection of CSF signal intensity on T2-weighted images communicates with the decompression bed.",
-                "The collection measures approximately 48 x 18 x 55 mm.",
+                "The collection measures approximately 48 mm transverse × 18 mm anteroposterior × 55 mm craniocaudal.",
                 "Mild mass effect without severe neural compression.",
                 "No compressive hematoma. No abscess pattern. No severe cauda equina compression."
               ]
@@ -567,7 +567,7 @@
               ]
             }
           ],
-          "accessibleSummary": "Postoperative MRI: communicating CSF-intensity dorsal epidural and subfascial collection about 48 x 18 x 55 mm with mild mass effect; no severe compression, hematoma, or abscess pattern.",
+          "accessibleSummary": "Postoperative MRI: communicating CSF-intensity dorsal epidural and subfascial collection about 48 mm transverse × 18 mm anteroposterior × 55 mm craniocaudal with mild mass effect; no severe compression, hematoma, or abscess pattern.",
           "acquiredAt": {
             "code": "POD4",
             "label": "Postoperative day 4"
@@ -614,12 +614,12 @@
         ],
         "image_interpretation_unavailable_reason": null,
         "report": {
-          "title": "Postoperative laboratory trend since surgery",
+          "title": "Postoperative laboratory trend (routine since postoperative day 1)",
           "sections": [
             {
               "heading": "Trend",
               "lines": [
-                "Mild postoperative leukocytosis, trending downward.",
+                "Mild postoperative leukocytosis, trending downward since postoperative day 1.",
                 "No laboratory pattern of infection."
               ]
             },
@@ -1002,6 +1002,7 @@
     "review_pause": null,
     "follow_up": {
       "branch_id": "B1",
+      "course": "B1",
       "followup": {
         "time": {
           "code": "W6",
@@ -1058,7 +1059,7 @@
           "label": "Other authored scenario",
           "branch_id": "B2",
           "action": "Short monitored period of recumbency and wound observation",
-          "consequence": "Symptoms and drainage persist and a second decision is required; subsequent lumbar drainage resolves the leak with a modestly longer stay."
+          "consequence": "Symptoms and drainage persist and a second decision is required. Subsequent lumbar drainage resolves the leak with a modestly longer stay; re-exploration at that point also resolves it, with an additional operation and a longer stay. Further observation has no authored consequence."
         },
         {
           "label": "Other authored scenario",
@@ -1070,7 +1071,68 @@
           "label": "Other authored scenario",
           "branch_id": "B4",
           "action": "Defer targeted treatment despite continuing drainage",
-          "consequence": "The collection and symptoms persist, requiring reassessment. A detailed outcome after reassessment is not authored in this case."
+          "consequence": "The collection and symptoms persist, requiring reassessment. Subsequent lumbar drainage resolves the leak with a longer stay; re-exploration resolves it with an additional operation and a longer stay. Further delay has no authored consequence."
+        }
+      ],
+      "faculty_perspective": {
+        "heading": "Faculty perspective",
+        "intro": "One experienced view of this case, offered for reflection. It is not an answer key, and thoughtful surgeons may reasonably differ.",
+        "sections": [
+          {
+            "title": "The clinical picture",
+            "text": "Elena's leg-dominant symptoms, provoked by standing and walking and relieved by flexion, describe neurogenic claudication. The subtle right EHL weakness and dorsal-foot sensory change point to the right L5 root. Present pulses and a negative straight-leg raise help keep vascular claudication and a disc herniation lower on the list. Much of the diagnosis is available before any imaging."
+          },
+          {
+            "title": "Position matters",
+            "text": "Translation at L4-L5 was 4.5 mm standing, 6.0 mm in flexion, 3.0 mm in extension, and 2.5 mm on supine MRI. A supine study alone underestimates the slip under load. Facet effusions and the 8-degree angular change raise the question of instability, while the absent vacuum phenomenon and partially preserved disc height point the other way. No single threshold settles it."
+          },
+          {
+            "title": "Decompression with or without fusion",
+            "text": "Reasonable surgeons disagree here, and the published trials have not converged. A useful question is what the decompression itself will do to stability, and how much the remaining motion matters for this patient. Her wish to avoid an extensive operation, her mild osteopenia and her preserved alignment all belong in that conversation. A clearly recorded threshold for later fusion is as important as the initial choice."
+          },
+          {
+            "title": "Complementary tests",
+            "text": "The EMG and the earlier right L5 block are concordant with the clinical and imaging picture, but neither is definitive. They support a decision; they do not make it."
+          },
+          {
+            "title": "The durotomy",
+            "text": "A recognized small defect is best repaired at once, with a watertight closure and a deliberate check before leaving the field. The more useful habit is to plan the postoperative watch at that moment: what you will ask nursing to report, and what would prompt imaging."
+          },
+          {
+            "title": "Day 3",
+            "text": "Orthostatic headache with clear drainage after a known durotomy points strongly to a CSF leak. The task is to confirm it, exclude infection and a compressive collection, and choose a response proportionate to the findings. Observation, lumbar drainage and early re-exploration each have a place. They differ mainly in burden and in how quickly they settle the problem."
+          },
+          {
+            "title": "Across the case",
+            "text": "Notice where your confidence moved, and whether new information or habit moved it. That is the most transferable lesson of a case like this."
+          }
+        ]
+      },
+      "reading_list": [
+        {
+          "citation": "Weinstein JN, et al. Surgical versus nonsurgical treatment for lumbar degenerative spondylolisthesis. N Engl J Med. 2007;356(22):2257-70.",
+          "url": "https://doi.org/10.1056/NEJMoa070302",
+          "note": "Compares operative and nonoperative care for degenerative spondylolisthesis with stenosis."
+        },
+        {
+          "citation": "Ghogawala Z, et al. Laminectomy plus fusion versus laminectomy alone for lumbar spondylolisthesis. N Engl J Med. 2016;374(15):1424-34.",
+          "url": "https://doi.org/10.1056/NEJMoa1508788",
+          "note": "Randomized comparison of decompression with and without fusion in stable degenerative spondylolisthesis."
+        },
+        {
+          "citation": "Försth P, et al. A randomized, controlled trial of fusion surgery for lumbar spinal stenosis. N Engl J Med. 2016;374(15):1413-23.",
+          "url": "https://doi.org/10.1056/NEJMoa1513721",
+          "note": "Published alongside the previous trial; a randomized trial of adding fusion to decompression for lumbar spinal stenosis."
+        },
+        {
+          "citation": "Austevoll IM, et al. Decompression with or without fusion in degenerative lumbar spondylolisthesis. N Engl J Med. 2021;385(6):526-38.",
+          "url": "https://doi.org/10.1056/NEJMoa2100990",
+          "note": "A more recent randomized comparison of decompression with and without fusion."
+        },
+        {
+          "citation": "Chaput C, et al. The significance of increased fluid signal on magnetic resonance imaging in lumbar facets in relationship to degenerative spondylolisthesis. Spine. 2007;32(17):1883-7.",
+          "url": "https://doi.org/10.1097/brs.0b013e318113271a",
+          "note": "Examines the relationship between facet fluid signal on MRI and degenerative spondylolisthesis."
         }
       ]
     },
@@ -1094,42 +1156,48 @@
       "role": "tutor",
       "mode": "orientation",
       "text": "I am a scripted tutor prototype. I ask one question at a time and will often stay silent. I cannot see unreleased information, order studies, or change the patient’s course. Use “Ask for a prompt” whenever a question would help.",
-      "trigger": "session_started"
+      "trigger": "session_started",
+      "promptId": null
     },
     {
       "sequence": 7,
       "role": "system",
       "mode": "discriminate",
       "text": "Prompt requested",
-      "trigger": "learner_selected"
+      "trigger": "learner_selected",
+      "promptId": null
     },
     {
       "sequence": 8,
       "role": "tutor",
       "mode": "discriminate",
       "text": "What finding would make you reconsider that hypothesis?",
-      "trigger": "support_requested:discriminate"
+      "trigger": "support_requested:discriminate",
+      "promptId": null
     },
     {
       "sequence": 42,
       "role": "tutor",
       "mode": "alternative",
-      "text": "Which patient-specific features support your strategy over a reasonable alternative?",
-      "trigger": "stage_entered:N3.recommendation"
+      "text": "How does her concern about an extensive operation shape your choice?",
+      "trigger": "stage_entered:N3.recommendation",
+      "promptId": "12.7"
     },
     {
       "sequence": 66,
       "role": "tutor",
       "mode": "integrate",
       "text": "How much weight should this result carry relative to the clinical picture, and why?",
-      "trigger": "report_released:postop_labs"
+      "trigger": "report_released:postop_labs",
+      "promptId": null
     },
     {
       "sequence": 91,
       "role": "tutor",
       "mode": "integrate",
       "text": "Compare the report with your own reading. Where do they differ, and does any difference matter for your working model?",
-      "trigger": "report_released:followup_xr"
+      "trigger": "report_released:followup_xr",
+      "promptId": null
     }
   ],
   "events": [
@@ -1143,7 +1211,7 @@
       "timestamp_utc": "2026-10-12T12:00:00.000Z",
       "simulated_time": "none",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "START",
       "state_after": "START",
       "payload": {
@@ -1152,12 +1220,14 @@
         "session_kind": "demonstration",
         "versions": {
           "case_id": "EDT-LUM-DUMMY-001",
-          "content_version": "edt-lum-dummy-001-handoff-1.0",
-          "ui_version": "ui-1.5.0",
-          "engine_version": "engine-1.5.0",
-          "asset_manifest_version": "manifest-1.0 (Visual Bible v0.1, 2026-09-29)",
-          "tutor_policy_version": "scripted-tutor-policy-1.0"
-        }
+          "content_version": "edt-lum-dummy-001-handoff-1.1",
+          "ui_version": "ui-1.6.0",
+          "engine_version": "engine-1.6.0",
+          "asset_manifest_version": "manifest-1.1 (Visual Bible v0.1 with amendments of 2026-10-12)",
+          "tutor_policy_version": "scripted-tutor-policy-1.1"
+        },
+        "consent": null,
+        "training_level": null
       }
     },
     {
@@ -1170,13 +1240,13 @@
       "timestamp_utc": "2026-10-12T12:00:00.000Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "START",
       "state_after": "START",
       "payload": {
         "presentation": {
           "patient": {
-            "displayName": "Patient A",
+            "displayName": "Elena Marsh",
             "ageYears": 64,
             "sex": "Female",
             "occupation": "Architect, professionally active part-time",
@@ -1322,7 +1392,7 @@
       "timestamp_utc": "2026-10-12T12:00:00.000Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "START",
       "state_after": "N1.assessment",
       "payload": {
@@ -1344,7 +1414,7 @@
       "timestamp_utc": "2026-10-12T12:00:20.000Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N1.assessment",
       "state_after": "N1.assessment",
       "payload": {
@@ -1368,7 +1438,7 @@
       "timestamp_utc": "2026-10-12T12:00:40.000Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N1.assessment",
       "state_after": "N1.assessment",
       "payload": {
@@ -1399,7 +1469,7 @@
       "timestamp_utc": "2026-10-12T12:00:40.000Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N1.assessment",
       "state_after": "N2.workup",
       "payload": {
@@ -1421,7 +1491,7 @@
       "timestamp_utc": "2026-10-12T12:01:00.000Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1439,7 +1509,7 @@
       "timestamp_utc": "2026-10-12T12:01:20.000Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1463,7 +1533,7 @@
       "timestamp_utc": "2026-10-12T12:01:40.000Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1482,7 +1552,7 @@
       "timestamp_utc": "2026-10-12T12:01:40.000Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1501,7 +1571,7 @@
       "timestamp_utc": "2026-10-12T12:01:40.000Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1521,7 +1591,7 @@
       "timestamp_utc": "2026-10-12T12:01:40.000Z",
       "simulated_time": "T+7d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1542,7 +1612,7 @@
       "timestamp_utc": "2026-10-12T12:01:40.000Z",
       "simulated_time": "T+7d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1586,7 +1656,7 @@
       "timestamp_utc": "2026-10-12T12:02:00.000Z",
       "simulated_time": "T+7d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1606,7 +1676,7 @@
       "timestamp_utc": "2026-10-12T12:02:00.000Z",
       "simulated_time": "T+7d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1652,7 +1722,7 @@
       "timestamp_utc": "2026-10-12T12:02:20.000Z",
       "simulated_time": "T+7d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1675,7 +1745,7 @@
       "timestamp_utc": "2026-10-12T12:02:40.000Z",
       "simulated_time": "T+7d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1694,7 +1764,7 @@
       "timestamp_utc": "2026-10-12T12:02:40.000Z",
       "simulated_time": "T+7d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1713,7 +1783,7 @@
       "timestamp_utc": "2026-10-12T12:02:40.000Z",
       "simulated_time": "T+7d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1733,7 +1803,7 @@
       "timestamp_utc": "2026-10-12T12:02:40.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1754,7 +1824,7 @@
       "timestamp_utc": "2026-10-12T12:02:40.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1828,7 +1898,7 @@
       "timestamp_utc": "2026-10-12T12:03:00.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1848,7 +1918,7 @@
       "timestamp_utc": "2026-10-12T12:03:00.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1906,7 +1976,7 @@
       "timestamp_utc": "2026-10-12T12:03:20.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1929,7 +1999,7 @@
       "timestamp_utc": "2026-10-12T12:03:40.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1948,7 +2018,7 @@
       "timestamp_utc": "2026-10-12T12:03:40.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1967,7 +2037,7 @@
       "timestamp_utc": "2026-10-12T12:03:40.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -1987,7 +2057,7 @@
       "timestamp_utc": "2026-10-12T12:03:40.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -2031,7 +2101,7 @@
       "timestamp_utc": "2026-10-12T12:04:00.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -2051,7 +2121,7 @@
       "timestamp_utc": "2026-10-12T12:04:00.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -2091,7 +2161,7 @@
       "timestamp_utc": "2026-10-12T12:04:20.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -2114,7 +2184,7 @@
       "timestamp_utc": "2026-10-12T12:04:40.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -2133,7 +2203,7 @@
       "timestamp_utc": "2026-10-12T12:04:40.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -2152,7 +2222,7 @@
       "timestamp_utc": "2026-10-12T12:04:40.000Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -2172,7 +2242,7 @@
       "timestamp_utc": "2026-10-12T12:04:40.000Z",
       "simulated_time": "T+12d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -2193,7 +2263,7 @@
       "timestamp_utc": "2026-10-12T12:04:40.000Z",
       "simulated_time": "T+12d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -2233,7 +2303,7 @@
       "timestamp_utc": "2026-10-12T12:05:00.000Z",
       "simulated_time": "T+12d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -2253,7 +2323,7 @@
       "timestamp_utc": "2026-10-12T12:05:20.000Z",
       "simulated_time": "T+12d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -2276,7 +2346,7 @@
       "timestamp_utc": "2026-10-12T12:05:40.000Z",
       "simulated_time": "T+12d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -2308,7 +2378,7 @@
       "timestamp_utc": "2026-10-12T12:05:40.000Z",
       "simulated_time": "T+12d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N2.workup",
       "payload": {
@@ -2329,7 +2399,7 @@
       "timestamp_utc": "2026-10-12T12:05:40.000Z",
       "simulated_time": "T+14d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N2.workup",
       "state_after": "N3.recommendation",
       "payload": {
@@ -2351,14 +2421,15 @@
       "timestamp_utc": "2026-10-12T12:06:00.000Z",
       "simulated_time": "T+14d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N3.recommendation",
       "state_after": "N3.recommendation",
       "payload": {
         "mode": "alternative",
-        "message": "Which patient-specific features support your strategy over a reasonable alternative?",
+        "message": "How does her concern about an extensive operation shape your choice?",
         "grounding_ids": [
-          "stage:N3.recommendation"
+          "stage:N3.recommendation",
+          "prompt:12.7"
         ],
         "requires_human_review": false,
         "trigger": "stage_entered:N3.recommendation",
@@ -2375,7 +2446,7 @@
       "timestamp_utc": "2026-10-12T12:06:20.000Z",
       "simulated_time": "T+14d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N3.recommendation",
       "state_after": "N3.recommendation",
       "payload": {
@@ -2411,7 +2482,7 @@
       "timestamp_utc": "2026-10-12T12:06:20.000Z",
       "simulated_time": "T+14d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N3.recommendation",
       "state_after": "N3.canonical_ack",
       "payload": {
@@ -2429,7 +2500,7 @@
       "timestamp_utc": "2026-10-12T12:06:20.000Z",
       "simulated_time": "T+14d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N3.canonical_ack",
       "state_after": "N3.canonical_ack",
       "payload": {
@@ -2446,7 +2517,7 @@
       "timestamp_utc": "2026-10-12T12:06:40.000Z",
       "simulated_time": "T+14d",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N3.canonical_ack",
       "state_after": "N3.canonical_ack",
       "payload": {
@@ -2464,7 +2535,7 @@
       "timestamp_utc": "2026-10-12T12:06:40.000Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N3.canonical_ack",
       "state_after": "N4.procedure",
       "payload": {
@@ -2486,7 +2557,7 @@
       "timestamp_utc": "2026-10-12T12:06:40.000Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.procedure",
       "state_after": "N4.procedure",
       "payload": {
@@ -2510,7 +2581,7 @@
       "timestamp_utc": "2026-10-12T12:07:00.000Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.procedure",
       "state_after": "N4.procedure",
       "payload": {
@@ -2545,7 +2616,7 @@
       "timestamp_utc": "2026-10-12T12:07:00.000Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.procedure",
       "state_after": "N4.durotomy_proposal",
       "payload": {
@@ -2563,7 +2634,7 @@
       "timestamp_utc": "2026-10-12T12:07:20.000Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.durotomy_proposal",
       "state_after": "N4.durotomy_proposal",
       "payload": {
@@ -2583,7 +2654,7 @@
       "timestamp_utc": "2026-10-12T12:07:20.000Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.durotomy_proposal",
       "state_after": "N4.durotomy_proposal_committed",
       "payload": {
@@ -2601,7 +2672,7 @@
       "timestamp_utc": "2026-10-12T12:07:40.000Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.durotomy_proposal_committed",
       "state_after": "N4.durotomy_proposal_committed",
       "payload": {
@@ -2644,7 +2715,7 @@
       "timestamp_utc": "2026-10-12T12:07:40.000Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.durotomy_proposal_committed",
       "state_after": "N4.repair_revealed",
       "payload": {
@@ -2662,7 +2733,7 @@
       "timestamp_utc": "2026-10-12T12:08:00.000Z",
       "simulated_time": "POD1",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.repair_revealed",
       "state_after": "N4.pod1",
       "payload": {
@@ -2684,7 +2755,7 @@
       "timestamp_utc": "2026-10-12T12:08:00.000Z",
       "simulated_time": "POD1",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.pod1",
       "state_after": "N4.pod1",
       "payload": {
@@ -2719,7 +2790,7 @@
       "timestamp_utc": "2026-10-12T12:08:20.000Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.pod1",
       "state_after": "N4.pod3_reassessment",
       "payload": {
@@ -2741,7 +2812,7 @@
       "timestamp_utc": "2026-10-12T12:08:20.000Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.pod3_reassessment",
       "state_after": "N4.pod3_reassessment",
       "payload": {
@@ -2785,7 +2856,7 @@
       "timestamp_utc": "2026-10-12T12:08:40.000Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.pod3_reassessment",
       "state_after": "N4.pod3_reassessment",
       "payload": {
@@ -2821,7 +2892,7 @@
       "timestamp_utc": "2026-10-12T12:08:40.000Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.pod3_reassessment",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -2839,7 +2910,7 @@
       "timestamp_utc": "2026-10-12T12:09:00.000Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -2858,7 +2929,7 @@
       "timestamp_utc": "2026-10-12T12:09:00.000Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -2877,7 +2948,7 @@
       "timestamp_utc": "2026-10-12T12:09:00.000Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -2897,18 +2968,18 @@
       "timestamp_utc": "2026-10-12T12:09:00.000Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
         "investigation_id": "postop_labs",
         "report": {
-          "title": "Postoperative laboratory trend since surgery",
+          "title": "Postoperative laboratory trend (routine since postoperative day 1)",
           "sections": [
             {
               "heading": "Trend",
               "lines": [
-                "Mild postoperative leukocytosis, trending downward.",
+                "Mild postoperative leukocytosis, trending downward since postoperative day 1.",
                 "No laboratory pattern of infection."
               ]
             },
@@ -2942,7 +3013,7 @@
       "timestamp_utc": "2026-10-12T12:09:20.000Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -2962,7 +3033,7 @@
       "timestamp_utc": "2026-10-12T12:09:40.000Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -2987,7 +3058,7 @@
       "timestamp_utc": "2026-10-12T12:10:00.000Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -3010,7 +3081,7 @@
       "timestamp_utc": "2026-10-12T12:10:20.000Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -3029,7 +3100,7 @@
       "timestamp_utc": "2026-10-12T12:10:20.000Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -3048,7 +3119,7 @@
       "timestamp_utc": "2026-10-12T12:10:20.000Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -3068,7 +3139,7 @@
       "timestamp_utc": "2026-10-12T12:10:20.000Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -3089,7 +3160,7 @@
       "timestamp_utc": "2026-10-12T12:10:20.000Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -3143,7 +3214,7 @@
       "timestamp_utc": "2026-10-12T12:10:40.000Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -3163,7 +3234,7 @@
       "timestamp_utc": "2026-10-12T12:10:40.000Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -3182,7 +3253,7 @@
               "lines": [
                 "Postoperative changes of decompression at L4-L5.",
                 "A dorsal epidural and subfascial collection of CSF signal intensity on T2-weighted images communicates with the decompression bed.",
-                "The collection measures approximately 48 x 18 x 55 mm.",
+                "The collection measures approximately 48 mm transverse × 18 mm anteroposterior × 55 mm craniocaudal.",
                 "Mild mass effect without severe neural compression.",
                 "No compressive hematoma. No abscess pattern. No severe cauda equina compression."
               ]
@@ -3194,7 +3265,7 @@
               ]
             }
           ],
-          "accessibleSummary": "Postoperative MRI: communicating CSF-intensity dorsal epidural and subfascial collection about 48 x 18 x 55 mm with mild mass effect; no severe compression, hematoma, or abscess pattern.",
+          "accessibleSummary": "Postoperative MRI: communicating CSF-intensity dorsal epidural and subfascial collection about 48 mm transverse × 18 mm anteroposterior × 55 mm craniocaudal with mild mass effect; no severe compression, hematoma, or abscess pattern.",
           "acquiredAt": {
             "code": "POD4",
             "label": "Postoperative day 4"
@@ -3217,7 +3288,7 @@
       "timestamp_utc": "2026-10-12T12:11:00.000Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -3240,7 +3311,7 @@
       "timestamp_utc": "2026-10-12T12:11:20.000Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.postop_workup",
       "payload": {
@@ -3266,7 +3337,7 @@
       "timestamp_utc": "2026-10-12T12:11:20.000Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.postop_workup",
       "state_after": "N4.branch_selection",
       "payload": {
@@ -3284,7 +3355,7 @@
       "timestamp_utc": "2026-10-12T12:11:40.000Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.branch_selection",
       "state_after": "N4.branch_selection",
       "payload": {
@@ -3304,7 +3375,7 @@
       "timestamp_utc": "2026-10-12T12:11:40.000Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.branch_selection",
       "state_after": "N4.B1.drainage",
       "payload": {
@@ -3326,7 +3397,7 @@
       "timestamp_utc": "2026-10-12T12:11:40.000Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.B1.drainage",
       "state_after": "N4.B1.drainage",
       "payload": {
@@ -3361,7 +3432,7 @@
       "timestamp_utc": "2026-10-12T12:12:00.000Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.B1.drainage",
       "state_after": "N4.B1.resolved",
       "payload": {
@@ -3379,7 +3450,7 @@
       "timestamp_utc": "2026-10-12T12:12:00.000Z",
       "simulated_time": "POD7",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.B1.resolved",
       "state_after": "N4.B1.resolved",
       "payload": {
@@ -3416,7 +3487,7 @@
       "timestamp_utc": "2026-10-12T12:12:20.000Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N4.B1.resolved",
       "state_after": "N5.followup",
       "payload": {
@@ -3438,11 +3509,12 @@
       "timestamp_utc": "2026-10-12T12:12:20.000Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N5.followup",
       "state_after": "N5.followup",
       "payload": {
         "branch_id": "B1",
+        "course": "B1",
         "followup": {
           "time": {
             "code": "W6",
@@ -3502,7 +3574,7 @@
       "timestamp_utc": "2026-10-12T12:12:40.000Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N5.followup",
       "state_after": "N5.followup",
       "payload": {
@@ -3521,7 +3593,7 @@
       "timestamp_utc": "2026-10-12T12:12:40.000Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N5.followup",
       "state_after": "N5.followup",
       "payload": {
@@ -3540,7 +3612,7 @@
       "timestamp_utc": "2026-10-12T12:12:40.000Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N5.followup",
       "state_after": "N5.followup",
       "payload": {
@@ -3560,7 +3632,7 @@
       "timestamp_utc": "2026-10-12T12:12:40.000Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N5.followup",
       "state_after": "N5.followup",
       "payload": {
@@ -3604,7 +3676,7 @@
       "timestamp_utc": "2026-10-12T12:13:00.000Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N5.followup",
       "state_after": "N5.followup",
       "payload": {
@@ -3624,7 +3696,7 @@
       "timestamp_utc": "2026-10-12T12:13:00.000Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N5.followup",
       "state_after": "N5.followup",
       "payload": {
@@ -3668,7 +3740,7 @@
       "timestamp_utc": "2026-10-12T12:13:20.000Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N5.followup",
       "state_after": "N5.followup",
       "payload": {
@@ -3693,7 +3765,7 @@
       "timestamp_utc": "2026-10-12T12:13:40.000Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N5.followup",
       "state_after": "N5.followup",
       "payload": {
@@ -3716,7 +3788,7 @@
       "timestamp_utc": "2026-10-12T12:14:00.000Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N5.followup",
       "state_after": "N5.followup",
       "payload": {
@@ -3727,7 +3799,7 @@
             "label": "Other authored scenario",
             "branch_id": "B2",
             "action": "Short monitored period of recumbency and wound observation",
-            "consequence": "Symptoms and drainage persist and a second decision is required; subsequent lumbar drainage resolves the leak with a modestly longer stay."
+            "consequence": "Symptoms and drainage persist and a second decision is required. Subsequent lumbar drainage resolves the leak with a modestly longer stay; re-exploration at that point also resolves it, with an additional operation and a longer stay. Further observation has no authored consequence."
           },
           {
             "label": "Other authored scenario",
@@ -3739,7 +3811,68 @@
             "label": "Other authored scenario",
             "branch_id": "B4",
             "action": "Defer targeted treatment despite continuing drainage",
-            "consequence": "The collection and symptoms persist, requiring reassessment. A detailed outcome after reassessment is not authored in this case."
+            "consequence": "The collection and symptoms persist, requiring reassessment. Subsequent lumbar drainage resolves the leak with a longer stay; re-exploration resolves it with an additional operation and a longer stay. Further delay has no authored consequence."
+          }
+        ],
+        "faculty_perspective": {
+          "heading": "Faculty perspective",
+          "intro": "One experienced view of this case, offered for reflection. It is not an answer key, and thoughtful surgeons may reasonably differ.",
+          "sections": [
+            {
+              "title": "The clinical picture",
+              "text": "Elena's leg-dominant symptoms, provoked by standing and walking and relieved by flexion, describe neurogenic claudication. The subtle right EHL weakness and dorsal-foot sensory change point to the right L5 root. Present pulses and a negative straight-leg raise help keep vascular claudication and a disc herniation lower on the list. Much of the diagnosis is available before any imaging."
+            },
+            {
+              "title": "Position matters",
+              "text": "Translation at L4-L5 was 4.5 mm standing, 6.0 mm in flexion, 3.0 mm in extension, and 2.5 mm on supine MRI. A supine study alone underestimates the slip under load. Facet effusions and the 8-degree angular change raise the question of instability, while the absent vacuum phenomenon and partially preserved disc height point the other way. No single threshold settles it."
+            },
+            {
+              "title": "Decompression with or without fusion",
+              "text": "Reasonable surgeons disagree here, and the published trials have not converged. A useful question is what the decompression itself will do to stability, and how much the remaining motion matters for this patient. Her wish to avoid an extensive operation, her mild osteopenia and her preserved alignment all belong in that conversation. A clearly recorded threshold for later fusion is as important as the initial choice."
+            },
+            {
+              "title": "Complementary tests",
+              "text": "The EMG and the earlier right L5 block are concordant with the clinical and imaging picture, but neither is definitive. They support a decision; they do not make it."
+            },
+            {
+              "title": "The durotomy",
+              "text": "A recognized small defect is best repaired at once, with a watertight closure and a deliberate check before leaving the field. The more useful habit is to plan the postoperative watch at that moment: what you will ask nursing to report, and what would prompt imaging."
+            },
+            {
+              "title": "Day 3",
+              "text": "Orthostatic headache with clear drainage after a known durotomy points strongly to a CSF leak. The task is to confirm it, exclude infection and a compressive collection, and choose a response proportionate to the findings. Observation, lumbar drainage and early re-exploration each have a place. They differ mainly in burden and in how quickly they settle the problem."
+            },
+            {
+              "title": "Across the case",
+              "text": "Notice where your confidence moved, and whether new information or habit moved it. That is the most transferable lesson of a case like this."
+            }
+          ]
+        },
+        "reading_list": [
+          {
+            "citation": "Weinstein JN, et al. Surgical versus nonsurgical treatment for lumbar degenerative spondylolisthesis. N Engl J Med. 2007;356(22):2257-70.",
+            "url": "https://doi.org/10.1056/NEJMoa070302",
+            "note": "Compares operative and nonoperative care for degenerative spondylolisthesis with stenosis."
+          },
+          {
+            "citation": "Ghogawala Z, et al. Laminectomy plus fusion versus laminectomy alone for lumbar spondylolisthesis. N Engl J Med. 2016;374(15):1424-34.",
+            "url": "https://doi.org/10.1056/NEJMoa1508788",
+            "note": "Randomized comparison of decompression with and without fusion in stable degenerative spondylolisthesis."
+          },
+          {
+            "citation": "Försth P, et al. A randomized, controlled trial of fusion surgery for lumbar spinal stenosis. N Engl J Med. 2016;374(15):1413-23.",
+            "url": "https://doi.org/10.1056/NEJMoa1513721",
+            "note": "Published alongside the previous trial; a randomized trial of adding fusion to decompression for lumbar spinal stenosis."
+          },
+          {
+            "citation": "Austevoll IM, et al. Decompression with or without fusion in degenerative lumbar spondylolisthesis. N Engl J Med. 2021;385(6):526-38.",
+            "url": "https://doi.org/10.1056/NEJMoa2100990",
+            "note": "A more recent randomized comparison of decompression with and without fusion."
+          },
+          {
+            "citation": "Chaput C, et al. The significance of increased fluid signal on magnetic resonance imaging in lumbar facets in relationship to degenerative spondylolisthesis. Spine. 2007;32(17):1883-7.",
+            "url": "https://doi.org/10.1097/brs.0b013e318113271a",
+            "note": "Examines the relationship between facet fluid signal on MRI and degenerative spondylolisthesis."
           }
         ]
       }
@@ -3754,7 +3887,7 @@
       "timestamp_utc": "2026-10-12T12:14:00.000Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N5.followup",
       "state_after": "N5.debrief",
       "payload": {
@@ -3772,7 +3905,7 @@
       "timestamp_utc": "2026-10-12T12:14:20.000Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N5.debrief",
       "state_after": "N5.debrief",
       "payload": {
@@ -3793,7 +3926,7 @@
       "timestamp_utc": "2026-10-12T12:14:40.000Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
-      "content_version": "edt-lum-dummy-001-handoff-1.0",
+      "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "N5.debrief",
       "state_after": "N5.debrief",
       "payload": {
@@ -3805,6 +3938,6 @@
     "event_count": 96,
     "first_sequence": 1,
     "last_sequence": 96,
-    "checksum_fnv1a": "40b8cf73"
+    "checksum_fnv1a": "f0556768"
   }
 }

@@ -2,6 +2,7 @@
 // It never reads case content, never interprets results, and cannot change clinical state.
 // It asks at most one focused question at a time and is often silent.
 import type { TutorAdapter, TutorContext, TutorMode, TutorOutput } from './contract.ts';
+import { casePromptFor, casePromptOnRelease, casePromptOnStage, type CasePrompt } from './casePrompts.ts';
 
 export const NODE_PROMPT_BUDGET = 3; // additional prompts per node before a decision
 export const CYCLE_PROMPT_BUDGET = 2; // additional prompts per investigation cycle
@@ -51,6 +52,11 @@ function out(mode: TutorMode, message: string, ctx: TutorContext): TutorOutput {
   return { mode, message, grounding_ids: grounding, requires_human_review: false };
 }
 
+function caseOut(p: CasePrompt, ctx: TutorContext): TutorOutput {
+  const o = out(p.mode, p.text, ctx);
+  return { ...o, grounding_ids: [...o.grounding_ids, `prompt:${p.id}`] };
+}
+
 function withinBudget(ctx: TutorContext): boolean {
   if (ctx.probesInNode >= NODE_PROMPT_BUDGET) return false;
   if ((ctx.trigger.kind === 'report_released' || ctx.openCycleInvestigationId) && ctx.probesInCycle >= CYCLE_PROMPT_BUDGET) return false;
@@ -58,7 +64,7 @@ function withinBudget(ctx: TutorContext): boolean {
 }
 
 export class ScriptedTutor implements TutorAdapter {
-  readonly id = 'scripted-tutor-1.0';
+  readonly id = 'scripted-tutor-1.1';
   readonly label = 'Scripted tutor prototype';
 
   respond(ctx: TutorContext): TutorOutput | null {
@@ -75,12 +81,20 @@ export class ScriptedTutor implements TutorAdapter {
       case 'report_released':
         // Restraint: at most one unrequested prompt per node; later results get silence.
         if (ctx.preference !== 'auto' || !withinBudget(ctx) || ctx.probesInNode > 0) return null;
+        {
+          const cp = casePromptOnRelease(ctx, t.investigationId);
+          if (cp) return caseOut(cp, ctx);
+        }
         if (t.variant === 'image_gate') {
           return out('integrate', 'Compare the report with your own reading. Where do they differ, and does any difference matter for your working model?', ctx);
         }
         return out('integrate', 'How much weight should this result carry relative to the clinical picture, and why?', ctx);
       case 'stage_entered':
         if (ctx.preference !== 'auto' || !withinBudget(ctx)) return null;
+        {
+          const cp = casePromptOnStage(ctx, t.stage);
+          if (cp) return caseOut(cp, ctx);
+        }
         if (t.stage === 'N3.recommendation') return out('alternative', prompt('alternative', 'N3'), ctx);
         return null;
       case 'support_requested': {
@@ -88,6 +102,10 @@ export class ScriptedTutor implements TutorAdapter {
           return out('orientation', 'Take a moment with your own reasoning here. Your working model, the chart, and the released results remain available.', ctx);
         }
         if (t.mode === 'orientation' || t.mode === 'boundary') return null;
+        {
+          const cp = casePromptFor(ctx, t.mode);
+          if (cp) return caseOut(cp, ctx);
+        }
         if (t.mode === 'integrate' && ctx.releasedInvestigationIds.length === 0) {
           return out('support', prompt('support', ctx.node), ctx);
         }
@@ -111,6 +129,7 @@ export class ScriptedTutor implements TutorAdapter {
         { mode: 'discriminate', label: 'Challenge my hypothesis' },
       ];
       if (ctx.releasedInvestigationIds.length > 0) opts.push({ mode: 'integrate', label: 'Integrate a result' });
+      else if (s === 'N2.workup') opts.push({ mode: 'threshold', label: 'Prioritize the next test' });
       return opts;
     }
     if (s.startsWith('N3')) {
@@ -120,7 +139,9 @@ export class ScriptedTutor implements TutorAdapter {
         { mode: 'threshold', label: 'Set a change threshold' },
       ];
     }
-    if (s === 'N4.durotomy_proposal' || s === 'N4.pod3_reassessment') {
+    // Silent at the intraoperative checkpoint: any prompt there could hint at what follows.
+    if (s === 'N4.durotomy_proposal' || s === 'N4.durotomy_proposal_committed') return [];
+    if (s === 'N4.pod3_reassessment') {
       return [
         { mode: 'clarify', label: 'Clarify the problem' },
         { mode: 'discriminate', label: 'Separate explanations' },

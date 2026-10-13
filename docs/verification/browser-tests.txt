@@ -2,105 +2,111 @@ TAP version 13
 # Subtest: AT01/AT21 landing, N1 and N2 DOM (text, attributes, titles) contain no future facts
 ok 1 - AT01/AT21 landing, N1 and N2 DOM (text, attributes, titles) contain no future facts
   ---
-  duration_ms: 1075.098508
+  duration_ms: 1485.654341
   type: 'test'
   ...
 # Subtest: Reference B1 walkthrough through UI, export verified against the on-screen trace (AT15, AT25, AT29)
 ok 2 - Reference B1 walkthrough through UI, export verified against the on-screen trace (AT15, AT25, AT29)
   ---
-  duration_ms: 7022.303535
+  duration_ms: 6448.720521
   type: 'test'
   ...
 # Subtest: Fusion recommendation stays distinct from the disclosed canonical continuation (AT11, AT12)
 ok 3 - Fusion recommendation stays distinct from the disclosed canonical continuation (AT11, AT12)
   ---
-  duration_ms: 913.483357
+  duration_ms: 1249.860365
   type: 'test'
   ...
 # Subtest: B2 rescue walkthrough (AT16)
 ok 4 - B2 rescue walkthrough (AT16)
   ---
-  duration_ms: 2727.092938
+  duration_ms: 2864.757637
   type: 'test'
   ...
 # Subtest: B3 walkthrough (AT17)
 ok 5 - B3 walkthrough (AT17)
   ---
-  duration_ms: 2463.379317
+  duration_ms: 2350.824248
+  type: 'test'
+  ...
+# Subtest: B4 then drainage resolves through the authored continuation (D5)
+ok 6 - B4 then drainage resolves through the authored continuation (D5)
+  ---
+  duration_ms: 2544.434761
   type: 'test'
   ...
 # Subtest: B4 review-pause walkthrough (AT18) and safe pause content (AT19)
-ok 6 - B4 review-pause walkthrough (AT18) and safe pause content (AT19)
+ok 7 - B4 review-pause walkthrough (AT18) and safe pause content (AT19)
   ---
-  duration_ms: 2535.2489
+  duration_ms: 2642.246496
   type: 'test'
   ...
 # Subtest: Unsupported postoperative action pauses for review (AT19)
-ok 7 - Unsupported postoperative action pauses for review (AT19)
+ok 8 - Unsupported postoperative action pauses for review (AT19)
   ---
-  duration_ms: 2350.956272
+  duration_ms: 2377.244465
   type: 'test'
   ...
 # Subtest: Unsupported study, repeat request and placeholder images are explicit (AT08, AT09, AT22)
-ok 8 - Unsupported study, repeat request and placeholder images are explicit (AT08, AT09, AT22)
+ok 9 - Unsupported study, repeat request and placeholder images are explicit (AT08, AT09, AT22)
   ---
-  duration_ms: 1265.588971
+  duration_ms: 1321.267674
   type: 'test'
   ...
 # Subtest: Text-only route is explicit in UI and export (AT22)
-ok 9 - Text-only route is explicit in UI and export (AT22)
+ok 10 - Text-only route is explicit in UI and export (AT22)
   ---
-  duration_ms: 780.985697
+  duration_ms: 1106.916381
   type: 'test'
   ...
 # Subtest: Refresh after interpretation restores gates, versions and drafts (AT23)
-ok 10 - Refresh after interpretation restores gates, versions and drafts (AT23)
+ok 11 - Refresh after interpretation restores gates, versions and drafts (AT23)
   ---
-  duration_ms: 1206.850462
+  duration_ms: 1406.043885
   type: 'test'
   ...
 # Subtest: Persistence failure prevents an unrecorded reveal (AT24)
-ok 11 - Persistence failure prevents an unrecorded reveal (AT24)
+ok 12 - Persistence failure prevents an unrecorded reveal (AT24)
   ---
-  duration_ms: 913.54341
+  duration_ms: 1085.182958
   type: 'test'
   ...
 # Subtest: Restart creates a distinct session and preserves the prior record (AT27)
-ok 12 - Restart creates a distinct session and preserves the prior record (AT27)
+ok 13 - Restart creates a distinct session and preserves the prior record (AT27)
   ---
-  duration_ms: 770.950103
+  duration_ms: 1398.378963
   type: 'test'
   ...
 # Subtest: Demonstration session is separate and labelled
-ok 13 - Demonstration session is separate and labelled
+ok 14 - Demonstration session is separate and labelled
   ---
-  duration_ms: 339.010477
+  duration_ms: 255.129943
   type: 'test'
   ...
 # Subtest: AT31 keyboard-only start, assessment, request and interpretation at desktop 1280
-ok 14 - AT31 keyboard-only start, assessment, request and interpretation at desktop 1280
+ok 15 - AT31 keyboard-only start, assessment, request and interpretation at desktop 1280
   ---
-  duration_ms: 867.724932
+  duration_ms: 872.668245
   type: 'test'
   ...
 # Subtest: AT31 keyboard-only start, assessment, request and interpretation at tablet landscape 1024
-ok 15 - AT31 keyboard-only start, assessment, request and interpretation at tablet landscape 1024
+ok 16 - AT31 keyboard-only start, assessment, request and interpretation at tablet landscape 1024
   ---
-  duration_ms: 1198.447263
+  duration_ms: 903.824231
   type: 'test'
   ...
 # Subtest: Image viewer keyboard navigation and full workflow at 1440
-ok 16 - Image viewer keyboard navigation and full workflow at 1440
+ok 17 - Image viewer keyboard navigation and full workflow at 1440
   ---
-  duration_ms: 897.935147
+  duration_ms: 1137.773734
   type: 'test'
   ...
-1..16
-# tests 16
+1..17
+# tests 17
 # suites 0
-# pass 16
+# pass 17
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 28032.785836
+# duration_ms 32059.264887

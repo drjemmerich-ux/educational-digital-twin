@@ -91,3 +91,40 @@ export function nodeOf(stage: string): 'N1' | 'N2' | 'N3' | 'N4' | 'N5' | 'REVIE
   if (n === 'N1' || n === 'N2' || n === 'N3' || n === 'N4' || n === 'N5' || n === 'REVIEW') return n;
   return 'START';
 }
+
+// ---------------------------------------------------------------------------
+// Participant information and consent (decision 17; ethics package sections 4-5).
+// Bracketed placeholders are completed before the pilot opens.
+// ---------------------------------------------------------------------------
+export const CONSENT_VERSION = 'consent-1.0-draft (2026-10-13)';
+
+export const PARTICIPANT_INFORMATION: { heading: string; text: string }[] = [
+  { heading: 'What is the study about?', text: 'We are testing whether a simulated patient encounter is easy to use, clinically realistic, and able to record how a surgeon reasons through a case. We are not testing you.' },
+  { heading: 'What will I do?', text: 'You will manage one fictional patient in a single online session of about 30 minutes. Before each result is shown, you will write why you want it and what you expect. At the end, you will see a summary of your own reasoning.' },
+  { heading: 'Is the patient real?', text: 'No. The patient, images and outcomes are entirely fictional. Nothing in the simulation is clinical advice.' },
+  { heading: 'Will I be graded?', text: 'No. There is no score, grade or pass mark. Nothing you write will be shared with your training program, your employer or any professional organization.' },
+  { heading: 'Is it anonymous?', text: 'Yes. You enter through a link with a random code. We do not ask for your name, email or institution. The only background question is your training level. Please do not write your name or other identifying details in your answers.' },
+  { heading: 'What is recorded?', text: 'Your written reasoning, your choices, your confidence ratings and the time taken. Results will be reported only in aggregate.' },
+  { heading: 'Where are the data kept?', text: 'In this preview, in your own browser only. In the pilot, on a secure server in the European Union, accessible only to the investigator, for [number] years.' },
+  { heading: 'Is artificial intelligence used?', text: 'Your answers are not processed by any AI system in this study. The tutor in the simulation asks fixed, pre-written questions.' },
+  { heading: 'Do I have to take part?', text: 'No. Participation is entirely voluntary. You can stop at any time without giving a reason, with no consequence of any kind.' },
+  { heading: 'Can I withdraw my data?', text: 'Yes. Send the random code shown on screen to the coordinator by [date], and your data will be deleted.' },
+  { heading: 'Questions?', text: 'Contact the coordinator, [name], at [email], or the investigator, Dr Juan P. Emmerich, at [email].' },
+];
+
+export const CONSENT_STATEMENTS: { id: string; text: string }[] = [
+  { id: 'c1', text: 'I have read the participant information and had the opportunity to ask questions.' },
+  { id: 'c2', text: 'I understand that participation is voluntary and that I can stop at any time without giving a reason and without any consequence.' },
+  { id: 'c3', text: 'I understand that the patient is fictional and that the simulation does not give clinical advice.' },
+  { id: 'c4', text: 'I understand that my answers are anonymous and will not be shared with my training program, employer or any professional organization.' },
+  { id: 'c5', text: 'I agree not to include my name or other identifying details in my written answers.' },
+  { id: 'c6', text: 'I understand that my anonymous answers may be reported in aggregated form at scientific meetings or in publications.' },
+  { id: 'c7', text: 'I understand that I can ask for my data to be deleted by sending my random code to the coordinator by [date].' },
+  { id: 'c8', text: 'I am a physician aged 18 or older currently in spine-related specialty training.' },
+];
+
+export const TRAINING_LEVELS: { id: string; label: string }[] = [
+  { id: 'resident_1_3', label: 'Resident, years 1 to 3' },
+  { id: 'resident_4_plus', label: 'Resident, year 4 or later' },
+  { id: 'fellow', label: 'Fellow' },
+];

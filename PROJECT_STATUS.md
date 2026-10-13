@@ -2,10 +2,10 @@
 
 | Item | Value |
 | --- | --- |
-| Current version | Prototype 1.5 (`ui-1.5.0`, `engine-1.5.0`, content `edt-lum-dummy-001-handoff-1.0`) |
+| Current version | Prototype 1.6 (`ui-1.6.0`, `engine-1.6.0`, content `edt-lum-dummy-001-handoff-1.1`, approved 13 October 2026) |
 | Case | `EDT-LUM-DUMMY-001`, fictional lumbar degenerative spondylolisthesis sandbox |
-| Updated | 12 October 2026 |
-| Stage | Ready for preliminary review of workflow; images pending |
+| Updated | 13 October 2026 |
+| Stage | Clinical content locked and implemented; images and server deployment pending |
 
 ## Completed
 
@@ -26,11 +26,23 @@
 | Three-column clinical workspace (1024 px and above), drawers below 1024 px | Implemented, tested at 420–1440 px |
 | Demonstration session (separate, labelled) | Implemented, tested |
 
+## Added in 1.6
+
+| Component | Status |
+| --- | --- |
+| Expert decisions 1-21 (patient Elena Marsh, CT wording, collection axes, laboratory and CT timing, block record) | Implemented, tested |
+| Authored continuations after persistence (observation then re-exploration; deferral then drainage or re-exploration) | Implemented, tested |
+| Participant information and consent screen, training level, consent recorded in the session | Implemented, tested (text contains bracketed placeholders) |
+| Neutral debrief statement for drainage without a postoperative MRI | Implemented, tested |
+| Faculty perspective and five verified references (debrief only) | Implemented, tested |
+| Twelve case-specific tutor prompts with release conditions; tutor silent at the intraoperative checkpoint | Implemented, tested |
+
 ## Placeholder or awaiting expert review
 
 - **Images:** all 43 packages are `Planned`; the viewer shows labelled technical placeholders. No image is clinically validated.
 - **Portrait, body map, timeline diagram, annotated teaching copies:** placeholders or not shown.
-- **Clinical wording questions C1–C11:** see `docs/DECISION_LOG.md` (postoperative CT and laboratory timing, collection axes, CT coronal wording, B1 without MRI, note wording).
+- **Consent text placeholders:** retention period, withdrawal date, coordinator name and emails.
+- **Reading list:** durotomy and standing-versus-supine references not yet supplied or verified.
 
 ## Not verified
 
@@ -42,10 +54,10 @@
 
 ## Tests
 
-Engine 33/33 pass · browser 16/16 pass · reference export replay pass. Details in `docs/TEST_REPORT.md`.
+Engine 38/38 pass · browser 17/17 pass · reference export replay pass. Details in `docs/TEST_REPORT.md`.
 
 ## Next step
 
-1. Expert review of the decision-log questions C1–C11 and of all case text in `src/case/caseContent.ts`.
-2. Production and review of image batch 1 (XR-N2-002, XR-N2-003, XR-N2-004, MRI-N2-001, MRI-N2-002, MRI-N2-004, CT-N2-002), then replacement by asset ID.
-3. Two or three preliminary fellow walkthroughs with exported sessions.
+1. Image production pack for ChatGPT, batch 1 first (decision 15).
+2. Account setup by Dr Emmerich: GitHub, Supabase (Frankfurt), Vercel; then the server engine, personal links and facilitator page.
+3. Complete the consent placeholders and name a coordinator.

@@ -67,7 +67,7 @@ export function ChartPanel() {
     <nav className="chart" aria-label="Patient chart">
       <section className="chart-id">
         <div className="portrait" role="img" aria-label="Patient portrait placeholder (CLIN-N1-001 pending)">
-          <span aria-hidden="true">A</span>
+          <span aria-hidden="true">{p.patient.displayName.split(' ').map((w) => w[0]).join('')}</span>
         </div>
         <div>
           <h2>{p.patient.displayName}</h2>

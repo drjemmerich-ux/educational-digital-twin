@@ -8,7 +8,9 @@ import {
   BRANCH_STEPS,
   BRANCH_SUMMARIES,
   CLINICAL_UPDATES,
+  FACULTY_PERSPECTIVE,
   FOLLOW_UP,
+  READING_LIST,
   OPERATIVE,
   PRESENTATION,
   RESULTS,
@@ -16,16 +18,21 @@ import {
 } from '../case/caseContent.ts';
 import {
   CANONICAL_CONTINUATION_COPY,
+  CONSENT_STATEMENTS,
+  CONSENT_VERSION,
+  TRAINING_LEVELS,
   EXPERT_REVIEW_COPY,
   POSTOP_ACTION_OPTIONS,
   STRATEGY_CATEGORIES,
   getInvestigationDef,
 } from '../case/publicCatalogue.ts';
 import type { BranchId, BranchOptionId, InvestigationDef, SimTime } from '../case/types.ts';
+import type { CourseId } from '../case/caseContent.ts';
 import { CURRENT_VERSIONS } from '../case/versions.ts';
 import { emptyInvestigation } from './reducer.ts';
 import { contextStageOf } from './stageRules.ts';
 import type {
+  ConsentRecord,
   EffectOnModel,
   EventDraft,
   EventPayloads,
@@ -148,11 +155,38 @@ function releasedReport(invId: string): ReleasedReport {
 // ---------------------------------------------------------------------------
 export function startSession(
   state: SessionState,
-  input: { participant_code: string; imaging_route: ImagingRoute; session_kind: SessionKind },
+  input: {
+    participant_code: string;
+    imaging_route: ImagingRoute;
+    session_kind: SessionKind;
+    consent_statement_ids?: string[];
+    training_level?: string | null;
+  },
 ): CommandResult {
   if (state.stage !== 'START') return reject('WRONG_STAGE', 'This session has already started.');
+  let consent: ConsentRecord | null = null;
+  let training: string | null = null;
+  if (input.session_kind === 'participant') {
+    const given = new Set(input.consent_statement_ids ?? []);
+    const missing = CONSENT_STATEMENTS.filter((c) => !given.has(c.id));
+    if (missing.length) return reject('CONSENT_REQUIRED', 'Please confirm every consent statement to start the session.');
+    if (!TRAINING_LEVELS.some((t) => t.id === input.training_level)) return reject('MISSING_FIELD', 'Select your training level.');
+    consent = { consent_version: CONSENT_VERSION, statement_ids: CONSENT_STATEMENTS.map((c) => c.id), accepted: true };
+    training = input.training_level ?? null;
+  }
   return ok([
-    { event_type: 'session_started', source: 'system', payload: { ...input, participant_code: input.participant_code.trim(), versions: CURRENT_VERSIONS } },
+    {
+      event_type: 'session_started',
+      source: 'system',
+      payload: {
+        participant_code: input.participant_code.trim(),
+        imaging_route: input.imaging_route,
+        session_kind: input.session_kind,
+        versions: CURRENT_VERSIONS,
+        consent,
+        training_level: training,
+      },
+    },
     engine('presentation_released', { presentation: PRESENTATION, sim_time: SIM.T0 }),
     transition('START', 'N1.assessment', SIM.T0),
   ]);
@@ -565,6 +599,21 @@ const ADVANCE: Partial<Record<Stage, { to: Stage; step: string; branch: BranchId
   'N4.B2.rescue_drainage': { to: 'N4.B2.resolved', step: 'B2_resolved', branch: 'B2' },
   'N4.B3.reexploration': { to: 'N4.B3.resolved', step: 'B3_resolved', branch: 'B3' },
   'N4.B4.deferred': { to: 'N4.B4.persistence', step: 'B4_persistence', branch: 'B4' },
+  'N4.B2.rescue_reexploration': { to: 'N4.B2.resolved_reexplore', step: 'B2_reexplore_resolved', branch: 'B2' },
+  'N4.B4.rescue_drainage': { to: 'N4.B4.resolved_drain', step: 'B4_drain_resolved', branch: 'B4' },
+  'N4.B4.rescue_reexploration': { to: 'N4.B4.resolved_reexplore', step: 'B4_reexplore_resolved', branch: 'B4' },
+};
+
+/** Authored second decisions after persistence (spec B2 rescue + amendment D5). Anything else pauses. */
+const RESCUES: Partial<Record<Stage, Partial<Record<BranchOptionId, { to: Stage; step: string }>>>> = {
+  'N4.B2.persistence': {
+    opt_drain: { to: 'N4.B2.rescue_drainage', step: 'B2_rescue_start' },
+    opt_reexplore: { to: 'N4.B2.rescue_reexploration', step: 'B2_reexplore_start' },
+  },
+  'N4.B4.persistence': {
+    opt_drain: { to: 'N4.B4.rescue_drainage', step: 'B4_drain_start' },
+    opt_reexplore: { to: 'N4.B4.rescue_reexploration', step: 'B4_reexplore_start' },
+  },
 };
 
 export function advanceBranch(state: SessionState): CommandResult {
@@ -590,22 +639,27 @@ export function commitSecondDecision(state: SessionState, input: PlanInput & { o
       decision_point: 'reassessment_after_persistence',
     }),
   ];
-  if (state.stage === 'N4.B2.persistence' && input.option_id === 'opt_drain') {
-    const step = BRANCH_STEPS.B2_rescue_start;
+  const branch: BranchId = state.stage === 'N4.B2.persistence' ? 'B2' : 'B4';
+  const rescue = RESCUES[state.stage]?.[input.option_id];
+  if (rescue) {
+    const step = BRANCH_STEPS[rescue.step];
     if (!step) return reject('NO_AUTHORED_CONSEQUENCE', 'Missing authored consequence.');
     drafts.push(
-      learner('postop_branch_confirmed', { option_id: 'opt_drain', branch_id: 'B2', postop_mri_released_before_choice: invRecord(state, 'postop_mri').status !== 'AVAILABLE', decision_point: 'reassessment_after_persistence' }),
-      transition('N4.B2.persistence', 'N4.B2.rescue_drainage'),
-      engine('branch_consequence_released', { branch_id: 'B2', step }),
+      learner('postop_branch_confirmed', {
+        option_id: input.option_id,
+        branch_id: branch,
+        postop_mri_released_before_choice: invRecord(state, 'postop_mri').status !== 'AVAILABLE',
+        decision_point: 'reassessment_after_persistence',
+      }),
+      transition(state.stage, rescue.to),
+      engine('branch_consequence_released', { branch_id: branch, step }),
     );
     return ok(drafts);
   }
   const reason =
-    state.stage === 'N4.B4.persistence'
-      ? 'A detailed outcome after reassessment of the deferred course is not authored in this case.'
-      : input.option_id === 'opt_observe'
-        ? 'Repeated observation has no authored subsequent consequence in this case.'
-        : 'The selected action after persistent symptoms has no authored consequence for this course.';
+    input.option_id === 'opt_observe' || input.option_id === 'opt_defer'
+      ? 'Further observation or deferral after persistent symptoms has no authored subsequent consequence in this case.'
+      : 'The selected action after persistent symptoms has no authored consequence for this course.';
   drafts.push(
     learner('postop_action_unsupported', { option_id: input.option_id, plan_version_id: planId, decision_point: 'reassessment_after_persistence' }),
     ...enterReview(state, reason, { ...planPreserved(input), selected_action: input.option_id }),
@@ -617,10 +671,20 @@ export function commitSecondDecision(state: SessionState, input: PlanInput & { o
 // N5
 // ---------------------------------------------------------------------------
 export function advanceToFollowUp(state: SessionState): CommandResult {
-  const map: Partial<Record<Stage, 'B1' | 'B2' | 'B3'>> = { 'N4.B1.resolved': 'B1', 'N4.B2.resolved': 'B2', 'N4.B3.resolved': 'B3' };
-  const b = map[state.stage];
-  if (!b) return reject('WRONG_STAGE', 'Follow-up is not available from here.');
-  return ok([transition(state.stage, 'N5.followup', SIM.W6), engine('followup_released', { branch_id: b, followup: FOLLOW_UP[b] })]);
+  const map: Partial<Record<Stage, { branch: BranchId; course: CourseId }>> = {
+    'N4.B1.resolved': { branch: 'B1', course: 'B1' },
+    'N4.B2.resolved': { branch: 'B2', course: 'B2' },
+    'N4.B3.resolved': { branch: 'B3', course: 'B3' },
+    'N4.B2.resolved_reexplore': { branch: 'B2', course: 'B2_reexplore' },
+    'N4.B4.resolved_drain': { branch: 'B4', course: 'B4_drain' },
+    'N4.B4.resolved_reexplore': { branch: 'B4', course: 'B4_reexplore' },
+  };
+  const m = map[state.stage];
+  if (!m) return reject('WRONG_STAGE', 'Follow-up is not available from here.');
+  return ok([
+    transition(state.stage, 'N5.followup', SIM.W6),
+    engine('followup_released', { branch_id: m.branch, course: m.course, followup: FOLLOW_UP[m.course] }),
+  ]);
 }
 
 export function enterDebrief(state: SessionState): CommandResult {
@@ -635,7 +699,7 @@ export function enterDebrief(state: SessionState): CommandResult {
     .filter((b) => b !== experienced && b !== 'B1')
     .map((b) => ({ label: 'Other authored scenario' as const, branch_id: b, ...BRANCH_SUMMARIES[b] }));
   return ok([
-    engine('comparisons_released', { experienced_branch: experienced, reference, others }),
+    engine('comparisons_released', { experienced_branch: experienced, reference, others, faculty_perspective: FACULTY_PERSPECTIVE, reading_list: READING_LIST }),
     transition(state.stage, 'N5.debrief'),
   ]);
 }

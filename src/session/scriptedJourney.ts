@@ -3,7 +3,7 @@
 // and is never shown as learner reasoning in a normal participant session.
 import * as C from '../engine/commands.ts';
 import type { BranchOptionId } from '../case/types.ts';
-import type { StrategyCategory } from '../case/publicCatalogue.ts';
+import { CONSENT_STATEMENTS, type StrategyCategory } from '../case/publicCatalogue.ts';
 import type { ImagingRoute, RecommendationInput, SessionKind } from '../engine/types.ts';
 import { ScriptedTutor } from '../tutor/scriptedTutor.ts';
 import { requestSupport, runTutor } from '../tutor/tutorService.ts';
@@ -63,7 +63,20 @@ export function sampleRecommendation(category: StrategyCategory): Recommendation
 
 export function runJourney(ctl: SessionController, o: JourneyOptions): void {
   const tutor = new ScriptedTutor();
-  must(ctl.dispatch(C.startSession, { participant_code: o.kind === 'demonstration' ? 'DEMO' : 'TEST-01', imaging_route: o.route, session_kind: o.kind }, o.sessionId), 'start');
+  must(
+    ctl.dispatch(
+      C.startSession,
+      {
+        participant_code: o.kind === 'demonstration' ? 'DEMO' : 'TEST-01',
+        imaging_route: o.route,
+        session_kind: o.kind,
+        consent_statement_ids: o.kind === 'participant' ? CONSENT_STATEMENTS.map((c) => c.id) : undefined,
+        training_level: o.kind === 'participant' ? 'fellow' : null,
+      },
+      o.sessionId,
+    ),
+    'start',
+  );
   if (o.withTutor) runTutor(ctl, tutor, { kind: 'session_started' });
   must(
     ctl.dispatch(C.commitInitialAssessment, {

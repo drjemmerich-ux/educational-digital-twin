@@ -30,6 +30,8 @@ export interface TutorContext {
   interpretedInvestigationIds: string[];
   openCycleInvestigationId: string | null;
   probesInNode: number;
+  /** Case-specific prompt ids already shown in this session. */
+  usedPromptIds: string[];
   probesInCycle: number;
   committed: {
     hasInitialAssessment: boolean;

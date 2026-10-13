@@ -14,17 +14,19 @@ import { SessionController, sequentialIds } from '../../src/session/controller.t
 import { ScriptedTutor } from '../../src/tutor/scriptedTutor.ts';
 import { requestSupport, runTutor } from '../../src/tutor/tutorService.ts';
 import { validateTutorOutput } from '../../src/tutor/contract.ts';
+import { buildTutorContext } from '../../src/tutor/context.ts';
+import { CASE_PROMPTS, casePromptFor } from '../../src/tutor/casePrompts.ts';
 import { PRESENTATION, RESULTS, OPERATIVE, CLINICAL_UPDATES, BRANCH_STEPS, FOLLOW_UP, BRANCH_SUMMARIES } from '../../src/case/caseContent.ts';
 import { ASSET_MANIFEST } from '../../src/case/assetManifest.ts';
 import type { SessionState } from '../../src/engine/types.ts';
-import { HIDDEN_FUTURE_TERMS, journey, newController, startedAtWorkup } from './helpers.ts';
+import { CONSENT_STATEMENTS, HIDDEN_FUTURE_TERMS, journey, newController, startedAtWorkup } from './helpers.ts';
 
 const types = (ctl: SessionController) => ctl.log.map((e) => e.event_type);
 const json = (x: unknown) => JSON.stringify(x);
 
 test('AT01 landing and N1 reveal no diagnosis, imaging result, operation, complication, or outcome', () => {
   const ctl = newController();
-  ctl.dispatch(C.startSession, { participant_code: '', imaging_route: 'image_gate_placeholder', session_kind: 'participant' }, 's1');
+  ctl.dispatch(C.startSession, { participant_code: '', imaging_route: 'image_gate_placeholder', session_kind: 'participant', consent_statement_ids: CONSENT_STATEMENTS.map((c) => c.id), training_level: 'fellow' }, 's1');
   assert.equal(ctl.state.stage, 'N1.assessment');
   const visible = json(releasedContent(ctl.state)) + json(ctl.state.timeline);
   for (const term of HIDDEN_FUTURE_TERMS) assert.ok(!visible.toLowerCase().includes(term.toLowerCase()), `N1 leaked "${term}"`);
@@ -249,13 +251,83 @@ test('AT17 B3 resolves with added operative burden and no unauthored operative f
   assert.ok(!/found|identified|defect measured|graft|patch/i.test(json(ctl.state.branchSteps)));
 });
 
-test('AT18 B4 exposes persistence and enters review for an unauthored rescue outcome', () => {
-  const ctl = journey({ firstAction: 'opt_defer', secondAction: 'opt_drain' });
+test('AT18 B4 exposes persistence; further deferral enters review for an unauthored outcome', () => {
+  const ctl = journey({ firstAction: 'opt_defer', secondAction: 'opt_defer' });
   assert.ok(ctl.state.branchSteps.some((s) => s.id === 'B4_persistence'));
   assert.equal(ctl.state.reviewPause !== null, true);
   assert.equal(ctl.state.followUp, null);
   assert.equal(ctl.state.plans.length, 2);
   assert.equal(ctl.state.stage, 'N5.debrief');
+});
+
+test('D5 authored continuations: B4 then drainage or re-exploration, B2 then re-exploration resolve without numbers', () => {
+  const cases = [
+    { firstAction: 'opt_defer', secondAction: 'opt_drain', course: 'B4_drain', last: 'B4_drain_resolved', text: /hospital stay was prolonged/ },
+    { firstAction: 'opt_defer', secondAction: 'opt_reexplore', course: 'B4_reexplore', last: 'B4_reexplore_resolved', text: /additional operation and a longer hospital stay/ },
+    { firstAction: 'opt_observe', secondAction: 'opt_reexplore', course: 'B2_reexplore', last: 'B2_reexplore_resolved', text: /additional operation and a longer hospital stay/ },
+  ] as const;
+  for (const c of cases) {
+    const ctl = journey({ firstAction: c.firstAction, secondAction: c.secondAction });
+    const steps = ctl.state.branchSteps;
+    assert.equal(steps[steps.length - 1]!.id, c.last);
+    assert.match(steps[steps.length - 1]!.lines.join(' '), c.text);
+    assert.equal(ctl.state.followUp!.course, c.course);
+    assert.equal(ctl.state.followUp!.followup.measures.length, 0);
+    assert.ok(!/\d+\/10|\d+%|\d+ m\b|reference course/i.test(json(ctl.state.branchSteps) + json(ctl.state.followUp)));
+    assert.equal(ctl.state.completion!.completion_status, 'clinical_pathway_completed');
+  }
+});
+
+test('D17 participant sessions require full consent and a training level; demonstration sessions record none', () => {
+  const ctl = newController();
+  const partial = ctl.dispatch(C.startSession, { participant_code: 'X', imaging_route: 'image_gate_placeholder', session_kind: 'participant', consent_statement_ids: ['c1', 'c2'], training_level: 'fellow' }, 's-c');
+  assert.equal(!partial.ok && partial.code, 'CONSENT_REQUIRED');
+  const noLevel = ctl.dispatch(C.startSession, { participant_code: 'X', imaging_route: 'image_gate_placeholder', session_kind: 'participant', consent_statement_ids: CONSENT_STATEMENTS.map((c) => c.id), training_level: null }, 's-c');
+  assert.equal(noLevel.ok, false);
+  assert.equal(ctl.log.length, 0);
+  const okStart = ctl.dispatch(C.startSession, { participant_code: 'X', imaging_route: 'image_gate_placeholder', session_kind: 'participant', consent_statement_ids: CONSENT_STATEMENTS.map((c) => c.id), training_level: 'fellow' }, 's-c');
+  assert.ok(okStart.ok);
+  const first = ctl.log[0]!;
+  assert.equal(first.event_type, 'session_started');
+  assert.equal(ctl.state.consent!.statement_ids.length, CONSENT_STATEMENTS.length);
+  assert.equal(ctl.state.trainingLevel, 'fellow');
+  const demo = journey({ kind: 'demonstration', stopAt: 'N2' });
+  assert.equal(demo.state.consent, null);
+});
+
+test('D1 drainage without a postoperative MRI is stated neutrally in the debrief', () => {
+  const without = journey({ postopStudies: ['postop_labs'] });
+  assert.ok(narrativeStatements(without.state).includes('You started lumbar drainage without a postoperative MRI.'));
+  const withMri = journey();
+  assert.ok(!narrativeStatements(withMri.state).some((x) => /without a postoperative MRI/.test(x)));
+});
+
+test('D8 and D10 faculty perspective and reading list are released only at the debrief', () => {
+  const mid = journey({ stopAt: 'followup' });
+  assert.ok(!json(buildExport(mid.log)).includes('Faculty perspective'));
+  const done = journey();
+  assert.equal(done.state.comparisons!.faculty_perspective.heading, 'Faculty perspective');
+  assert.equal(done.state.comparisons!.reading_list.length, 5);
+  assert.ok(done.state.comparisons!.reading_list.every((r) => r.url.startsWith('https://doi.org/')));
+});
+
+test('D9 case-specific tutor prompts respect release conditions and stay silent at the checkpoint', () => {
+  const tutor = new ScriptedTutor();
+  const ctl = startedAtWorkup();
+  requestSupport(ctl, tutor, 'threshold');
+  assert.equal(ctl.state.tutor.messages.filter((m) => m.role === 'tutor').pop()!.promptId, '12.3');
+  ctl.dispatch(C.commitRequest, { investigation_id: 'lumbar_mri', rationale: 'r', expectation: 'e', confidence: null });
+  requestSupport(ctl, tutor, 'integrate');
+  assert.notEqual(ctl.state.tutor.messages.filter((m) => m.role === 'tutor').pop()!.promptId, '12.4', '12.4 needs a standing study too');
+  ctl.dispatch(C.commitRequest, { investigation_id: 'standing_lumbar_xr', rationale: 'r', expectation: 'e', confidence: null });
+  const ctxNow = buildTutorContext(ctl.state, { kind: 'support_requested', mode: 'integrate' });
+  assert.equal(casePromptFor(ctxNow, 'integrate')!.id, '12.4');
+  const atCheckpoint = journey({ stopAt: 'N3' });
+  atCheckpoint.dispatch(C.acknowledgeCanonical, undefined);
+  atCheckpoint.dispatch(C.continueProcedure, undefined);
+  assert.equal(atCheckpoint.state.stage, 'N4.durotomy_proposal');
+  assert.deepEqual(tutor.supportOptions(buildTutorContext(atCheckpoint.state, { kind: 'session_started' })), []);
+  for (const p of CASE_PROMPTS) assert.ok(!/pseudomeningocele|durotomy|leak|stenosis|spondylolisthesis|fusion is|decompression is/i.test(p.text), p.id);
 });
 
 test('AT19 an unsupported clinical action pauses without new harm, success, or probabilities', () => {

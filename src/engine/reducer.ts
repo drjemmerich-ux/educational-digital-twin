@@ -8,6 +8,8 @@ export function initialState(): SessionState {
   return {
     sessionId: null,
     participantCode: '',
+    consent: null,
+    trainingLevel: null,
     sessionKind: 'participant',
     imagingRoute: 'image_gate_placeholder',
     versions: null,
@@ -100,6 +102,8 @@ export function applyEvent(state: SessionState, e: AnyEvent): SessionState {
         ...s,
         sessionId: e.session_id,
         participantCode: e.payload.participant_code,
+        consent: e.payload.consent ?? null,
+        trainingLevel: e.payload.training_level ?? null,
         imagingRoute: e.payload.imaging_route,
         sessionKind: e.payload.session_kind,
         versions: e.payload.versions,
@@ -278,7 +282,7 @@ export function applyEvent(state: SessionState, e: AnyEvent): SessionState {
         ...s,
         tutor: {
           ...s.tutor,
-          messages: [...s.tutor.messages, { sequence: e.sequence, role: 'tutor', mode: e.payload.mode, text: e.payload.message, trigger: e.payload.trigger }],
+          messages: [...s.tutor.messages, { sequence: e.sequence, role: 'tutor', mode: e.payload.mode, text: e.payload.message, trigger: e.payload.trigger, promptId: e.payload.grounding_ids.find((g) => g.startsWith('prompt:'))?.slice(7) ?? null }],
           probesByNode: isProbe ? { ...s.tutor.probesByNode, [node]: (s.tutor.probesByNode[node] ?? 0) + 1 } : s.tutor.probesByNode,
           probesByCycle:
             isProbe && cycleKey ? { ...s.tutor.probesByCycle, [cycleKey]: (s.tutor.probesByCycle[cycleKey] ?? 0) + 1 } : s.tutor.probesByCycle,
@@ -290,12 +294,12 @@ export function applyEvent(state: SessionState, e: AnyEvent): SessionState {
     case 'tutor_support_requested':
       return {
         ...s,
-        tutor: { ...s.tutor, messages: [...s.tutor.messages, { sequence: e.sequence, role: 'system', mode: e.payload.mode, text: 'Prompt requested', trigger: e.payload.trigger }] },
+        tutor: { ...s.tutor, messages: [...s.tutor.messages, { sequence: e.sequence, role: 'system', mode: e.payload.mode, text: 'Prompt requested', trigger: e.payload.trigger, promptId: null }] },
       };
     case 'tutor_response':
       return {
         ...s,
-        tutor: { ...s.tutor, messages: [...s.tutor.messages, { sequence: e.sequence, role: 'learner', mode: 'response', text: e.payload.text, trigger: 'learner' }] },
+        tutor: { ...s.tutor, messages: [...s.tutor.messages, { sequence: e.sequence, role: 'learner', mode: 'response', text: e.payload.text, trigger: 'learner', promptId: null }] },
       };
     case 'tutor_preference_changed':
       return { ...s, tutor: { ...s.tutor, preference: e.payload.mode } };

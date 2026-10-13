@@ -31,11 +31,12 @@ export const SIM = {
   B2_RESOLVED: { code: 'B2-resolved', label: 'After the prescribed drainage period (interval not specified in the case)' },
   B3_REASSESS: { code: 'POD4+reop', label: 'After re-exploration (interval not specified in the case)' },
   B4_REASSESS: { code: 'POD4+defer', label: 'At reassessment after deferral (interval not specified in the case)' },
+  RESCUE_RESOLVED: { code: 'rescue-resolved', label: 'After the second treatment (interval not specified in the case)' },
 } satisfies Record<string, SimTime>;
 
 export const PRESENTATION: PresentationSnapshot = {
   patient: {
-    displayName: 'Patient A',
+    displayName: 'Elena Marsh',
     ageYears: 64,
     sex: 'Female',
     occupation: 'Architect, professionally active part-time',
@@ -225,7 +226,7 @@ export const RESULTS: Record<string, InvestigationResult> = {
         heading: 'Findings',
         lines: [
           'Grade I degenerative spondylolisthesis at L4-L5.',
-          'Advanced bilateral L4-L5 facet arthrosis without vacuum phenomenon.',
+          'Mild disc-space narrowing at L4-L5 with advanced bilateral facet arthrosis, without vacuum phenomenon.',
           'No pars defect. No fracture or lytic lesion.',
           'Pedicles are symmetric. No segmentation anomaly.',
           'Mean attenuation at L1 approximately 118 HU.',
@@ -233,7 +234,7 @@ export const RESULTS: Record<string, InvestigationResult> = {
       },
     ],
     accessibleSummary:
-      'Lumbar CT: grade I L4-L5 spondylolisthesis; advanced bilateral facet arthrosis without vacuum phenomenon; no pars defect or fracture; L1 attenuation about 118 HU.',
+      'Lumbar CT: grade I L4-L5 spondylolisthesis; mild L4-L5 disc-space narrowing with advanced bilateral facet arthrosis, without vacuum phenomenon; no pars defect or fracture; L1 attenuation about 118 HU.',
     annotationAssetIds: NO_ANNOTATION,
   },
   emg_ncs: {
@@ -297,10 +298,10 @@ export const RESULTS: Record<string, InvestigationResult> = {
     reportTitle: 'Right L5 selective nerve-root block record',
     sections: [
       { heading: 'Procedure', lines: ['Right L5 selective nerve-root block, approximately six months before case entry. Technically adequate.'] },
-      { heading: 'Response', lines: ['Substantial but temporary relief of right leg pain.'] },
+      { heading: 'Response', lines: ['Substantial but temporary relief of right leg pain.', 'No meaningful change in back pain.'] },
       { heading: 'Note', lines: ['Technique, medication, and the duration of relief are not specified in this synthetic case record.'] },
     ],
-    accessibleSummary: 'Technically adequate right L5 block with substantial but temporary right leg-pain relief.',
+    accessibleSummary: 'Technically adequate right L5 block with substantial but temporary right leg-pain relief and no meaningful change in back pain.',
     annotationAssetIds: NO_ANNOTATION,
   },
   postop_mri: {
@@ -320,7 +321,7 @@ export const RESULTS: Record<string, InvestigationResult> = {
         lines: [
           'Postoperative changes of decompression at L4-L5.',
           'A dorsal epidural and subfascial collection of CSF signal intensity on T2-weighted images communicates with the decompression bed.',
-          'The collection measures approximately 48 x 18 x 55 mm.',
+          'The collection measures approximately 48 mm transverse × 18 mm anteroposterior × 55 mm craniocaudal.',
           'Mild mass effect without severe neural compression.',
           'No compressive hematoma. No abscess pattern. No severe cauda equina compression.',
         ],
@@ -328,7 +329,7 @@ export const RESULTS: Record<string, InvestigationResult> = {
       { heading: 'Impression', lines: ['Communicating postoperative pseudomeningocele without severe neural compression, hematoma, or abscess pattern.'] },
     ],
     accessibleSummary:
-      'Postoperative MRI: communicating CSF-intensity dorsal epidural and subfascial collection about 48 x 18 x 55 mm with mild mass effect; no severe compression, hematoma, or abscess pattern.',
+      'Postoperative MRI: communicating CSF-intensity dorsal epidural and subfascial collection about 48 mm transverse × 18 mm anteroposterior × 55 mm craniocaudal with mild mass effect; no severe compression, hematoma, or abscess pattern.',
     annotationAssetIds: NO_ANNOTATION,
   },
   postop_labs: {
@@ -336,9 +337,9 @@ export const RESULTS: Record<string, InvestigationResult> = {
     acquiredAt: SIM.POD3,
     series: [],
     reportAssetId: 'LAB-N4-001',
-    reportTitle: 'Postoperative laboratory trend since surgery',
+    reportTitle: 'Postoperative laboratory trend (routine since postoperative day 1)',
     sections: [
-      { heading: 'Trend', lines: ['Mild postoperative leukocytosis, trending downward.', 'No laboratory pattern of infection.'] },
+      { heading: 'Trend', lines: ['Mild postoperative leukocytosis, trending downward since postoperative day 1.', 'No laboratory pattern of infection.'] },
       { heading: 'Note', lines: ['Individual numeric values are not specified in this synthetic case record.'] },
     ],
     accessibleSummary: 'Expected mild postoperative leukocytosis trending downward; no laboratory pattern of infection.',
@@ -488,7 +489,7 @@ export const BRANCH_STEPS: Record<string, BranchStep> = {
     id: 'B2_resolved',
     time: SIM.B2_RESOLVED,
     title: 'After the prescribed drainage period',
-    lines: ['The leak has resolved.', 'The hospital stay is modestly longer than in the reference course.'],
+    lines: ['The leak has resolved.', 'The hospital stay was modestly prolonged.'],
   },
   B3_start: {
     id: 'B3_start',
@@ -514,9 +515,50 @@ export const BRANCH_STEPS: Record<string, BranchStep> = {
     title: 'Reassessment',
     lines: ['The collection and symptoms persist.', 'A further management decision is required.'],
   },
+  // Continuations authored by Dr Emmerich on 12 October 2026 (decision 5). Qualitative only.
+  B2_reexplore_start: {
+    id: 'B2_reexplore_start',
+    time: SIM.B2_REASSESS,
+    title: 'Operative re-exploration',
+    lines: ['Operative re-exploration and reinforced repair are performed.'],
+  },
+  B2_reexplore_resolved: {
+    id: 'B2_reexplore_resolved',
+    time: SIM.RESCUE_RESOLVED,
+    title: 'Reassessment after re-exploration',
+    lines: ['The leak has resolved.', 'This course included an additional operation and a longer hospital stay.'],
+  },
+  B4_drain_start: {
+    id: 'B4_drain_start',
+    time: SIM.B4_REASSESS,
+    title: 'Lumbar CSF drainage',
+    lines: ['Lumbar CSF drainage has started according to the prescribed course.'],
+  },
+  B4_drain_resolved: {
+    id: 'B4_drain_resolved',
+    time: SIM.RESCUE_RESOLVED,
+    title: 'After the prescribed drainage period',
+    lines: ['The leak has resolved.', 'The hospital stay was prolonged.'],
+  },
+  B4_reexplore_start: {
+    id: 'B4_reexplore_start',
+    time: SIM.B4_REASSESS,
+    title: 'Operative re-exploration',
+    lines: ['Operative re-exploration and reinforced repair are performed.'],
+  },
+  B4_reexplore_resolved: {
+    id: 'B4_reexplore_resolved',
+    time: SIM.RESCUE_RESOLVED,
+    title: 'Reassessment after re-exploration',
+    lines: ['The leak has resolved.', 'This course included an additional operation and a longer hospital stay.'],
+  },
 };
 
-export const FOLLOW_UP: Record<'B1' | 'B2' | 'B3', FollowUpContent> = {
+export type CourseId = 'B1' | 'B2' | 'B3' | 'B2_reexplore' | 'B4_drain' | 'B4_reexplore';
+
+const NO_MEASURES = ['Detailed six-week clinical measures are not authored for this course.'];
+
+export const FOLLOW_UP: Record<CourseId, FollowUpContent> = {
   B1: {
     time: SIM.W6,
     title: 'Six-week follow-up',
@@ -537,7 +579,7 @@ export const FOLLOW_UP: Record<'B1' | 'B2' | 'B3', FollowUpContent> = {
     time: SIM.W6,
     title: 'Follow-up for this course',
     measures: [],
-    lines: ['The leak resolved after lumbar drainage.', 'The hospital stay was modestly longer than in the reference course.'],
+    lines: ['The leak resolved after lumbar drainage.', 'The hospital stay was modestly prolonged.'],
     unavailable: ['Detailed six-week clinical measures are not authored for this course.'],
   },
   B3: {
@@ -545,7 +587,28 @@ export const FOLLOW_UP: Record<'B1' | 'B2' | 'B3', FollowUpContent> = {
     title: 'Follow-up for this course',
     measures: [],
     lines: ['The leak resolved after re-exploration and reinforced repair.', 'The course included the burden of an additional operation.'],
-    unavailable: ['Detailed six-week clinical measures are not authored for this course.'],
+    unavailable: NO_MEASURES,
+  },
+  B2_reexplore: {
+    time: SIM.W6,
+    title: 'Follow-up for this course',
+    measures: [],
+    lines: ['The leak resolved after re-exploration and reinforced repair.', 'The course included the burden of an additional operation and a longer hospital stay.'],
+    unavailable: NO_MEASURES,
+  },
+  B4_drain: {
+    time: SIM.W6,
+    title: 'Follow-up for this course',
+    measures: [],
+    lines: ['The leak resolved after lumbar drainage.', 'The hospital stay was prolonged.'],
+    unavailable: NO_MEASURES,
+  },
+  B4_reexplore: {
+    time: SIM.W6,
+    title: 'Follow-up for this course',
+    measures: [],
+    lines: ['The leak resolved after re-exploration and reinforced repair.', 'The course included the burden of an additional operation and a longer hospital stay.'],
+    unavailable: NO_MEASURES,
   },
 };
 
@@ -557,7 +620,7 @@ export const BRANCH_SUMMARIES: Record<BranchId, { action: string; consequence: s
   },
   B2: {
     action: 'Short monitored period of recumbency and wound observation',
-    consequence: 'Symptoms and drainage persist and a second decision is required; subsequent lumbar drainage resolves the leak with a modestly longer stay.',
+    consequence: 'Symptoms and drainage persist and a second decision is required. Subsequent lumbar drainage resolves the leak with a modestly longer stay; re-exploration at that point also resolves it, with an additional operation and a longer stay. Further observation has no authored consequence.',
   },
   B3: {
     action: 'Early operative re-exploration and reinforced repair',
@@ -565,6 +628,72 @@ export const BRANCH_SUMMARIES: Record<BranchId, { action: string; consequence: s
   },
   B4: {
     action: 'Defer targeted treatment despite continuing drainage',
-    consequence: 'The collection and symptoms persist, requiring reassessment. A detailed outcome after reassessment is not authored in this case.',
+    consequence: 'The collection and symptoms persist, requiring reassessment. Subsequent lumbar drainage resolves the leak with a longer stay; re-exploration resolves it with an additional operation and a longer stay. Further delay has no authored consequence.',
   },
 };
+
+/** Approved by Dr Emmerich on 13 October 2026 (content review pack, section 11). Debrief only. */
+export const FACULTY_PERSPECTIVE: { heading: string; intro: string; sections: { title: string; text: string }[] } = {
+  heading: 'Faculty perspective',
+  intro: 'One experienced view of this case, offered for reflection. It is not an answer key, and thoughtful surgeons may reasonably differ.',
+  sections: [
+    {
+      title: 'The clinical picture',
+      text: "Elena's leg-dominant symptoms, provoked by standing and walking and relieved by flexion, describe neurogenic claudication. The subtle right EHL weakness and dorsal-foot sensory change point to the right L5 root. Present pulses and a negative straight-leg raise help keep vascular claudication and a disc herniation lower on the list. Much of the diagnosis is available before any imaging.",
+    },
+    {
+      title: 'Position matters',
+      text: 'Translation at L4-L5 was 4.5 mm standing, 6.0 mm in flexion, 3.0 mm in extension, and 2.5 mm on supine MRI. A supine study alone underestimates the slip under load. Facet effusions and the 8-degree angular change raise the question of instability, while the absent vacuum phenomenon and partially preserved disc height point the other way. No single threshold settles it.',
+    },
+    {
+      title: 'Decompression with or without fusion',
+      text: 'Reasonable surgeons disagree here, and the published trials have not converged. A useful question is what the decompression itself will do to stability, and how much the remaining motion matters for this patient. Her wish to avoid an extensive operation, her mild osteopenia and her preserved alignment all belong in that conversation. A clearly recorded threshold for later fusion is as important as the initial choice.',
+    },
+    {
+      title: 'Complementary tests',
+      text: 'The EMG and the earlier right L5 block are concordant with the clinical and imaging picture, but neither is definitive. They support a decision; they do not make it.',
+    },
+    {
+      title: 'The durotomy',
+      text: 'A recognized small defect is best repaired at once, with a watertight closure and a deliberate check before leaving the field. The more useful habit is to plan the postoperative watch at that moment: what you will ask nursing to report, and what would prompt imaging.',
+    },
+    {
+      title: 'Day 3',
+      text: 'Orthostatic headache with clear drainage after a known durotomy points strongly to a CSF leak. The task is to confirm it, exclude infection and a compressive collection, and choose a response proportionate to the findings. Observation, lumbar drainage and early re-exploration each have a place. They differ mainly in burden and in how quickly they settle the problem.',
+    },
+    {
+      title: 'Across the case',
+      text: 'Notice where your confidence moved, and whether new information or habit moved it. That is the most transferable lesson of a case like this.',
+    },
+  ],
+};
+
+/** Verified 13 October 2026 against PubMed and Crossref records (content review pack, section 13). Debrief only. */
+export const READING_LIST: { citation: string; url: string; note: string }[] = [
+  {
+    citation: 'Weinstein JN, et al. Surgical versus nonsurgical treatment for lumbar degenerative spondylolisthesis. N Engl J Med. 2007;356(22):2257-70.',
+    url: 'https://doi.org/10.1056/NEJMoa070302',
+    note: 'Compares operative and nonoperative care for degenerative spondylolisthesis with stenosis.',
+  },
+  {
+    citation: 'Ghogawala Z, et al. Laminectomy plus fusion versus laminectomy alone for lumbar spondylolisthesis. N Engl J Med. 2016;374(15):1424-34.',
+    url: 'https://doi.org/10.1056/NEJMoa1508788',
+    note: 'Randomized comparison of decompression with and without fusion in stable degenerative spondylolisthesis.',
+  },
+  {
+    citation: 'Försth P, et al. A randomized, controlled trial of fusion surgery for lumbar spinal stenosis. N Engl J Med. 2016;374(15):1413-23.',
+    url: 'https://doi.org/10.1056/NEJMoa1513721',
+    note: 'Published alongside the previous trial; a randomized trial of adding fusion to decompression for lumbar spinal stenosis.',
+  },
+  {
+    citation: 'Austevoll IM, et al. Decompression with or without fusion in degenerative lumbar spondylolisthesis. N Engl J Med. 2021;385(6):526-38.',
+    url: 'https://doi.org/10.1056/NEJMoa2100990',
+    note: 'A more recent randomized comparison of decompression with and without fusion.',
+  },
+  {
+    citation:
+      'Chaput C, et al. The significance of increased fluid signal on magnetic resonance imaging in lumbar facets in relationship to degenerative spondylolisthesis. Spine. 2007;32(17):1883-7.',
+    url: 'https://doi.org/10.1097/brs.0b013e318113271a',
+    note: 'Examines the relationship between facet fluid signal on MRI and degenerative spondylolisthesis.',
+  },
+];

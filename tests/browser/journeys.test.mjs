@@ -40,6 +40,15 @@ const setConfidence = async (page, id) => {
 async function start(page, route = 'image') {
   if (route === 'text') await page.getByRole('radio', { name: /Text-only demonstration/ }).check();
   await page.getByRole('button', { name: 'Start patient encounter' }).click();
+  await consent(page);
+}
+
+async function consent(page) {
+  const boxes = page.locator('.consent-list input[type="checkbox"]');
+  const n = await boxes.count();
+  for (let i = 0; i < n; i++) await boxes.nth(i).check();
+  await page.getByRole('radio', { name: 'Fellow' }).check();
+  await page.getByRole('button', { name: 'I agree to take part. Start the session' }).click();
 }
 
 async function initialAssessment(page) {
@@ -135,7 +144,12 @@ test('AT01/AT21 landing, N1 and N2 DOM (text, attributes, titles) contain no fut
   };
   await scan('S00');
   await page.screenshot({ path: `${SHOTS}01-start.png` });
-  await start(page);
+  await page.getByRole('button', { name: 'Start patient encounter' }).click();
+  await scan('S00 consent');
+  assert.equal(await page.getByRole('button', { name: 'I agree to take part. Start the session' }).isDisabled(), true, 'cannot start without consent');
+  await page.screenshot({ path: `${SHOTS}01b-consent.png`, fullPage: true });
+  await consent(page);
+  assert.match(await page.locator('.chart-id').innerText(), /Elena Marsh/);
   await scan('S01');
   await page.screenshot({ path: `${SHOTS}02-initial-assessment.png` });
   await initialAssessment(page);
@@ -247,7 +261,7 @@ test('B2 rescue walkthrough (AT16)', async () => {
   assert.equal(await page.getByRole('button', { name: /Advance through/ }).count(), 0);
   await secondDecision(page, 'Lumbar CSF drainage');
   await page.getByRole('button', { name: 'Advance through the prescribed drainage period' }).click();
-  assert.match(await page.locator('#center').innerText(), /modestly longer/);
+  assert.match(await page.locator('#center').innerText(), /modestly prolonged/);
   await page.getByRole('button', { name: 'Continue to follow-up' }).click();
   assert.equal(await page.locator('.outcome-table').count(), 0, 'no inherited six-week numbers');
   await page.getByRole('button', { name: 'Continue to the debrief' }).click();
@@ -273,7 +287,7 @@ test('B3 walkthrough (AT17)', async () => {
   assert.equal(await page.locator('.outcome-table').count(), 0);
 });
 
-test('B4 review-pause walkthrough (AT18) and safe pause content (AT19)', async () => {
+test('B4 then drainage resolves through the authored continuation (D5)', async () => {
   const { page } = await open();
   await start(page);
   await initialAssessment(page);
@@ -284,6 +298,26 @@ test('B4 review-pause walkthrough (AT18) and safe pause content (AT19)', async (
   await chooseAction(page, 'Defer targeted treatment for now');
   await page.getByRole('button', { name: 'Advance to reassessment' }).click();
   await secondDecision(page, 'Lumbar CSF drainage');
+  await page.getByRole('button', { name: 'Advance through the prescribed drainage period' }).click();
+  const t = await page.locator('#center').innerText();
+  assert.match(t, /The hospital stay was prolonged/);
+  assert.ok(!/reference course/i.test(t));
+  await page.getByRole('button', { name: 'Continue to follow-up' }).click();
+  assert.equal(await page.locator('.outcome-table').count(), 0);
+  assert.equal((await state(page)).followUp.course, 'B4_drain');
+});
+
+test('B4 review-pause walkthrough (AT18) and safe pause content (AT19)', async () => {
+  const { page } = await open();
+  await start(page);
+  await initialAssessment(page);
+  await concludeWorkup(page);
+  await recommend(page);
+  await operativeDay(page);
+  await postopToSelection(page);
+  await chooseAction(page, 'Defer targeted treatment for now');
+  await page.getByRole('button', { name: 'Advance to reassessment' }).click();
+  await secondDecision(page, 'Defer targeted treatment for now');
   await page.screenshot({ path: `${SHOTS}16-expert-review.png` });
   const t = await page.locator('#center').innerText();
   assert.match(t, /does not contain an expert-authored consequence/);
@@ -434,6 +468,15 @@ for (const vp of [
       throw new Error('focus target not reached by Tab');
     };
     await tabTo(() => document.activeElement?.textContent === 'Start patient encounter');
+    await page.keyboard.press('Enter');
+    for (let i = 0; i < 8; i++) {
+      await tabTo(() => document.activeElement?.type === 'checkbox' && !document.activeElement.checked, 6);
+      await page.keyboard.press('Space');
+    }
+    await tabTo(() => document.activeElement?.type === 'radio', 6);
+    await page.keyboard.press('ArrowDown');
+    await page.keyboard.press('ArrowDown');
+    await tabTo(() => document.activeElement?.textContent === 'I agree to take part. Start the session', 6);
     await page.keyboard.press('Enter');
     await tabTo(() => document.activeElement?.id === 'n1-pr');
     await page.keyboard.type('Keyboard problem representation');

@@ -16,6 +16,7 @@ const LAYERS = [
   { id: 'index', label: '4 · Proposed vs demonstration operation' },
   { id: 'postop', label: '5 · Postoperative course' },
   { id: 'reflect', label: '6 · Metrics and reflection' },
+  { id: 'faculty', label: '7 · Faculty perspective and reading' },
 ] as const;
 
 function ConfidenceChart(props: { points: { label: string; value: number }[] }) {
@@ -352,6 +353,37 @@ export function Debrief() {
               These are modelled educational scenarios, not validated individualized predictions. They are compared by burden and reasoning, and no comparative outcome
               probabilities are implied.
             </p>
+          </section>
+        ) : null}
+
+        {layer === 'faculty' ? (
+          <section>
+            {state.comparisons ? (
+              <>
+                <h3>{state.comparisons.faculty_perspective.heading}</h3>
+                <p className="ack-copy">{state.comparisons.faculty_perspective.intro}</p>
+                {state.comparisons.faculty_perspective.sections.map((sec) => (
+                  <div key={sec.title} className="faculty-section">
+                    <h4>{sec.title}</h4>
+                    <p>{sec.text}</p>
+                  </div>
+                ))}
+                <h3>Further reading</h3>
+                <p className="muted small">Verified references. Each note says what the work addresses, not what it proves for this patient.</p>
+                <ol className="reading-list">
+                  {state.comparisons.reading_list.map((r) => (
+                    <li key={r.url}>
+                      <a href={r.url} target="_blank" rel="noreferrer">
+                        {r.citation}
+                      </a>
+                      <span className="muted small"> {r.note}</span>
+                    </li>
+                  ))}
+                </ol>
+              </>
+            ) : (
+              <p className="muted">Available after the clinical episode ends.</p>
+            )}
           </section>
         ) : null}
 

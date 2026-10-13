@@ -13,7 +13,12 @@ const ADVANCE_LABEL: Record<string, string> = {
   'N4.B2.observation': 'Advance to reassessment',
   'N4.B3.reexploration': 'Advance to reassessment',
   'N4.B4.deferred': 'Advance to reassessment',
+  'N4.B2.rescue_reexploration': 'Advance to reassessment',
+  'N4.B4.rescue_drainage': 'Advance through the prescribed drainage period',
+  'N4.B4.rescue_reexploration': 'Advance to reassessment',
 };
+
+const RESOLVED = ['N4.B1.resolved', 'N4.B2.resolved', 'N4.B3.resolved', 'N4.B2.resolved_reexplore', 'N4.B4.resolved_drain', 'N4.B4.resolved_reexplore'];
 
 export function Branch() {
   const state = useSession();
@@ -22,7 +27,7 @@ export function Branch() {
   const [plan, setPlan, clear] = useDraft('second:plan', EMPTY_PLAN);
   const stage = state.stage;
   const persistence = stage === 'N4.B2.persistence' || stage === 'N4.B4.persistence';
-  const resolved = stage === 'N4.B1.resolved' || stage === 'N4.B2.resolved' || stage === 'N4.B3.resolved';
+  const resolved = RESOLVED.includes(stage);
   const go = (cmd: typeof C.advanceBranch) => {
     const r = run(cmd, undefined);
     setError(r.ok ? null : r.message);

@@ -1,7 +1,7 @@
 // S00: start encounter. No pathology, complication, or branch is named here.
 import * as React from 'react';
 import * as C from '../engine/commands.ts';
-import { APP_NAME, CASE_TITLE, stageLabel } from '../case/publicCatalogue.ts';
+import { APP_NAME, CASE_TITLE, CONSENT_STATEMENTS, CONSENT_VERSION, PARTICIPANT_INFORMATION, TRAINING_LEVELS, stageLabel } from '../case/publicCatalogue.ts';
 import type { ImagingRoute } from '../engine/types.ts';
 import { PersistenceError, type SessionMeta } from '../session/repository.ts';
 import { REFERENCE_JOURNEY, runJourney } from '../session/scriptedJourney.ts';
@@ -27,12 +27,104 @@ export function StartScreen(props: { restoreError: string | null; onRestoreError
     }
   }
 
+  const [step, setStep] = React.useState<'landing' | 'consent'>('landing');
+  const [agreed, setAgreed] = React.useState<Record<string, boolean>>({});
+  const [level, setLevel] = React.useState<string | null>(null);
+  const [randomCode] = React.useState(() => {
+    const alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    const bytes = new Uint8Array(6);
+    globalThis.crypto?.getRandomValues?.(bytes);
+    return 'P-' + Array.from(bytes, (b) => alphabet[b % alphabet.length]).join('');
+  });
+
+  const proceed = () => {
+    if (!route) return setError('Choose an imaging route.');
+    setError(null);
+    setStep('consent');
+  };
+
   const start = () => {
     if (!route) return setError('Choose an imaging route.');
     const id = controller.ids.newId('session');
-    const res = run(C.startSession, { participant_code: code, imaging_route: route, session_kind: 'participant' }, id);
+    const res = run(
+      C.startSession,
+      {
+        participant_code: code.trim() || randomCode,
+        imaging_route: route,
+        session_kind: 'participant',
+        consent_statement_ids: CONSENT_STATEMENTS.filter((c) => agreed[c.id]).map((c) => c.id),
+        training_level: level,
+      },
+      id,
+    );
     if (!res.ok) setError(res.message);
   };
+
+  if (step === 'consent') {
+    const allAgreed = CONSENT_STATEMENTS.every((c) => agreed[c.id]);
+    return (
+      <main className="start" id="main">
+        <div className="start-inner">
+          <p className="eyebrow">Before you start</p>
+          <h1>Participant information and consent</h1>
+          <p className="lede">Please read this information. The session starts only after you confirm each statement below.</p>
+          <section className="start-card" aria-labelledby="info-title">
+            <h2 id="info-title">Information for participants</h2>
+            <div className="consent-info">
+              {PARTICIPANT_INFORMATION.map((i) => (
+                <div key={i.heading}>
+                  <h3>{i.heading}</h3>
+                  <p>{i.text}</p>
+                </div>
+              ))}
+            </div>
+            <p className="muted small">Information sheet version: {CONSENT_VERSION}. Bracketed items are completed before the pilot opens.</p>
+          </section>
+          <section className="start-card" aria-labelledby="consent-title">
+            <h2 id="consent-title">Consent</h2>
+            <p>
+              Your random code for this session is <span className="code-chip">{code.trim() || randomCode}</span>. Keep it if you may want your data withdrawn later.
+            </p>
+            <ul className="consent-list">
+              {CONSENT_STATEMENTS.map((c) => (
+                <li key={c.id}>
+                  <label>
+                    <input type="checkbox" checked={!!agreed[c.id]} onChange={(e) => setAgreed({ ...agreed, [c.id]: e.target.checked })} />
+                    <span>{c.text}</span>
+                  </label>
+                </li>
+              ))}
+            </ul>
+            <RadioGroup<string>
+              name="training-level"
+              legend="What is your current training level?"
+              required
+              value={level}
+              onChange={setLevel}
+              options={TRAINING_LEVELS.map((t) => ({ id: t.id, label: t.label }))}
+            />
+            <ErrorNote message={error} />
+            <div className="row">
+              <button type="button" className="btn-primary btn-large" disabled={!allAgreed || !level} onClick={start}>
+                I agree to take part. Start the session
+              </button>
+              <button
+                type="button"
+                className="btn-secondary"
+                onClick={() => {
+                  setStep('landing');
+                  setAgreed({});
+                  setLevel(null);
+                }}
+              >
+                I do not wish to take part
+              </button>
+            </div>
+          </section>
+        </div>
+      </main>
+    );
+  }
 
   const resume = (id: string, force = false) => {
     try {
@@ -69,7 +161,8 @@ export function StartScreen(props: { restoreError: string | null; onRestoreError
             <h2 id="before-title">Before you begin</h2>
             <ul className="plain">
               <li>
-                <strong>Fictional and synthetic.</strong> The patient, images and outcomes are invented for education. Nothing here is clinical advice.
+                <strong>Fictional and synthetic.</strong> The patient, images and outcomes are invented for education. Nothing here is clinical advice. This is a
+                demonstration to evaluate the potential of this educational model.
               </li>
               <li>
                 <strong>Formative only.</strong> There is no grade, score or pass mark. Several strategies can be defensible.
@@ -116,7 +209,7 @@ export function StartScreen(props: { restoreError: string | null; onRestoreError
               ]}
             />
             <ErrorNote message={error} />
-            <button type="button" className="btn-primary btn-large" onClick={start}>
+            <button type="button" className="btn-primary btn-large" onClick={proceed}>
               Start patient encounter
             </button>
           </section>

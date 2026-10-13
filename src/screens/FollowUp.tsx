@@ -53,7 +53,7 @@ export function FollowUp() {
   const run = useRun();
   const [ui, setUi] = useUi();
   const [error, setError] = React.useState<string | null>(null);
-  const b1 = state.followUp?.branch_id === 'B1';
+  const b1 = state.followUp?.course === 'B1';
   return (
     <div className="screen">
       <FollowUpView />

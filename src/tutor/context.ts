@@ -19,6 +19,7 @@ export function buildTutorContext(state: SessionState, trigger: TutorTrigger): T
     interpretedInvestigationIds: recs.filter((r) => r.interpretations.length > 0).map((r) => r.id),
     openCycleInvestigationId: open?.id ?? null,
     probesInNode: state.tutor.probesByNode[node] ?? 0,
+    usedPromptIds: state.tutor.messages.map((m) => m.promptId).filter((x): x is string => x !== null),
     probesInCycle: cycleId ? state.tutor.probesByCycle[`cycle:${cycleId}`] ?? 0 : 0,
     committed: {
       hasInitialAssessment: preop.length > 0,

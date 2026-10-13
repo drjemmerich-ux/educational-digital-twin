@@ -405,3 +405,17 @@ figcaption { font-size: 13px; margin-top: 6px; }
   .synthetic-chip { display: none; }
   .topbar-stage { margin-left: var(--s2); }
 }
+
+/* Faculty perspective, reading list, consent */
+.faculty-section { margin-bottom: var(--s2); max-width: 75ch; }
+.reading-list { display: flex; flex-direction: column; gap: 10px; }
+.reading-list a { color: var(--focus); }
+.consent-info { display: grid; grid-template-columns: 1fr 1fr; gap: 12px var(--s3); }
+.consent-info > * { min-width: 0; }
+.consent-info h3 { font-size: 14px; margin-bottom: 2px; }
+.consent-info p { font-size: 14px; }
+.consent-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.consent-list label { display: flex; gap: 10px; align-items: flex-start; border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; min-height: 44px; cursor: pointer; }
+.consent-list input { width: 18px; height: 18px; margin-top: 2px; flex: 0 0 auto; }
+.code-chip { font-family: 'Courier New', monospace; background: var(--surface); padding: 2px 8px; border-radius: 4px; }
+@media (max-width: 860px) { .consent-info { grid-template-columns: 1fr; } }
