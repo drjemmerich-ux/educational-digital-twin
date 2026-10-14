@@ -1,6 +1,5 @@
 // S05: management commitment, then the transparent canonical-continuation acknowledgement.
 import * as React from 'react';
-import * as C from '../engine/commands.ts';
 import { STRATEGY_CATEGORIES, type StrategyCategory } from '../case/publicCatalogue.ts';
 import { strategyLabel } from '../engine/selectors.ts';
 import type { RecommendationInput } from '../engine/types.ts';
@@ -37,7 +36,7 @@ export function Management() {
   const setField = (k: string, v: string) => setFields({ ...fields, [k]: v });
   const setCmp = (opt: string, k: string, v: string) => setComparison({ ...comparison, [opt]: { ...(comparison[opt] ?? {}), [k]: v } });
 
-  const commit = () => {
+  const commit = async () => {
     const input: RecommendationInput = {
       category: (category ?? '') as StrategyCategory,
       other_strategy: other,
@@ -63,7 +62,7 @@ export function Management() {
         preference_fit: comparison[o]?.preference_fit ?? '',
       })),
     };
-    const res = run(C.commitRecommendation, input);
+    const res = await run('commitRecommendation', input);
     setError(res.ok ? null : res.message);
   };
 
@@ -163,8 +162,8 @@ export function CanonicalAck() {
         <button
           type="button"
           className="btn-primary"
-          onClick={() => {
-            const r = run(C.acknowledgeCanonical, undefined);
+          onClick={async () => {
+            const r = await run('acknowledgeCanonical', undefined);
             if (!r.ok) setError(r.message);
           }}
         >

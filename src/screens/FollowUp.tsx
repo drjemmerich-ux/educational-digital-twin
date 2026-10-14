@@ -1,6 +1,5 @@
 // S10: follow-up encounter. Patient outcome only; no feedback about reasoning here.
 import * as React from 'react';
-import * as C from '../engine/commands.ts';
 import { useRun, useSession } from '../ui/session.tsx';
 import { ErrorNote } from '../components/forms.tsx';
 import { Catalogue } from './Workup.tsx';
@@ -70,8 +69,8 @@ export function FollowUp() {
         <button
           type="button"
           className="btn-primary"
-          onClick={() => {
-            const r = run(C.enterDebrief, undefined);
+          onClick={async () => {
+            const r = await run('enterDebrief', undefined);
             setError(r.ok ? null : r.message);
           }}
         >

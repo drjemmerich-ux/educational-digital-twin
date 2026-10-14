@@ -1,6 +1,5 @@
 // S01: initial patient presentation and the first committed reasoning. Nothing is prefilled.
 import * as React from 'react';
-import * as C from '../engine/commands.ts';
 import { useDraft, useRun, useSession } from '../ui/session.tsx';
 import { COMMIT_NOTE, CommitBar, ConfidenceInput, ListInput, TextField } from '../components/forms.tsx';
 
@@ -128,8 +127,8 @@ export function InitialAssessment() {
           label="Commit initial assessment"
           confirmText={`${COMMIT_NOTE} After this you can request investigations.`}
           error={error}
-          onCommit={() => {
-            const res = run(C.commitInitialAssessment, { problem_representation: pr, hypotheses: hyps, priorities: prio, confidence: conf as number });
+          onCommit={async () => {
+            const res = await run('commitInitialAssessment', { problem_representation: pr, hypotheses: hyps, priorities: prio, confidence: conf as number });
             if (!res.ok) setError(res.message);
             else {
               clearPr();

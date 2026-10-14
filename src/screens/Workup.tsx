@@ -1,7 +1,7 @@
 // S02: diagnostic work-up. Neutral catalogue cards (no thumbnails, no results before release),
 // visible working model, and the active study (S04). Reused for postoperative and follow-up studies.
 import * as React from 'react';
-import * as C from '../engine/commands.ts';
+import { contextStageOf } from '../engine/stageRules.ts';
 import type { InvestigationContext } from '../case/types.ts';
 import { catalogue, currentModel, integratedRadiologyReport, modelChain } from '../engine/selectors.ts';
 import type { ModelChain } from '../engine/types.ts';
@@ -81,8 +81,8 @@ export function WorkingModelCard(props: { chain: ModelChain; editable: boolean; 
             <button
               type="button"
               className="btn-primary"
-              onClick={() => {
-                const res = run(C.reviseWorkingModel, { problem_representation: pr, hypotheses: hyps, priorities: prio, reason, confidence: conf });
+              onClick={async () => {
+                const res = await run('reviseWorkingModel', { problem_representation: pr, hypotheses: hyps, priorities: prio, reason, confidence: conf });
                 if (!res.ok) setError(res.message);
                 else {
                   [clearPr, clearH, clearP, clearR, clearC].forEach((f) => f());
@@ -137,7 +137,7 @@ export function Catalogue(props: { context: InvestigationContext }) {
                   onClick={() => {
                     if (ui.activeStudy === def.id) return;
                     // Reopening a released study is logged as a view, never as a new order.
-                    run(C.openStudy, { investigation_id: def.id });
+                    void run('openStudy', { investigation_id: def.id });
                     setUi({ activeStudy: def.id });
                   }}
                 >
@@ -147,7 +147,7 @@ export function Catalogue(props: { context: InvestigationContext }) {
             </div>
           </li>
         ))}
-        {state.stage === C.contextStage(items[0]!.def) ? (
+        {state.stage === contextStageOf(items[0]!.def.context) ? (
           <li className="cat-card other">
             <div className="cat-body">
               <h4>Request another investigation</h4>
@@ -261,8 +261,8 @@ function ConcludeWorkup() {
         label="Commit and continue to management"
         confirmText={`${COMMIT_NOTE} The pre-operative investigation catalogue closes after this step.`}
         error={error}
-        onCommit={() => {
-          const res = run(C.concludeWorkup, { integrated_model: model, confidence: conf as number, enough_information: enough });
+        onCommit={async () => {
+          const res = await run('concludeWorkup', { integrated_model: model, confidence: conf as number, enough_information: enough });
           if (!res.ok) setError(res.message);
           else {
             clearM();

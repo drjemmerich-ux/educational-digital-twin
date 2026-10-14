@@ -1,7 +1,6 @@
 // S11: layered descriptive debrief. Starts with what the learner actually did. No scores, no
 // correct/incorrect markers, no competence or entrustment statements.
 import * as React from 'react';
-import * as C from '../engine/commands.ts';
 import { REFLECTION_QUESTIONS, getInvestigationDef } from '../case/publicCatalogue.ts';
 import { indexTreatmentComparison, investigationRows, narrativeStatements } from '../engine/debrief.ts';
 import { actionLabel, confidenceTrajectory, sessionMetrics, strategyLabel } from '../engine/selectors.ts';
@@ -458,8 +457,8 @@ export function Debrief() {
                   <button
                     type="button"
                     className="btn-primary"
-                    onClick={() => {
-                      const r = run(C.commitReflection, { answers });
+                    onClick={async () => {
+                      const r = await run('commitReflection', { answers });
                       if (!r.ok) setError(r.message);
                       else {
                         clearAnswers();
@@ -472,8 +471,8 @@ export function Debrief() {
                   <button
                     type="button"
                     className="btn-secondary"
-                    onClick={() => {
-                      const r = run(C.completeSession, undefined);
+                    onClick={async () => {
+                      const r = await run('completeSession', undefined);
                       setError(r.ok ? null : r.message);
                     }}
                   >

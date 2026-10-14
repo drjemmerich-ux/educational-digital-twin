@@ -4,6 +4,7 @@ import { LocalSessionRepository } from './session/localRepository.ts';
 import { MemorySessionRepository } from './session/memoryRepository.ts';
 import { PersistenceError } from './session/repository.ts';
 import { SessionController } from './session/controller.ts';
+import { LocalGateway } from './session/localGateway.ts';
 import { ScriptedTutor } from './tutor/scriptedTutor.ts';
 import { SessionProvider } from './ui/session.tsx';
 import { App } from './ui/App.tsx';
@@ -11,6 +12,7 @@ import { App } from './ui/App.tsx';
 const local = LocalSessionRepository.tryCreate();
 const repo = local ?? new MemorySessionRepository();
 const controller = new SessionController(repo);
+const gateway = new LocalGateway(controller);
 const tutor = new ScriptedTutor();
 
 let restoreError: string | null = null;
@@ -52,7 +54,7 @@ if (local) {
 const root = createRoot(document.getElementById('root')!);
 root.render(
   <React.StrictMode>
-    <SessionProvider controller={controller} tutor={tutor}>
+    <SessionProvider controller={gateway} tutor={tutor}>
       <App restoreError={restoreError} />
     </SessionProvider>
   </React.StrictMode>,

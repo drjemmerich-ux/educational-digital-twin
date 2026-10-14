@@ -1,12 +1,8 @@
 // S00: start encounter. No pathology, complication, or branch is named here.
 import * as React from 'react';
-import * as C from '../engine/commands.ts';
 import { APP_NAME, CASE_TITLE, CONSENT_STATEMENTS, CONSENT_VERSION, PARTICIPANT_INFORMATION, TRAINING_LEVELS, stageLabel } from '../case/publicCatalogue.ts';
 import type { ImagingRoute } from '../engine/types.ts';
 import { PersistenceError, type SessionMeta } from '../session/repository.ts';
-import { REFERENCE_JOURNEY, runJourney } from '../session/scriptedJourney.ts';
-import { SessionController } from '../session/controller.ts';
-import { MemorySessionRepository } from '../session/memoryRepository.ts';
 import { useController, useRun } from '../ui/session.tsx';
 import { ErrorNote, RadioGroup } from '../components/forms.tsx';
 
@@ -16,21 +12,22 @@ export function StartScreen(props: { restoreError: string | null; onRestoreError
   const [code, setCode] = React.useState('');
   const [route, setRoute] = React.useState<ImagingRoute | null>('image_gate_placeholder');
   const [error, setError] = React.useState<string | null>(null);
-  const [sessions, setSessions] = React.useState<SessionMeta[]>(() => safeList());
+  const [sessions, setSessions] = React.useState<SessionMeta[]>([]);
   const [lockPrompt, setLockPrompt] = React.useState<string | null>(null);
+  const [busy, setBusy] = React.useState(false);
+  const remote = controller.capabilities.storage === 'server';
 
-  function safeList(): SessionMeta[] {
-    try {
-      return controller.repo.listSessions().sort((a, b) => b.updated_at_utc.localeCompare(a.updated_at_utc));
-    } catch {
-      return [];
-    }
-  }
+  const refresh = React.useCallback(() => {
+    controller.listSessions().then(setSessions, (err: unknown) => setError(`Your encounters could not be listed. ${(err as Error).message ?? ''}`.trim()));
+  }, [controller]);
+  React.useEffect(() => refresh(), [refresh]);
+  const unfinished = remote ? sessions.find((s) => s.session_kind === 'participant' && s.status !== 'completed') : undefined;
 
   const [step, setStep] = React.useState<'landing' | 'consent'>('landing');
   const [agreed, setAgreed] = React.useState<Record<string, boolean>>({});
   const [level, setLevel] = React.useState<string | null>(null);
   const [randomCode] = React.useState(() => {
+    if (controller.assignedParticipantCode) return controller.assignedParticipantCode;
     const alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
     const bytes = new Uint8Array(6);
     globalThis.crypto?.getRandomValues?.(bytes);
@@ -43,20 +40,20 @@ export function StartScreen(props: { restoreError: string | null; onRestoreError
     setStep('consent');
   };
 
-  const start = () => {
+  const participantCode = controller.assignedParticipantCode ?? (code.trim() || randomCode);
+
+  const start = async () => {
     if (!route) return setError('Choose an imaging route.');
-    const id = controller.ids.newId('session');
-    const res = run(
-      C.startSession,
-      {
-        participant_code: code.trim() || randomCode,
-        imaging_route: route,
-        session_kind: 'participant',
-        consent_statement_ids: CONSENT_STATEMENTS.filter((c) => agreed[c.id]).map((c) => c.id),
-        training_level: level,
-      },
-      id,
-    );
+    if (busy) return;
+    setBusy(true);
+    const res = await run('startSession', {
+      participant_code: participantCode,
+      imaging_route: route,
+      session_kind: 'participant',
+      consent_statement_ids: CONSENT_STATEMENTS.filter((c) => agreed[c.id]).map((c) => c.id),
+      training_level: level,
+    });
+    setBusy(false);
     if (!res.ok) setError(res.message);
   };
 
@@ -83,7 +80,7 @@ export function StartScreen(props: { restoreError: string | null; onRestoreError
           <section className="start-card" aria-labelledby="consent-title">
             <h2 id="consent-title">Consent</h2>
             <p>
-              Your random code for this session is <span className="code-chip">{code.trim() || randomCode}</span>. Keep it if you may want your data withdrawn later.
+              {controller.assignedParticipantCode ? 'Your participant code is' : 'Your random code for this session is'} <span className="code-chip">{participantCode}</span>. Keep it if you may want your data withdrawn later.
             </p>
             <ul className="consent-list">
               {CONSENT_STATEMENTS.map((c) => (
@@ -105,7 +102,7 @@ export function StartScreen(props: { restoreError: string | null; onRestoreError
             />
             <ErrorNote message={error} />
             <div className="row">
-              <button type="button" className="btn-primary btn-large" disabled={!allAgreed || !level} onClick={start}>
+              <button type="button" className="btn-primary btn-large" disabled={!allAgreed || !level || busy} onClick={() => void start()}>
                 I agree to take part. Start the session
               </button>
               <button
@@ -126,22 +123,18 @@ export function StartScreen(props: { restoreError: string | null; onRestoreError
     );
   }
 
-  const resume = (id: string, force = false) => {
+  const resume = async (id: string, force = false) => {
     try {
-      const r = controller.load(id, force);
+      const r = await controller.open(id, force);
       if (r.lockedElsewhere) setLockPrompt(id);
     } catch (err) {
-      setError(err instanceof PersistenceError ? `${err.message} The record has been left untouched.` : String(err));
+      setError(err instanceof PersistenceError ? `${err.message} The record has been left untouched.` : (err as Error).message ?? String(err));
     }
   };
 
-  const openDemo = () => {
-    // Build the demonstration log in memory, then store it as its own clearly labelled session.
-    const scratch = new SessionController(new MemorySessionRepository(), controller.ids);
-    const id = controller.ids.newId('demo');
-    runJourney(scratch, { ...REFERENCE_JOURNEY, sessionId: id, kind: 'demonstration', stopAt: 'debrief' });
+  const openDemo = async () => {
     try {
-      controller.loadPrepared([...scratch.log]);
+      await controller.startDemo?.();
     } catch (err) {
       setError(`The demonstration session could not be stored: ${(err as Error).message}`);
     }
@@ -173,23 +166,45 @@ export function StartScreen(props: { restoreError: string | null; onRestoreError
               <li>
                 <strong>Information arrives progressively.</strong> Only what has happened is shown.
               </li>
-              <li>
-                <strong>Saved in this browser.</strong> Browser data can be cleared; use Export to keep a JSON record.
-              </li>
+              {remote ? (
+                <li>
+                  <strong>Saved on the study server.</strong> You can close the page and continue later with your personal link. Keep the link private.
+                </li>
+              ) : (
+                <li>
+                  <strong>Saved in this browser.</strong> Browser data can be cleared; use Export to keep a JSON record.
+                </li>
+              )}
               <li>
                 <strong>Estimated time 25 to 35 minutes.</strong> This is a planning estimate and has not been validated.
               </li>
             </ul>
           </section>
+          {unfinished ? (
+            <section className="start-card" aria-labelledby="new-title">
+              <h2 id="new-title">Continue your encounter</h2>
+              <p>You have an encounter in progress. It continues exactly where you left it.</p>
+              <button type="button" className="btn-primary btn-large" onClick={() => void resume(unfinished.session_id)}>
+                Continue encounter
+              </button>
+              <ErrorNote message={error} />
+            </section>
+          ) : (
           <section className="start-card" aria-labelledby="new-title">
             <h2 id="new-title">New encounter</h2>
-            <div className="field">
-              <label className="field-label" htmlFor="participant-code">
-                Participant code <span className="optional">(optional, pseudonymous)</span>
-              </label>
-              <p className="field-helper">Do not enter your name or any identifiable information.</p>
-              <input id="participant-code" type="text" value={code} onChange={(e) => setCode(e.target.value)} autoComplete="off" />
-            </div>
+            {controller.assignedParticipantCode ? (
+              <p>
+                Participant code from your personal link: <span className="code-chip">{controller.assignedParticipantCode}</span>
+              </p>
+            ) : (
+              <div className="field">
+                <label className="field-label" htmlFor="participant-code">
+                  Participant code <span className="optional">(optional, pseudonymous)</span>
+                </label>
+                <p className="field-helper">Do not enter your name or any identifiable information.</p>
+                <input id="participant-code" type="text" value={code} onChange={(e) => setCode(e.target.value)} autoComplete="off" />
+              </div>
+            )}
             <RadioGroup<ImagingRoute>
               name="route"
               legend="Imaging route"
@@ -213,6 +228,7 @@ export function StartScreen(props: { restoreError: string | null; onRestoreError
               Start patient encounter
             </button>
           </section>
+          )}
         </div>
 
         {props.restoreError ? (
@@ -231,7 +247,7 @@ export function StartScreen(props: { restoreError: string | null; onRestoreError
             <h2>This encounter is open in another tab</h2>
             <p>To avoid conflicting entries, continue in the other tab, or take over here. The other tab will then stop saving.</p>
             <div className="row">
-              <button type="button" className="btn-primary" onClick={() => { resume(lockPrompt, true); setLockPrompt(null); }}>
+              <button type="button" className="btn-primary" onClick={() => { void resume(lockPrompt, true); setLockPrompt(null); }}>
                 Take over in this tab
               </button>
               <button type="button" className="btn-secondary" onClick={() => { controller.reset(); setLockPrompt(null); }}>
@@ -243,7 +259,7 @@ export function StartScreen(props: { restoreError: string | null; onRestoreError
 
         {sessions.length ? (
           <section className="start-card" aria-labelledby="saved-title">
-            <h2 id="saved-title">Saved encounters in this browser</h2>
+            <h2 id="saved-title">{remote ? 'Your encounters' : 'Saved encounters in this browser'}</h2>
             <table className="sessions">
               <thead>
                 <tr>
@@ -268,30 +284,32 @@ export function StartScreen(props: { restoreError: string | null; onRestoreError
                     <td>{s.status === 'completed' ? 'Completed' : s.status === 'paused_for_review' ? 'Paused for expert review' : stageLabel(s.stage)}</td>
                     <td className="tabular">{s.updated_at_utc ? new Date(s.updated_at_utc).toLocaleString() : ''}</td>
                     <td>
-                      <button type="button" className="btn-secondary btn-small" onClick={() => resume(s.session_id)}>
-                        Resume
+                      <button type="button" className="btn-secondary btn-small" onClick={() => void resume(s.session_id)}>
+                        {s.status === 'completed' ? 'Open' : 'Resume'}
                       </button>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
-            <button type="button" className="btn-link" onClick={() => setSessions(safeList())}>
+            <button type="button" className="btn-link" onClick={refresh}>
               Refresh list
             </button>
           </section>
         ) : null}
 
+        {controller.capabilities.demo ? (
         <section className="start-card demo" aria-labelledby="demo-title">
           <h2 id="demo-title">For reviewers: demonstration session</h2>
           <p>
             Opens a separate, clearly labelled session with prefilled sample reasoning, already advanced to the debrief along the reference course. It is not a participant
             record and does not change any other session.
           </p>
-          <button type="button" className="btn-secondary" onClick={openDemo}>
+          <button type="button" className="btn-secondary" onClick={() => void openDemo()}>
             Open demonstration session
           </button>
         </section>
+        ) : null}
       </div>
     </main>
   );

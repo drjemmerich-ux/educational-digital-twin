@@ -16,8 +16,21 @@ export function TopBar(props: { onExit: () => void }) {
   const controller = useController();
   const [ui, setUi] = useUi();
   const save = controller.saveStatus;
+  const where = controller.capabilities.storage === 'server' ? 'Saved on the study server' : 'Saved in this browser';
   const saveText =
-    save === 'saved' ? 'Saved in this browser' : save === 'memory_only' ? 'Not saved: memory only' : save === 'failed' ? 'Last save failed' : save === 'conflict' ? 'Open in another tab' : 'Ready';
+    save === 'saved'
+      ? where
+      : save === 'saving'
+        ? 'Saving…'
+        : save === 'offline'
+          ? 'Connection lost: not saved'
+          : save === 'memory_only'
+            ? 'Not saved: memory only'
+            : save === 'failed'
+              ? 'Last save failed'
+              : save === 'conflict'
+                ? 'Open in another tab'
+                : 'Ready';
   return (
     <header className="topbar">
       <div className="topbar-brand">
@@ -300,7 +313,8 @@ export function RecordDialog() {
 export function HelpDialog() {
   const [, setUi] = useUi();
   const controller = useController();
-  const [failArmed, setFailArmed] = React.useState(controller.repo.failNextWrites > 0);
+  const [failArmed, setFailArmed] = React.useState(controller.storageFailureArmed ?? false);
+  const remote = controller.capabilities.storage === 'server';
   return (
     <Dialog title="Help" onClose={() => setUi({ dialog: null })} wide>
       <h3>About this encounter</h3>
@@ -316,10 +330,17 @@ export function HelpDialog() {
         <li>Record how the result affects your working model.</li>
       </ol>
       <h3>Saving</h3>
-      <p>
-        Your session is saved in this browser only. Browser data can be cleared, so use Export to keep a reviewable JSON record. Committed entries are not edited; changes are
-        saved as new linked versions.
-      </p>
+      {remote ? (
+        <p>
+          Every committed entry is saved on the study server before anything is released. You can close the page and continue later with your personal link. Export gives
+          you a reviewable JSON copy of your own record. Committed entries are not edited; changes are saved as new linked versions.
+        </p>
+      ) : (
+        <p>
+          Your session is saved in this browser only. Browser data can be cleared, so use Export to keep a reviewable JSON record. Committed entries are not edited; changes are
+          saved as new linked versions.
+        </p>
+      )}
       <h3>Tutor</h3>
       <p>
         Scripted tutor prototype. It asks short questions from a fixed script and is often silent. It does not understand free text, does not assess your answers, and cannot
@@ -340,6 +361,7 @@ export function HelpDialog() {
           </React.Fragment>
         ))}
       </dl>
+      {controller.capabilities.devTools && controller.armStorageFailure ? (
       <details className="dev-tools">
         <summary>Developer review tools</summary>
         <p className="muted">For verifying integrity rules. These do not change patient content.</p>
@@ -347,7 +369,7 @@ export function HelpDialog() {
           type="button"
           className="btn-secondary btn-small"
           onClick={() => {
-            controller.repo.failNextWrites = 1;
+            controller.armStorageFailure?.();
             setFailArmed(true);
           }}
         >
@@ -355,6 +377,7 @@ export function HelpDialog() {
         </button>
         {failArmed ? <p className="muted">Armed: the next commitment will fail to save and nothing will be released.</p> : null}
       </details>
+      ) : null}
     </Dialog>
   );
 }

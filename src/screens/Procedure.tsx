@@ -1,7 +1,6 @@
 // S06: canonical procedure, intraoperative checkpoint, participant proposal before the team's action,
 // then postoperative day 1.
 import * as React from 'react';
-import * as C from '../engine/commands.ts';
 import { useDraft, useRun, useSession } from '../ui/session.tsx';
 import { COMMIT_NOTE, CommitBar, ConfidenceInput, ErrorNote, TextField } from '../components/forms.tsx';
 import type { ClinicalUpdate } from '../case/types.ts';
@@ -67,8 +66,8 @@ export function Procedure() {
   const [checks, setChecks, clearCh] = useDraft('n4:checks', '');
   const [post, setPost, clearP] = useDraft('n4:post', '');
   const [conf, setConf, clearC] = useDraft<number | null>('n4:conf', null);
-  const go = (cmd: (s: typeof state) => C.CommandResult) => {
-    const r = run(cmd, undefined);
+  const go = async (cmd: 'continueProcedure' | 'revealTeamAction' | 'advanceToPod1' | 'advanceToPod3') => {
+    const r = await run(cmd, undefined);
     setError(r.ok ? null : r.message);
   };
   const stage = state.stage;
@@ -85,7 +84,7 @@ export function Procedure() {
         <PlaceholderPicture assetId="OR-N4-001" title="Operative field" caption="Synthetic operative illustration pending production." />
       </section>
 
-      {stage === 'N4.procedure' ? <Advance label="Continue the procedure" onClick={() => go(C.continueProcedure)} /> : null}
+      {stage === 'N4.procedure' ? <Advance label="Continue the procedure" onClick={() => void go('continueProcedure')} /> : null}
 
       {state.intraopCheckpoint ? <UpdateCard update={state.intraopCheckpoint} tone="alert" /> : null}
 
@@ -101,8 +100,8 @@ export function Procedure() {
             label="Commit proposal"
             confirmText={`${COMMIT_NOTE} The simulated team's action is shown only after this.`}
             error={error}
-            onCommit={() => {
-              const r = run(C.commitIntraopProposal, { immediate: imm, checks, postop_considerations: post, confidence: conf });
+            onCommit={async () => {
+              const r = await run('commitIntraopProposal', { immediate: imm, checks, postop_considerations: post, confidence: conf });
               if (!r.ok) setError(r.message);
               else [clearI, clearCh, clearP, clearC].forEach((f) => f());
             }}
@@ -124,7 +123,7 @@ export function Procedure() {
         </section>
       ) : null}
 
-      {stage === 'N4.durotomy_proposal_committed' ? <Advance label="Show the team's action" onClick={() => go(C.revealTeamAction)} /> : null}
+      {stage === 'N4.durotomy_proposal_committed' ? <Advance label="Show the team's action" onClick={() => void go('revealTeamAction')} /> : null}
 
       {state.teamAction ? (
         <section className="update-card" aria-labelledby="team-title">
@@ -139,9 +138,9 @@ export function Procedure() {
         </section>
       ) : null}
 
-      {stage === 'N4.repair_revealed' ? <Advance label="Advance to postoperative day 1" onClick={() => go(C.advanceToPod1)} /> : null}
+      {stage === 'N4.repair_revealed' ? <Advance label="Advance to postoperative day 1" onClick={() => void go('advanceToPod1')} /> : null}
       {pod1 ? <UpdateCard update={pod1} /> : null}
-      {stage === 'N4.pod1' ? <Advance label="Advance to postoperative day 3" onClick={() => go(C.advanceToPod3)} /> : null}
+      {stage === 'N4.pod1' ? <Advance label="Advance to postoperative day 3" onClick={() => void go('advanceToPod3')} /> : null}
       <ErrorNote message={error} />
     </div>
   );

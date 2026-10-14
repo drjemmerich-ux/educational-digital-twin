@@ -1,15 +1,16 @@
-// React bindings for the SessionController. UI code calls `run(command, input)`; this is also
+// React bindings for the SessionGateway. UI code calls `run('commandName', input)`; this is also
 // where educational tutor triggers are derived from released events (the tutor never sees
-// commands or hidden content).
+// commands or hidden content). The UI never imports engine commands or hidden case content.
 import * as React from 'react';
-import type { CommandContext, CommandResult } from '../engine/commands.ts';
+import type { CommandInput, CommandName } from '../engine/commandTypes.ts';
 import type { AnyEvent, SessionState } from '../engine/types.ts';
-import type { DispatchResult, SessionController } from '../session/controller.ts';
+import type { DispatchResult } from '../session/controller.ts';
+import type { SessionGateway } from '../session/gateway.ts';
 import type { TutorAdapter } from '../tutor/contract.ts';
 import { runTutor } from '../tutor/tutorService.ts';
 
 interface Ctx {
-  controller: SessionController;
+  controller: SessionGateway;
   tutor: TutorAdapter;
   ui: UiState;
   setUi: (patch: Partial<UiState>) => void;
@@ -41,7 +42,7 @@ export const initialUi: UiState = {
 
 const SessionCtx = React.createContext<Ctx | null>(null);
 
-export function SessionProvider(props: { controller: SessionController; tutor: TutorAdapter; children: React.ReactNode }) {
+export function SessionProvider(props: { controller: SessionGateway; tutor: TutorAdapter; children: React.ReactNode }) {
   const [ui, setUiState] = React.useState<UiState>(initialUi);
   const setUi = React.useCallback((patch: Partial<UiState>) => setUiState((u) => ({ ...u, ...patch })), []);
   const value = React.useMemo(() => ({ controller: props.controller, tutor: props.tutor, ui, setUi }), [props.controller, props.tutor, ui, setUi]);
@@ -62,7 +63,7 @@ export function useSession(): SessionState {
   );
 }
 
-export function useController(): SessionController {
+export function useController(): SessionGateway {
   useSession(); // re-render on change
   return useCtx().controller;
 }
@@ -77,7 +78,7 @@ export function useTutor(): TutorAdapter {
 }
 
 /** Derive tutor triggers from events just committed. */
-function tutorTriggersFor(events: AnyEvent[], controller: SessionController, tutor: TutorAdapter) {
+function tutorTriggersFor(events: AnyEvent[], controller: SessionGateway, tutor: TutorAdapter) {
   for (const e of events) {
     if (e.event_type === 'report_released') {
       runTutor(controller, tutor, { kind: 'report_released', investigationId: e.payload.investigation_id, variant: e.payload.variant });
@@ -94,8 +95,8 @@ function tutorTriggersFor(events: AnyEvent[], controller: SessionController, tut
 export function useRun() {
   const { controller, tutor } = useCtx();
   return React.useCallback(
-    <I,>(command: (s: SessionState, input: I, ctx: CommandContext) => CommandResult, input: I, sessionIdForStart?: string): DispatchResult => {
-      const r = controller.dispatch(command, input, sessionIdForStart);
+    async <N extends CommandName>(name: N, input: CommandInput<N>): Promise<DispatchResult> => {
+      const r = await controller.run(name, input);
       if (r.ok) tutorTriggersFor(r.events, controller, tutor);
       return r;
     },

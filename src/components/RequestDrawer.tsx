@@ -1,7 +1,6 @@
 // S03: investigation request drawer with two separate commitments.
 // Data stay locked until both fields are committed and the transaction is saved.
 import * as React from 'react';
-import * as C from '../engine/commands.ts';
 import { REQUEST_HELPERS, getInvestigationDef } from '../case/publicCatalogue.ts';
 import { useDraft, useRun, useUi } from '../ui/session.tsx';
 import { ConfidenceInput, ErrorNote, TextField } from './forms.tsx';
@@ -49,21 +48,21 @@ function DrawerBody(props: { mode: 'request' | 'repeat' | 'unsupported'; studyId
     clearC();
   };
 
-  const commit = () => {
+  const commit = async () => {
     setError(null);
     if (props.mode === 'request' && def) {
-      const res = run(C.commitRequest, { investigation_id: def.id, rationale, expectation, confidence: conf });
+      const res = await run('commitRequest', { investigation_id: def.id, rationale, expectation, confidence: conf });
       if (!res.ok) return setError(res.message);
       clearAll();
       props.onReleased(def.id);
     } else if (props.mode === 'repeat' && def) {
-      const res = run(C.requestRepeat, { investigation_id: def.id, rationale, expectation });
+      const res = await run('requestRepeat', { investigation_id: def.id, rationale, expectation });
       if (!res.ok) return setError(res.message);
       clearAll();
       const b = res.events.find((e) => e.event_type === 'boundary_response');
       setBoundary(b && b.event_type === 'boundary_response' ? b.payload.message : 'Recorded.');
     } else {
-      const res = run(C.requestUnsupported, { name, rationale, expectation });
+      const res = await run('requestUnsupported', { name, rationale, expectation });
       if (!res.ok) return setError(res.message);
       clearAll();
       const b = res.events.find((e) => e.event_type === 'boundary_response');

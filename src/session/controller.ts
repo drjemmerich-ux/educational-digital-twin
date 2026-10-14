@@ -143,6 +143,13 @@ export class SessionController {
     return this.commit(drafts);
   }
 
+  /** Tutor events computed against the latest committed state (same contract as the remote gateway). */
+  appendTutorWith(build: (state: SessionState) => EventDraft[] | null): DispatchResult | null {
+    const drafts = build(this._state);
+    if (!drafts || drafts.length === 0) return null;
+    return this.appendTutorEvents(drafts);
+  }
+
   private commit(drafts: EventDraft[], sessionIdForStart?: string): DispatchResult {
     const sessionId = this._state.sessionId ?? sessionIdForStart;
     if (!sessionId) return { ok: false, code: 'NO_SESSION', message: 'No active session.' };

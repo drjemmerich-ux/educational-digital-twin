@@ -86,6 +86,11 @@ export function App(props: { restoreError: string | null }) {
           This encounter was changed in another tab, so this tab has stopped saving. Reload the page to continue with the latest record.
         </div>
       ) : null}
+      {controller.saveStatus === 'offline' ? (
+        <div className="banner banner-boundary" role="alert">
+          The study server could not be reached, so your last entry was not saved and nothing was released. Check your connection and try again. {controller.lastError ?? ''}
+        </div>
+      ) : null}
       {controller.saveStatus === 'failed' && controller.lastError ? (
         <div className="banner banner-boundary" role="alert">
           The last entry could not be saved and nothing was released. {controller.lastError} Try again.
@@ -111,7 +116,11 @@ export function App(props: { restoreError: string | null }) {
       {ui.dialog === 'export' ? <ExportDialog /> : null}
       {ui.dialog === 'exit' ? (
         <Dialog title="Leave this encounter?" onClose={() => setUi({ dialog: null })}>
-          <p>Your progress is saved in this browser. You can resume it from the start screen. Export first if you need a copy elsewhere.</p>
+          <p>
+            {controller.capabilities.storage === 'server'
+              ? 'Your progress is saved on the study server. You can continue later with your personal link. Export first if you want your own copy.'
+              : 'Your progress is saved in this browser. You can resume it from the start screen. Export first if you need a copy elsewhere.'}
+          </p>
           <div className="row">
             <button type="button" className="btn-secondary" onClick={() => setUi({ dialog: 'export' })}>
               Export first
@@ -131,7 +140,11 @@ export function App(props: { restoreError: string | null }) {
       ) : null}
       {ui.dialog === 'restart' ? (
         <Dialog title="Start a new encounter?" onClose={() => setUi({ dialog: null })}>
-          <p>This session stays saved in this browser and remains available to resume or export. A new encounter starts as a separate session.</p>
+          <p>
+            {controller.capabilities.storage === 'server'
+              ? 'This session stays saved on the study server and remains available to open or export. A new encounter starts as a separate session.'
+              : 'This session stays saved in this browser and remains available to resume or export. A new encounter starts as a separate session.'}
+          </p>
           <div className="row">
             <button type="button" className="btn-secondary" onClick={() => setUi({ dialog: 'export' })}>
               Export this session first

@@ -1,7 +1,6 @@
 // Connects a TutorAdapter to the session. It can only append tutor events; the controller
 // rejects any other event type from this path.
-import type { EventDraft } from '../engine/types.ts';
-import type { SessionController } from '../session/controller.ts';
+import type { EventDraft, SessionState } from '../engine/types.ts';
 import { buildTutorContext } from './context.ts';
 import { validateTutorOutput, type TutorAdapter, type TutorMode, type TutorTrigger } from './contract.ts';
 
@@ -20,13 +19,23 @@ function triggerName(t: TutorTrigger): string {
   }
 }
 
-export function runTutor(controller: SessionController, adapter: TutorAdapter, trigger: TutorTrigger): void {
-  const ctx = buildTutorContext(controller.state, trigger);
+/** Anything that can append tutor events computed from its latest committed state. */
+export interface TutorTarget {
+  appendTutorWith(build: (state: SessionState) => EventDraft[] | null): unknown;
+}
+
+export function runTutor(target: TutorTarget, adapter: TutorAdapter, trigger: TutorTrigger): void {
+  target.appendTutorWith((state) => tutorDrafts(state, adapter, trigger));
+}
+
+/** Pure: the tutor's event drafts for a trigger, given released state only. */
+export function tutorDrafts(state: SessionState, adapter: TutorAdapter, trigger: TutorTrigger): EventDraft[] | null {
+  const ctx = buildTutorContext(state, trigger);
   const output = adapter.respond(ctx);
   const name = triggerName(trigger);
   let draft: EventDraft;
   if (output === null) {
-    if (trigger.kind !== 'support_requested') return; // silence needs no record unless the learner asked
+    if (trigger.kind !== 'support_requested') return null; // silence needs no record unless the learner asked
     draft = { event_type: 'tutor_silent', source: 'tutor', payload: { trigger: name, reason: 'no_prompt_for_context' } };
   } else if (!validateTutorOutput(output)) {
     draft = {
@@ -37,19 +46,19 @@ export function runTutor(controller: SessionController, adapter: TutorAdapter, t
   } else {
     draft = { event_type: 'tutor_message', source: 'tutor', payload: { ...output, trigger: name, budget_override_reason: null } };
   }
-  controller.appendTutorEvents([draft]);
+  return [draft];
 }
 
-export function requestSupport(controller: SessionController, adapter: TutorAdapter, mode: TutorMode): void {
-  controller.appendTutorEvents([{ event_type: 'tutor_support_requested', source: 'learner', payload: { mode, trigger: 'learner_selected' } }]);
-  runTutor(controller, adapter, { kind: 'support_requested', mode });
+export function requestSupport(target: TutorTarget, adapter: TutorAdapter, mode: TutorMode): void {
+  target.appendTutorWith(() => [{ event_type: 'tutor_support_requested', source: 'learner', payload: { mode, trigger: 'learner_selected' } }]);
+  runTutor(target, adapter, { kind: 'support_requested', mode });
 }
 
-export function respondToTutor(controller: SessionController, text: string, inReplyTo: string | null): void {
+export function respondToTutor(target: TutorTarget, text: string, inReplyTo: string | null): void {
   if (!text.trim()) return;
-  controller.appendTutorEvents([{ event_type: 'tutor_response', source: 'learner', payload: { text: text.trim(), in_reply_to: inReplyTo } }]);
+  target.appendTutorWith(() => [{ event_type: 'tutor_response', source: 'learner', payload: { text: text.trim(), in_reply_to: inReplyTo } }]);
 }
 
-export function setTutorPreference(controller: SessionController, mode: 'auto' | 'on_request'): void {
-  controller.appendTutorEvents([{ event_type: 'tutor_preference_changed', source: 'learner', payload: { mode } }]);
+export function setTutorPreference(target: TutorTarget, mode: 'auto' | 'on_request'): void {
+  target.appendTutorWith(() => [{ event_type: 'tutor_preference_changed', source: 'learner', payload: { mode } }]);
 }

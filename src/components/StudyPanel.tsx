@@ -1,6 +1,6 @@
 // S04: study view, independent interpretation gate, report release, and model update.
 import * as React from 'react';
-import * as C from '../engine/commands.ts';
+import { contextStageOf } from '../engine/stageRules.ts';
 import { INTERPRETATION_PROMPT, getInvestigationDef } from '../case/publicCatalogue.ts';
 import { currentModel, nextStepFor, record } from '../engine/selectors.ts';
 import type { EffectOnModel, ManagementThinking, ReleasedReport, ReleasedSeries } from '../engine/types.ts';
@@ -46,16 +46,16 @@ export function StudyPanel(props: { investigationId: string; readOnly?: boolean;
   const r = record(state, props.investigationId);
   const [tab, setTab] = React.useState<'images' | 'report' | 'annotations'>('images');
   const interpreted = r.interpretations.length > 0;
-  const editable = !props.readOnly && def !== undefined && state.stage === C.contextStage(def);
+  const editable = !props.readOnly && def !== undefined && state.stage === contextStageOf(def.context);
 
   if (!def) return null;
 
   const placeholderShown = (assetId: string) => {
     if (!controller.state.assetNotices.some((n) => n.asset_id === assetId && n.kind === 'placeholder_displayed')) {
-      controller.dispatch(C.recordAssetNotice, { asset_id: assetId, kind: 'placeholder_displayed', detail: 'Approved frames not supplied; technical placeholder shown.' });
+      void controller.run('recordAssetNotice', { asset_id: assetId, kind: 'placeholder_displayed', detail: 'Approved frames not supplied; technical placeholder shown.' });
     }
   };
-  const loadError = (assetId: string, detail: string) => controller.dispatch(C.recordAssetNotice, { asset_id: assetId, kind: 'load_error', detail });
+  const loadError = (assetId: string, detail: string) => void controller.run('recordAssetNotice', { asset_id: assetId, kind: 'load_error', detail });
 
   // Comparison: only series from other studies already released in this session.
   const compareOptions = Object.values(state.investigations)
@@ -146,7 +146,7 @@ export function StudyPanel(props: { investigationId: string; readOnly?: boolean;
               className={tab === 'annotations' ? 'active' : ''}
               onClick={() => {
                 setTab('annotations');
-                if (r.report && interpreted) controller.dispatch(C.openAnnotations, { investigation_id: r.id });
+                if (r.report && interpreted) void controller.run('openAnnotations', { investigation_id: r.id });
               }}
             >
               Teaching annotations{!r.report ? ' (locked)' : ''}
@@ -261,8 +261,8 @@ function InterpretationRecord(props: { investigationId: string; editable: boolea
               <button
                 type="button"
                 className="btn-primary"
-                onClick={() => {
-                  const res = run(C.addInterpretationAddendum, { investigation_id: r.id, text });
+                onClick={async () => {
+                  const res = await run('addInterpretationAddendum', { investigation_id: r.id, text });
                   if (!res.ok) setError(res.message);
                   else {
                     clear();
@@ -312,8 +312,8 @@ function InterpretationForm(props: { investigationId: string; imageGate: boolean
       <button
         type="button"
         className="btn-primary"
-        onClick={() => {
-          const res = run(C.commitInterpretation, { investigation_id: props.investigationId, text, confidence: conf });
+        onClick={async () => {
+          const res = await run('commitInterpretation', { investigation_id: props.investigationId, text, confidence: conf });
           if (!res.ok) setError(res.message);
           else {
             clear();
@@ -352,8 +352,8 @@ function TextOnlySwitch(props: { investigationId: string }) {
         <button
           type="button"
           className="btn-primary"
-          onClick={() => {
-            const res = run(C.switchStudyToTextOnly, { investigation_id: props.investigationId, reason });
+          onClick={async () => {
+            const res = await run('switchStudyToTextOnly', { investigation_id: props.investigationId, reason });
             if (!res.ok) setError(res.message);
           }}
         >
@@ -435,8 +435,8 @@ function ModelUpdateForm(props: { investigationId: string }) {
         label="Commit model update"
         confirmText={COMMIT_NOTE}
         error={error}
-        onCommit={() => {
-          const res = run(C.commitModelUpdate, {
+        onCommit={async () => {
+          const res = await run('commitModelUpdate', {
             investigation_id: props.investigationId,
             effect,
             explanation,

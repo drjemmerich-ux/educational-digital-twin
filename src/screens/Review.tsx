@@ -1,7 +1,6 @@
 // S09: expert review required. A safe application boundary, not a competence judgment and not
 // simulated deterioration.
 import * as React from 'react';
-import * as C from '../engine/commands.ts';
 import { actionLabel } from '../engine/selectors.ts';
 import { useRun, useSession, useUi } from '../ui/session.tsx';
 import { ErrorNote } from '../components/forms.tsx';
@@ -48,8 +47,8 @@ export function Review() {
         <button
           type="button"
           className="btn-primary"
-          onClick={() => {
-            const r = run(C.enterDebrief, undefined);
+          onClick={async () => {
+            const r = await run('enterDebrief', undefined);
             setError(r.ok ? null : r.message);
           }}
         >

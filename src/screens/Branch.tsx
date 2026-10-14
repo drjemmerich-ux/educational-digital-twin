@@ -1,7 +1,6 @@
 // S08: execute the confirmed branch with authored simulated-time controls. Only this branch's
 // consequences appear. Persistence requires a new committed response stored as a new version.
 import * as React from 'react';
-import * as C from '../engine/commands.ts';
 import { actionLabel } from '../engine/selectors.ts';
 import { useDraft, useRun, useSession } from '../ui/session.tsx';
 import { ErrorNote } from '../components/forms.tsx';
@@ -28,8 +27,8 @@ export function Branch() {
   const stage = state.stage;
   const persistence = stage === 'N4.B2.persistence' || stage === 'N4.B4.persistence';
   const resolved = RESOLVED.includes(stage);
-  const go = (cmd: typeof C.advanceBranch) => {
-    const r = run(cmd, undefined);
+  const go = async (cmd: 'advanceBranch' | 'advanceToFollowUp') => {
+    const r = await run(cmd, undefined);
     setError(r.ok ? null : r.message);
   };
   return (
@@ -62,7 +61,7 @@ export function Branch() {
       {ADVANCE_LABEL[stage] ? (
         <div className="continue-block">
           <p className="muted small">Simulated clinical time advances; no real waiting is involved.</p>
-          <button type="button" className="btn-primary" onClick={() => go(C.advanceBranch)}>
+          <button type="button" className="btn-primary" onClick={() => void go('advanceBranch')}>
             {ADVANCE_LABEL[stage]}
           </button>
         </div>
@@ -78,8 +77,8 @@ export function Branch() {
           <ActionSelect
             legend="Which action does your revised plan describe?"
             error={error}
-            onConfirm={(id) => {
-              const r = run(C.commitSecondDecision, { ...plan, confidence: plan.confidence as number, option_id: id });
+            onConfirm={async (id) => {
+              const r = await run('commitSecondDecision', { ...plan, confidence: plan.confidence as number, option_id: id });
               if (!r.ok) setError(r.message);
               else clear();
             }}
@@ -88,7 +87,7 @@ export function Branch() {
       ) : null}
       {resolved ? (
         <div className="continue-block">
-          <button type="button" className="btn-primary" onClick={() => go(C.advanceToFollowUp)}>
+          <button type="button" className="btn-primary" onClick={() => void go('advanceToFollowUp')}>
             Continue to follow-up
           </button>
         </div>

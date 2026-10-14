@@ -1,7 +1,6 @@
 // S07: new postoperative findings, reassessment, postoperative work-up (same gates), plan, and
 // neutral action-category confirmation.
 import * as React from 'react';
-import * as C from '../engine/commands.ts';
 import { POSTOP_ACTION_OPTIONS } from '../case/publicCatalogue.ts';
 import type { BranchOptionId } from '../case/types.ts';
 import type { PlanInput } from '../engine/types.ts';
@@ -51,8 +50,8 @@ function Reassessment() {
         label="Commit reassessment"
         confirmText={`${COMMIT_NOTE} You can then request investigations.`}
         error={error}
-        onCommit={() => {
-          const r = run(C.commitPostopReassessment, { problem_representation: pr, differential: dd, priorities: prio, confidence: conf as number });
+        onCommit={async () => {
+          const r = await run('commitPostopReassessment', { problem_representation: pr, differential: dd, priorities: prio, confidence: conf as number });
           if (!r.ok) setError(r.message);
           else [c1, c2, c3, c4].forEach((f) => f());
         }}
@@ -84,8 +83,8 @@ function PlanForm() {
         label="Commit plan"
         confirmText={`${COMMIT_NOTE} The postoperative investigation catalogue closes after this step.`}
         error={error}
-        onCommit={() => {
-          const r = run(C.commitPostopPlan, { ...plan, confidence: plan.confidence as number });
+        onCommit={async () => {
+          const r = await run('commitPostopPlan', { ...plan, confidence: plan.confidence as number });
           if (!r.ok) setError(r.message);
           else clear();
         }}
@@ -186,8 +185,8 @@ export function Postop() {
       <ActionSelect
         legend="Which action does your plan describe?"
         error={error}
-        onConfirm={(id) => {
-          const r = run(C.confirmBranchSelection, { option_id: id });
+        onConfirm={async (id) => {
+          const r = await run('confirmBranchSelection', { option_id: id });
           setError(r.ok ? null : r.message);
         }}
       />
