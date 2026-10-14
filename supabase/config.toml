@@ -1,0 +1,5 @@
+# Supabase CLI configuration (used by the GitHub deployment workflow).
+project_id = "aczupeihejdguwipqcfz"
+
+[functions.edt-engine]
+verify_jwt = false
