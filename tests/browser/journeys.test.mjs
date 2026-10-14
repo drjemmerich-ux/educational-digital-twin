@@ -502,6 +502,9 @@ for (const vp of [
     await page.keyboard.type('Keyboard interpretation');
     await tabTo(() => document.activeElement?.textContent === 'Commit interpretation', 10);
     await page.keyboard.press('Enter');
+    // Commits resolve asynchronously (the same interface runs against the server in the pilot build).
+    await page.waitForFunction(() => window.__edt.controller.state.investigations.emg_ncs?.interpretations.length > 0);
+    await page.waitForFunction(() => document.activeElement?.id === 'study-emg_ncs-title', null, { timeout: 5000 }).catch(() => undefined);
     const s = await state(page);
     assert.equal(s.investigations.emg_ncs.interpretations[0].text, 'Keyboard interpretation');
     if (vp.width === 1024) await page.screenshot({ path: `${SHOTS}17-tablet-1024.png` });

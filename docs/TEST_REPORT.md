@@ -1,15 +1,17 @@
-# Test report · Prototype 1.6
+# Test report · Prototype 1.7
 
-Run on 13 October 2026 in the build environment (Node 22.22, headless Chromium via Playwright 1.56).
+Run on 14 October 2026 in the build environment (Node 22.22, headless Chromium via Playwright 1.56).
 Raw logs: `docs/verification/`. Screenshots: `docs/screenshots/`.
 
 | Check | Result |
 | --- | --- |
 | Type-check (strict TS, offline React shim) | Pass |
 | Type-check against real `@types/react` | **Not run** (package registry unavailable here) |
-| Engine, persistence, export, tutor tests (`npm test`) | 38 of 38 pass |
-| Browser walkthroughs (`npm run test:browser`) | 17 of 17 pass |
-| Reference-path export regenerated and replayed | Pass: 96 events, `clinical_pathway_completed`, checksum `f0556768` |
+| Engine, persistence, export, tutor and server tests (`npm test`) | 50 of 50 pass (38 acceptance + 12 server) |
+| Browser walkthroughs (`npm run test:browser`) | 22 of 22 pass (17 local build + 5 pilot build), three consecutive full runs. AT31 was intermittent after commits became asynchronous (the test read state before the commit resolved); it now waits for the commit and still asserts focus return |
+| Hidden-content check on pilot bundles | Pass: 212 hidden case strings, none in the participant or facilitator page |
+| Reference-path export regenerated and replayed | Pass: 96 events, `clinical_pathway_completed`, checksum `7a9c021c` (version labels changed to 1.7) |
+| Live Supabase database, Edge Function, Vercel site | **Not tested**: not yet deployed (see `docs/DEPLOYMENT.md`) |
 | Horizontal overflow at 420, 768, 900, 1024, 1280 px | None |
 | Published Artifact preview opened and exercised in claude.ai | **Not verified** from this session |
 
@@ -48,6 +50,32 @@ Raw logs: `docs/verification/`. Screenshots: `docs/screenshots/`.
 | AT30 | Unit (no grading or competence vocabulary, no citations); browser debrief text scan | Pass |
 | AT31 | Browser keyboard-only journey at 1280 and 1024 px, visible focus | Pass for start, assessment, request, interpretation. The full five-node journey was not repeated keyboard-only |
 | AT32 | Unit scan for superseded details; asset registry has 43 unique planned packages | Pass |
+
+## Server and pilot checks (new in 1.7)
+
+| ID | What it checks | Result |
+| --- | --- | --- |
+| SRV01 | Facilitator key required; link created once; only the token hash stored; overview never returns tokens | Pass |
+| SRV02 | Invalid and disabled links refused | Pass |
+| SRV03 | Reference journey through the server equals the local engine (event types, stage, released content); export replays | Pass |
+| SRV04 | Stored log equals the participant trace; reopening rebuilds identical state | Pass |
+| SRV05 | Guards on the server: consent, imaging route, unknown command, malformed input, wrong stage; link cannot start a demonstration | Pass |
+| SRV06 | One open encounter per link; another link cannot read it | Pass |
+| SRV07 | Stale tab refused with CONFLICT, becomes read-only, nothing appended | Pass |
+| SRV08 | Database or network failure releases nothing | Pass |
+| SRV09 | Tutor path can only append tutor events | Pass |
+| SRV10 | Double submission sends one request | Pass |
+| SRV11 | Facilitator overview with training level; disable and re-enable | Pass |
+| SRV12 | Participant and facilitator sources import no engine commands or hidden content | Pass |
+| PIL01 | No link or a bad link: clear message | Pass |
+| PIL02 | Served participant page contains no hidden case content | Pass |
+| PIL03 | Browser: facilitator creates link → consent → B1 to completion with a reload mid-session → server record equals trace → facilitator JSON export | Pass |
+| PIL04 | Disabled link stops access | Pass |
+| PIL05 | Wrong facilitator key refused | Pass |
+
+The pilot browser tests use the local development server, which runs the same handler as the Edge Function with an
+in-memory store. The Supabase store (`supabaseStore.ts`) and the SQL functions have not been exercised against the
+live database yet.
 
 ## Required walkthroughs
 

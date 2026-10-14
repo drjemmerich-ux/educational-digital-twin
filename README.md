@@ -1,6 +1,11 @@
-# Educational Digital Twin · Prototype 1.5
+# Educational Digital Twin · Prototype 1.7
 
-Lumbar Spine Patient Encounter — fictional case `EDT-LUM-DUMMY-001`, content bundle `edt-lum-dummy-001-handoff-1.0`.
+Lumbar Spine Patient Encounter — fictional case `EDT-LUM-DUMMY-001`, content bundle `edt-lum-dummy-001-handoff-1.1`.
+
+Two builds share one engine and one interface:
+
+- **Local build** (`dist/`): the engine runs in the browser; sessions are kept in browser storage. Used for review, the claude.ai Artifact preview and the demonstration session.
+- **Pilot build** (`dist-web/`): each fellow opens a personal link; every command runs on the server engine (Supabase Edge Function `edt-engine`), which holds the hidden case content and the append-only record. A facilitator page creates and disables links and exports records. See `docs/DEPLOYMENT.md`.
 
 A formative clinical-reasoning simulation for spine surgery education. The learner manages a synthetic patient across
 five nodes (initial presentation, diagnostic work-up, management strategy, procedure and complication, outcome and
@@ -23,6 +28,9 @@ npx playwright install chromium
 npm run test:browser     # browser walkthroughs against dist/index.html
 npm run reference-session  # regenerate docs/reference-path-session.json and verify it by replay
 npm run typecheck        # strict TypeScript against @types/react
+npm run build:web        # pilot build: dist-web/index.html + facilitator.html (fails if hidden content leaks)
+npm run build:edge       # server engine bundle: supabase/functions/edt-engine/engine.js
+npm run dev:pilot        # local pilot server with an in-memory store at http://localhost:5174
 ```
 
 `dist/index.html` also works when opened directly from disk. Session data are saved in that browser's local storage.
@@ -53,8 +61,16 @@ src/tutor/       educational conversation only
   scriptedTutor.ts     deterministic Socratic prompts and hidden budgets
   tutorService.ts      appends tutor events; cannot reach engine commands
 src/components/, src/screens/   React presentation (S00-S11)
-tests/unit/      AT01-AT30, AT32 at engine/persistence level
-tests/browser/   Playwright walkthroughs incl. AT31 keyboard and DOM leakage checks
+src/server/      server engine (pilot)
+  api.ts               wire contract shared by pages and server
+  handler.ts           authenticate link/key, fold log, run guarded command, stamp, atomic append
+  store.ts, memoryStore.ts, supabaseStore.ts   persistence boundary and implementations
+  edgeEntry.ts         bundle entry for the Supabase Edge Function
+src/session/gateway.ts, localGateway.ts, remoteGateway.ts   the UI's only route to the engine
+src/mainRemote.tsx, src/facilitator/   pilot participant and facilitator entry points
+supabase/        migrations (append-only schema) and the edt-engine function
+tests/unit/      AT01-AT30, AT32 at engine/persistence level; SRV01-SRV12 server
+tests/browser/   Playwright walkthroughs incl. AT31 keyboard and DOM leakage checks; PIL01-PIL05 pilot
 docs/            decision log, test report, screenshots, reference-path session JSON
 ```
 

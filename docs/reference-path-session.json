@@ -10,8 +10,8 @@
   "versions": {
     "case_id": "EDT-LUM-DUMMY-001",
     "content_version": "edt-lum-dummy-001-handoff-1.1",
-    "ui_version": "ui-1.6.0",
-    "engine_version": "engine-1.6.0",
+    "ui_version": "ui-1.7.0",
+    "engine_version": "engine-1.7.0",
     "asset_manifest_version": "manifest-1.1 (Visual Bible v0.1 with amendments of 2026-10-12)",
     "tutor_policy_version": "scripted-tutor-policy-1.1"
   },
@@ -1221,8 +1221,8 @@
         "versions": {
           "case_id": "EDT-LUM-DUMMY-001",
           "content_version": "edt-lum-dummy-001-handoff-1.1",
-          "ui_version": "ui-1.6.0",
-          "engine_version": "engine-1.6.0",
+          "ui_version": "ui-1.7.0",
+          "engine_version": "engine-1.7.0",
           "asset_manifest_version": "manifest-1.1 (Visual Bible v0.1 with amendments of 2026-10-12)",
           "tutor_policy_version": "scripted-tutor-policy-1.1"
         },
@@ -3938,6 +3938,6 @@
     "event_count": 96,
     "first_sequence": 1,
     "last_sequence": 96,
-    "checksum_fnv1a": "f0556768"
+    "checksum_fnv1a": "7a9c021c"
   }
 }

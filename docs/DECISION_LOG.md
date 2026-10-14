@@ -81,3 +81,17 @@ All 13 sections of the EDT Content Review Pack were approved by Dr Emmerich. Con
 | 19 | Start screen line 1.3 | Adds "This is a demonstration to evaluate the potential of this educational model." (Dr Emmerich's edit, wording polished). |
 | 20 | Course wording during the episode | "Longer than the reference course" replaced by "modestly prolonged" / "prolonged" so that the existence of a reference course is not revealed before the debrief. |
 | 21 | Reading list | Five verified references ship. The three "pending verification" items were ticked in the pack but no specific papers were supplied; none is shown until a verified citation exists. |
+
+## Prototype 1.7 · server-backed pilot (14 October 2026)
+
+Implements decisions 11 and 12. No clinical content changed (content `edt-lum-dummy-001-handoff-1.1`).
+
+| ID | Decision |
+| --- | --- |
+| S12 | The interface reaches the engine only through a `SessionGateway` with named commands. The local build uses `LocalGateway` (unchanged behaviour); the pilot build uses `RemoteGateway`. The participant bundle never contains engine commands or hidden content; the build fails if any hidden case string reaches it. |
+| S13 | The server engine is the same `commands.ts`, reducer and stamping code, run in a Supabase Edge Function. Each request rebuilds the session from its append-only log, runs one guarded command and appends atomically with a sequence check (stale tab → conflict, nothing appended). |
+| S14 | Personal links: 256-bit random token in the URL fragment; only its SHA-256 hash is stored. The link fixes the participant code (P-XXXXXX) and the session kind (participant). One encounter in progress per link; a new one only after completion. |
+| S15 | Facilitator access by key created in the SQL editor (shown once, hash stored). Labels must be neutral ("Fellow 01"); no names are stored by the system. |
+| S16 | Data withdrawal is a database function run by the coordinator; it is the only path that can delete events. |
+| S17 | The tutor still runs in the browser (released state only); its events are validated by type on the server. The demonstration session and the developer storage-failure tool are local-build only. |
+| S18 | Deployment: GitHub Actions deploys the Edge Function (tests run first); Vercel builds the pages from `vercel.json`. The database schema is applied once from `deploy/setup-database.sql`. |

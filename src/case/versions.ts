@@ -1,8 +1,8 @@
 // Version bundle for Prototype 1.5. A session keeps the versions it started with.
 export const CASE_ID = 'EDT-LUM-DUMMY-001' as const;
 export const CONTENT_VERSION = 'edt-lum-dummy-001-handoff-1.1' as const;
-export const UI_VERSION = 'ui-1.6.0' as const;
-export const ENGINE_VERSION = 'engine-1.6.0' as const;
+export const UI_VERSION = 'ui-1.7.0' as const;
+export const ENGINE_VERSION = 'engine-1.7.0' as const;
 export const ASSET_MANIFEST_VERSION = 'manifest-1.1 (Visual Bible v0.1 with amendments of 2026-10-12)' as const;
 export const TUTOR_POLICY_VERSION = 'scripted-tutor-policy-1.1' as const;
 export const EXPORT_SCHEMA_VERSION = 'edt-session-export-1.0' as const;
