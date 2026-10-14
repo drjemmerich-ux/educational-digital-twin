@@ -38,12 +38,11 @@
 ## Not verified
 
 - Live Supabase, Edge Function and Vercel behaviour (not deployed yet).
-- Type-check against real `@types/react` (registry blocked here; CI installs it but runs tests, not typecheck).
 - Screen readers, non-Chromium browsers, phones.
 
 ## Tests
 
-Unit 50/50 (38 acceptance + 12 server) · browser 22/22 (17 local + 5 pilot) · reference export replay pass. Details in `docs/TEST_REPORT.md`.
+Type-check against real React types: pass (GitHub Actions) · unit 50/50 (38 acceptance + 12 server) · browser 22/22 (17 local + 5 pilot) · reference export replay pass. Details in `docs/TEST_REPORT.md`.
 
 ## Next step
 

@@ -6,7 +6,7 @@ Raw logs: `docs/verification/`. Screenshots: `docs/screenshots/`.
 | Check | Result |
 | --- | --- |
 | Type-check (strict TS, offline React shim) | Pass |
-| Type-check against real `@types/react` | **Not run** (package registry unavailable here) |
+| Type-check against real `@types/react` | Pass on GitHub Actions (run 38590051784); unit tests also pass there |
 | Engine, persistence, export, tutor and server tests (`npm test`) | 50 of 50 pass (38 acceptance + 12 server) |
 | Browser walkthroughs (`npm run test:browser`) | 22 of 22 pass (17 local build + 5 pilot build), three consecutive full runs. AT31 was intermittent after commits became asynchronous (the test read state before the commit resolved); it now waits for the commit and still asserts focus return |
 | Hidden-content check on pilot bundles | Pass: 212 hidden case strings, none in the participant or facilitator page |
