@@ -1,18 +1,21 @@
 {
   "name": "educational-digital-twin-lumbar",
-  "version": "1.5.0",
+  "version": "1.7.0",
   "private": true,
-  "description": "Educational Digital Twin - Prototype 1.5 - fictional lumbar case EDT-LUM-DUMMY-001 (synthetic, formative, local only)",
+  "description": "Educational Digital Twin - Prototype 1.7 - fictional lumbar case EDT-LUM-DUMMY-001; local build and server-backed pilot build",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "node scripts/build.mjs --serve",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "node --import tsx --test tests/unit/*.test.ts",
-    "test:browser": "node scripts/build.mjs && node --test tests/browser/*.test.mjs",
+    "test:browser": "node scripts/build.mjs && EDT_API_URL=/api node scripts/build.mjs --web && node --import tsx --test --test-concurrency=1 tests/browser/*.test.mjs tests/browser/*.test.ts",
     "reference-session": "node --import tsx scripts/generate-reference-session.ts",
     "verify": "npm run typecheck && npm test && npm run test:browser && npm run reference-session",
-    "typecheck:offline": "tsc -p tsconfig.sandbox.json --noEmit"
+    "typecheck:offline": "tsc -p tsconfig.sandbox.json --noEmit",
+    "build:web": "node scripts/build.mjs --web",
+    "build:edge": "node scripts/build-edge.mjs",
+    "dev:pilot": "EDT_API_URL=/api node scripts/build.mjs --web && node --import tsx scripts/dev-server.ts"
   },
   "dependencies": {
     "react": "^19.2.0",

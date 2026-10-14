@@ -1,6 +1,6 @@
 {
   "export_schema_version": "edt-session-export-1.0",
-  "exported_at_utc": "2026-10-14T14:35:17.643Z",
+  "exported_at_utc": "2026-10-14T14:55:11.370Z",
   "notice": [
     "Fictional, fully synthetic educational case. Not real patient data. Not clinical decision support.",
     "Formative prototype: no grading, scoring, or competence classification.",
@@ -15,17 +15,17 @@
     "tutor_policy_version": "scripted-tutor-policy-1.1"
   },
   "session": {
-    "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
-    "participant_code": "P-MZZFK6",
+    "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
+    "participant_code": "P-8LZVY8",
     "session_kind": "participant",
     "imaging_route": "image_gate_placeholder",
     "status": "completed",
     "completion_status": "clinical_pathway_completed",
     "current_stage": "N5.debrief",
     "simulated_time_now": "Six weeks after surgery",
-    "started_at_utc": "2026-10-14T14:35:12.110Z",
-    "last_event_at_utc": "2026-10-14T14:35:17.506Z",
-    "real_elapsed_seconds": 5
+    "started_at_utc": "2026-10-14T14:55:05.436Z",
+    "last_event_at_utc": "2026-10-14T14:55:11.207Z",
+    "real_elapsed_seconds": 6
   },
   "released_content": {
     "presentation": {
@@ -218,7 +218,7 @@
         "interpretations": [
           {
             "text": "My interpretation of Lumbar MRI",
-            "reasoning_version_id": "rv-6ac7458d-0544-4c1e-a06c-3e1b85a9e15c",
+            "reasoning_version_id": "rv-448105f6-99ef-4e04-a187-7be30a0d041e",
             "predecessor_id": null,
             "confidence": null,
             "sequence": 13
@@ -272,7 +272,7 @@
           "decision": "revise",
           "confidence": null,
           "management_thinking": "unsure",
-          "resulting_model_id": "model-2457e83f-ad83-4659-a4a5-6aaa1a7f228e",
+          "resulting_model_id": "model-884a8aa8-6831-4c20-b9d6-72edfcc8fe33",
           "sequence": 17
         },
         "reopened_views": 0,
@@ -311,7 +311,7 @@
         "interpretations": [
           {
             "text": "My interpretation of Flexion and extension lateral radiographs",
-            "reasoning_version_id": "rv-42b2064a-dd3a-4a01-8399-19939d47f3b7",
+            "reasoning_version_id": "rv-fde859dc-80be-4fa4-ac93-c936701809be",
             "predecessor_id": null,
             "confidence": null,
             "sequence": 23
@@ -347,7 +347,7 @@
           "decision": "maintain",
           "confidence": null,
           "management_thinking": "unchanged",
-          "resulting_model_id": "model-2457e83f-ad83-4659-a4a5-6aaa1a7f228e",
+          "resulting_model_id": "model-884a8aa8-6831-4c20-b9d6-72edfcc8fe33",
           "sequence": 25
         },
         "reopened_views": 0,
@@ -369,7 +369,7 @@
         "interpretations": [
           {
             "text": "My interpretation of EMG and nerve conduction studies",
-            "reasoning_version_id": "rv-ef5e592b-b400-4f53-a251-617a3f6770de",
+            "reasoning_version_id": "rv-dc9b3d26-b5cd-4d70-8863-57751712c40b",
             "predecessor_id": null,
             "confidence": null,
             "sequence": 31
@@ -405,7 +405,7 @@
           "decision": "maintain",
           "confidence": null,
           "management_thinking": "unchanged",
-          "resulting_model_id": "model-2457e83f-ad83-4659-a4a5-6aaa1a7f228e",
+          "resulting_model_id": "model-884a8aa8-6831-4c20-b9d6-72edfcc8fe33",
           "sequence": 32
         },
         "reopened_views": 0,
@@ -452,7 +452,7 @@
         "interpretations": [
           {
             "text": "My interpretation of Lumbar MRI (postoperative)",
-            "reasoning_version_id": "rv-6e070fcc-0839-4fae-a657-ebaa6be267b0",
+            "reasoning_version_id": "rv-8fd3f4f5-832c-41c9-833a-8c78b20a9176",
             "predecessor_id": null,
             "confidence": null,
             "sequence": 68
@@ -502,7 +502,7 @@
           "decision": "maintain",
           "confidence": null,
           "management_thinking": "unchanged",
-          "resulting_model_id": "model-baf181b8-a5ef-4af7-b632-f04dc12965dd",
+          "resulting_model_id": "model-ae2369fc-61c4-4a14-aa1c-54528c3ea732",
           "sequence": 70
         },
         "reopened_views": 0,
@@ -524,7 +524,7 @@
         "interpretations": [
           {
             "text": "My interpretation of Postoperative laboratory studies",
-            "reasoning_version_id": "rv-94723ac7-b2a9-4b00-9ef0-0965058a28f8",
+            "reasoning_version_id": "rv-b854a561-23a0-445a-9c77-882b6d3d8ed9",
             "predecessor_id": null,
             "confidence": null,
             "sequence": 60
@@ -565,7 +565,7 @@
           "decision": "maintain",
           "confidence": null,
           "management_thinking": "unchanged",
-          "resulting_model_id": "model-baf181b8-a5ef-4af7-b632-f04dc12965dd",
+          "resulting_model_id": "model-ae2369fc-61c4-4a14-aa1c-54528c3ea732",
           "sequence": 61
         },
         "reopened_views": 0,
@@ -604,7 +604,7 @@
         "interpretations": [
           {
             "text": "My interpretation of Standing lumbar AP and lateral radiographs (follow-up)",
-            "reasoning_version_id": "rv-9e1817a2-b545-4675-97e6-8d91ddb1f1b8",
+            "reasoning_version_id": "rv-e709dda8-942b-46b0-b312-0d813587dc21",
             "predecessor_id": null,
             "confidence": null,
             "sequence": 85
@@ -644,7 +644,7 @@
           "decision": "maintain",
           "confidence": null,
           "management_thinking": "unchanged",
-          "resulting_model_id": "model-baf181b8-a5ef-4af7-b632-f04dc12965dd",
+          "resulting_model_id": "model-ae2369fc-61c4-4a14-aa1c-54528c3ea732",
           "sequence": 88
         },
         "reopened_views": 0,
@@ -653,7 +653,7 @@
     ],
     "working_models": [
       {
-        "version_id": "model-744b0370-c33d-4ca7-a712-b2b7ff19522b",
+        "version_id": "model-e0a41bd5-0f17-4a5b-b8ad-74cc6c4ecab1",
         "chain": "preop",
         "version": 1,
         "predecessor_id": null,
@@ -667,10 +667,10 @@
         "sequence": 5
       },
       {
-        "version_id": "model-2457e83f-ad83-4659-a4a5-6aaa1a7f228e",
+        "version_id": "model-884a8aa8-6831-4c20-b9d6-72edfcc8fe33",
         "chain": "preop",
         "version": 2,
-        "predecessor_id": "model-744b0370-c33d-4ca7-a712-b2b7ff19522b",
+        "predecessor_id": "model-e0a41bd5-0f17-4a5b-b8ad-74cc6c4ecab1",
         "trigger": "study_update:lumbar_mri",
         "problem_representation": "Revised representation",
         "hypotheses": [
@@ -681,10 +681,10 @@
         "sequence": 16
       },
       {
-        "version_id": "model-f00453d4-21b3-4e97-ad64-959e71b2dc38",
+        "version_id": "model-0201c1df-411d-4f0d-8c0c-4a7de35f8b36",
         "chain": "preop",
         "version": 3,
-        "predecessor_id": "model-2457e83f-ad83-4659-a4a5-6aaa1a7f228e",
+        "predecessor_id": "model-884a8aa8-6831-4c20-b9d6-72edfcc8fe33",
         "trigger": "workup_conclusion",
         "problem_representation": "Integrated model",
         "hypotheses": [
@@ -695,7 +695,7 @@
         "sequence": 33
       },
       {
-        "version_id": "model-baf181b8-a5ef-4af7-b632-f04dc12965dd",
+        "version_id": "model-ae2369fc-61c4-4a14-aa1c-54528c3ea732",
         "chain": "postop",
         "version": 1,
         "predecessor_id": null,
@@ -714,7 +714,7 @@
       "confidence": 55,
       "enough_information": true,
       "open_cycles": [],
-      "model_id": "model-f00453d4-21b3-4e97-ad64-959e71b2dc38",
+      "model_id": "model-0201c1df-411d-4f0d-8c0c-4a7de35f8b36",
       "sequence": 34
     },
     "recommendation": {
@@ -737,7 +737,7 @@
         "confidence": 55,
         "comparison": []
       },
-      "reasoning_version_id": "rv-6da47f7a-9cae-413e-981d-f5803c8889bb",
+      "reasoning_version_id": "rv-b9f0f046-de62-4600-96c7-f3360c1f0f73",
       "sequence": 37
     },
     "recommendation_flag": null,
@@ -867,7 +867,7 @@
           "threshold": "",
           "confidence": 55
         },
-        "plan_version_id": "plan-5aaf7087-211a-4e3f-87ca-75b44c25e8c7",
+        "plan_version_id": "plan-70318754-00d5-4c57-89d4-7bba9e60f09c",
         "predecessor_id": null,
         "decision_point": "initial_postoperative_plan",
         "sequence": 71
@@ -1065,7 +1065,7 @@
         "answers": {
           "r1": "Reflection text"
         },
-        "reflection_version_id": "refl-99e71846-d1a8-4d46-a19c-06793db340bc",
+        "reflection_version_id": "refl-eb907bee-3f71-47bd-9b97-953900fb27cd",
         "sequence": 91
       }
     ],
@@ -1142,20 +1142,20 @@
   ],
   "events": [
     {
-      "event_id": "evt-90eed62a-531a-4890-8f1c-97839b09ee61",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-6216bbfe-6da7-45e2-b718-81819b9c51d3",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 1,
-      "transaction_id": "txn-33e7f50a-1bee-447f-b5e6-74e7a64da03d",
+      "transaction_id": "txn-34a58439-8760-44cb-a675-b61094b4d68b",
       "event_type": "session_started",
       "source": "system",
-      "timestamp_utc": "2026-10-14T14:35:12.110Z",
+      "timestamp_utc": "2026-10-14T14:55:05.436Z",
       "simulated_time": "none",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
       "state_before": "START",
       "state_after": "START",
       "payload": {
-        "participant_code": "P-MZZFK6",
+        "participant_code": "P-8LZVY8",
         "imaging_route": "image_gate_placeholder",
         "session_kind": "participant",
         "versions": {
@@ -1184,13 +1184,13 @@
       }
     },
     {
-      "event_id": "evt-d9b12732-9e13-4786-8deb-066630a74cf1",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-8bbcbff8-d06b-4deb-a2d9-57d1338f810f",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 2,
-      "transaction_id": "txn-33e7f50a-1bee-447f-b5e6-74e7a64da03d",
+      "transaction_id": "txn-34a58439-8760-44cb-a675-b61094b4d68b",
       "event_type": "presentation_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:12.110Z",
+      "timestamp_utc": "2026-10-14T14:55:05.436Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1336,13 +1336,13 @@
       }
     },
     {
-      "event_id": "evt-9945f548-5aea-4d02-ad23-4dd68a959585",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-be1a8d45-281b-44e9-8f9e-6fe3f94f010f",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 3,
-      "transaction_id": "txn-33e7f50a-1bee-447f-b5e6-74e7a64da03d",
+      "transaction_id": "txn-34a58439-8760-44cb-a675-b61094b4d68b",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:12.110Z",
+      "timestamp_utc": "2026-10-14T14:55:05.436Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1358,13 +1358,13 @@
       }
     },
     {
-      "event_id": "evt-8944fd9c-f234-4108-bafa-d1cc99a13159",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-b478b82f-1a11-4bb4-b29d-423d9db8d00d",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 4,
-      "transaction_id": "txn-04ab69f0-f326-45f8-a959-4a2178957494",
+      "transaction_id": "txn-ca882703-309e-4672-9ef3-556cb93e5299",
       "event_type": "tutor_message",
       "source": "tutor",
-      "timestamp_utc": "2026-10-14T14:35:12.123Z",
+      "timestamp_utc": "2026-10-14T14:55:05.447Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1382,13 +1382,13 @@
       }
     },
     {
-      "event_id": "evt-7cc8f73b-bb2d-4c8f-9f41-7f8fa5e92de6",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-5d1b0491-1235-4578-b99d-bddea555e9a9",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 5,
-      "transaction_id": "txn-02511859-bc17-4e7c-9eb9-22aa4919130a",
+      "transaction_id": "txn-66306017-0357-406f-82d3-588851e80fc2",
       "event_type": "initial_assessment_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:12.275Z",
+      "timestamp_utc": "2026-10-14T14:55:05.572Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1396,7 +1396,7 @@
       "state_after": "N1.assessment",
       "payload": {
         "model": {
-          "version_id": "model-744b0370-c33d-4ca7-a712-b2b7ff19522b",
+          "version_id": "model-e0a41bd5-0f17-4a5b-b8ad-74cc6c4ecab1",
           "chain": "preop",
           "version": 1,
           "predecessor_id": null,
@@ -1411,13 +1411,13 @@
       }
     },
     {
-      "event_id": "evt-c43f22bd-4b57-4d0d-a72b-7fa3dd278985",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-836579f5-2415-4e1f-b0b9-a176ce315e5e",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 6,
-      "transaction_id": "txn-02511859-bc17-4e7c-9eb9-22aa4919130a",
+      "transaction_id": "txn-66306017-0357-406f-82d3-588851e80fc2",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:12.275Z",
+      "timestamp_utc": "2026-10-14T14:55:05.572Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1433,13 +1433,13 @@
       }
     },
     {
-      "event_id": "evt-13509e40-de29-4bde-8c91-0114d794c4ac",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-bfa6100d-bffa-4f9b-a7d4-5e18a542fc1d",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 7,
-      "transaction_id": "txn-50db800f-94cc-4db5-a0c3-7c1767126632",
+      "transaction_id": "txn-a044daff-9033-4e45-aba5-48450ec4b7e2",
       "event_type": "investigation_requested",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:12.591Z",
+      "timestamp_utc": "2026-10-14T14:55:05.906Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1452,13 +1452,13 @@
       }
     },
     {
-      "event_id": "evt-c7c84855-96fc-45bd-9ef2-30695f47fa44",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-19e1d742-aa0f-4abc-850c-821fae844db3",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 8,
-      "transaction_id": "txn-50db800f-94cc-4db5-a0c3-7c1767126632",
+      "transaction_id": "txn-a044daff-9033-4e45-aba5-48450ec4b7e2",
       "event_type": "rationale_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:12.591Z",
+      "timestamp_utc": "2026-10-14T14:55:05.906Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1467,17 +1467,17 @@
       "payload": {
         "investigation_id": "lumbar_mri",
         "text": "Why Lumbar MRI",
-        "reasoning_version_id": "rv-048ffb0d-c968-48c3-8528-07d4a599b72c"
+        "reasoning_version_id": "rv-c07e46aa-6825-4401-a9d1-bb10693b7df2"
       }
     },
     {
-      "event_id": "evt-7d38aadc-a866-4781-b747-23daefc20139",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-9389cccc-e559-4261-90f2-42238e346e08",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 9,
-      "transaction_id": "txn-50db800f-94cc-4db5-a0c3-7c1767126632",
+      "transaction_id": "txn-a044daff-9033-4e45-aba5-48450ec4b7e2",
       "event_type": "expectation_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:12.591Z",
+      "timestamp_utc": "2026-10-14T14:55:05.906Z",
       "simulated_time": "T0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1486,18 +1486,18 @@
       "payload": {
         "investigation_id": "lumbar_mri",
         "text": "Expect Lumbar MRI",
-        "reasoning_version_id": "rv-7a112a7a-894e-4005-bd81-c74d3750a907",
+        "reasoning_version_id": "rv-0cd437a8-cc2d-494d-8494-b3505cd4dfd2",
         "confidence": null
       }
     },
     {
-      "event_id": "evt-e6b1c52d-95b5-4032-925b-29b9aab686d7",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-e1ac8aa6-d09f-4c80-9f15-eb01f1237f54",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 10,
-      "transaction_id": "txn-50db800f-94cc-4db5-a0c3-7c1767126632",
+      "transaction_id": "txn-a044daff-9033-4e45-aba5-48450ec4b7e2",
       "event_type": "clock_advanced",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:12.591Z",
+      "timestamp_utc": "2026-10-14T14:55:05.906Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1512,13 +1512,13 @@
       }
     },
     {
-      "event_id": "evt-01b83355-0382-49b5-b9c3-e04d9e77d67b",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-e7c470c7-3b4c-4f28-a1e9-a2830425eae1",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 11,
-      "transaction_id": "txn-50db800f-94cc-4db5-a0c3-7c1767126632",
+      "transaction_id": "txn-a044daff-9033-4e45-aba5-48450ec4b7e2",
       "event_type": "raw_data_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:12.591Z",
+      "timestamp_utc": "2026-10-14T14:55:05.906Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1586,13 +1586,13 @@
       }
     },
     {
-      "event_id": "evt-f8b1e4ae-a466-494a-b675-1a4cd6e31abb",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-c2b83eb2-1fac-475e-bdc7-8e289a49501f",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 12,
-      "transaction_id": "txn-649cb420-69b0-49b0-b81b-80eb65d36c64",
+      "transaction_id": "txn-73ab50d4-6151-405b-a6e8-a9ec38a18f81",
       "event_type": "asset_notice",
       "source": "system",
-      "timestamp_utc": "2026-10-14T14:35:12.607Z",
+      "timestamp_utc": "2026-10-14T14:55:05.918Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1605,13 +1605,13 @@
       }
     },
     {
-      "event_id": "evt-f47e7be5-103f-4c88-82f4-3d69c1289960",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-1bea7f55-a2cf-4728-a353-8761b367ff76",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 13,
-      "transaction_id": "txn-757bc9cb-b8f7-4080-843d-4ecba815a4bd",
+      "transaction_id": "txn-0b3d3647-4898-41c3-bfce-be9b6cf6dca7",
       "event_type": "interpretation_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:12.693Z",
+      "timestamp_utc": "2026-10-14T14:55:05.988Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1620,18 +1620,18 @@
       "payload": {
         "investigation_id": "lumbar_mri",
         "text": "My interpretation of Lumbar MRI",
-        "reasoning_version_id": "rv-6ac7458d-0544-4c1e-a06c-3e1b85a9e15c",
+        "reasoning_version_id": "rv-448105f6-99ef-4e04-a187-7be30a0d041e",
         "confidence": null
       }
     },
     {
-      "event_id": "evt-42caeb58-fa7d-4895-bb09-311999be3fa7",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-c25d88db-bb4c-4e15-ae57-6e71a104bb55",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 14,
-      "transaction_id": "txn-757bc9cb-b8f7-4080-843d-4ecba815a4bd",
+      "transaction_id": "txn-0b3d3647-4898-41c3-bfce-be9b6cf6dca7",
       "event_type": "report_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:12.693Z",
+      "timestamp_utc": "2026-10-14T14:55:05.988Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1683,13 +1683,13 @@
       }
     },
     {
-      "event_id": "evt-9a472515-0ba6-4622-b3a5-2d4cbb97f7d8",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-d2c90d1d-677c-496e-a8af-67756e5d7b10",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 15,
-      "transaction_id": "txn-eebcb1cb-59b3-4d33-b15f-af5c1a6be2e6",
+      "transaction_id": "txn-9335c950-a2e9-414d-a82d-4619532fe75a",
       "event_type": "tutor_message",
       "source": "tutor",
-      "timestamp_utc": "2026-10-14T14:35:12.699Z",
+      "timestamp_utc": "2026-10-14T14:55:05.994Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1708,13 +1708,13 @@
       }
     },
     {
-      "event_id": "evt-8597fa39-35c6-46de-b6ed-894edfd0b6da",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-800a4271-84ee-4b18-8cae-577525f753a0",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 16,
-      "transaction_id": "txn-87f2e590-bbf5-44cb-abf9-817c25cb485b",
+      "transaction_id": "txn-bf0898f9-d6cd-4adf-986e-1f52670ac3ee",
       "event_type": "working_model_revised",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:13.041Z",
+      "timestamp_utc": "2026-10-14T14:55:06.353Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1722,10 +1722,10 @@
       "state_after": "N2.workup",
       "payload": {
         "model": {
-          "version_id": "model-2457e83f-ad83-4659-a4a5-6aaa1a7f228e",
+          "version_id": "model-884a8aa8-6831-4c20-b9d6-72edfcc8fe33",
           "chain": "preop",
           "version": 2,
-          "predecessor_id": "model-744b0370-c33d-4ca7-a712-b2b7ff19522b",
+          "predecessor_id": "model-e0a41bd5-0f17-4a5b-b8ad-74cc6c4ecab1",
           "trigger": "study_update:lumbar_mri",
           "problem_representation": "Revised representation",
           "hypotheses": [
@@ -1738,13 +1738,13 @@
       }
     },
     {
-      "event_id": "evt-8f37caf7-5551-423f-b067-7cfba948ae70",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-b783165b-67fb-4277-9333-dd355e89b2d5",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 17,
-      "transaction_id": "txn-87f2e590-bbf5-44cb-abf9-817c25cb485b",
+      "transaction_id": "txn-bf0898f9-d6cd-4adf-986e-1f52670ac3ee",
       "event_type": "model_update_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:13.041Z",
+      "timestamp_utc": "2026-10-14T14:55:06.353Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1757,17 +1757,17 @@
         "decision": "revise",
         "confidence": null,
         "management_thinking": "unsure",
-        "resulting_model_id": "model-2457e83f-ad83-4659-a4a5-6aaa1a7f228e"
+        "resulting_model_id": "model-884a8aa8-6831-4c20-b9d6-72edfcc8fe33"
       }
     },
     {
-      "event_id": "evt-64052717-871d-433c-beb2-d6fe0ea8b7ad",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-68d49e8a-5b8e-463f-8035-12edf29e3f2a",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 18,
-      "transaction_id": "txn-c46e7369-495b-4ad4-ab56-986f434ebad8",
+      "transaction_id": "txn-5158a755-3dff-40ad-8679-dac716edf449",
       "event_type": "investigation_requested",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:13.191Z",
+      "timestamp_utc": "2026-10-14T14:55:06.538Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1780,13 +1780,13 @@
       }
     },
     {
-      "event_id": "evt-022104b3-99ca-4f8a-bbc7-a03128f50a44",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-74ad8ea2-b886-4256-889b-2ea52a1d2ad1",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 19,
-      "transaction_id": "txn-c46e7369-495b-4ad4-ab56-986f434ebad8",
+      "transaction_id": "txn-5158a755-3dff-40ad-8679-dac716edf449",
       "event_type": "rationale_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:13.191Z",
+      "timestamp_utc": "2026-10-14T14:55:06.538Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1795,17 +1795,17 @@
       "payload": {
         "investigation_id": "dynamic_xr",
         "text": "Why Flexion and extension lateral radiographs",
-        "reasoning_version_id": "rv-f68d4749-8fc4-4a59-a544-6769a7ff28ef"
+        "reasoning_version_id": "rv-02bd44f9-a905-48bb-8531-1d764b9bd096"
       }
     },
     {
-      "event_id": "evt-1a9a7fc4-79c6-4986-900a-fc6372caac83",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-87cb566e-890e-4eff-8345-d60ab74fe57f",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 20,
-      "transaction_id": "txn-c46e7369-495b-4ad4-ab56-986f434ebad8",
+      "transaction_id": "txn-5158a755-3dff-40ad-8679-dac716edf449",
       "event_type": "expectation_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:13.191Z",
+      "timestamp_utc": "2026-10-14T14:55:06.538Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1814,18 +1814,18 @@
       "payload": {
         "investigation_id": "dynamic_xr",
         "text": "Expect Flexion and extension lateral radiographs",
-        "reasoning_version_id": "rv-aacc8ee0-df0e-4414-8189-f04f6325ea47",
+        "reasoning_version_id": "rv-f4b349eb-cba4-4809-9c80-30f338ea4569",
         "confidence": null
       }
     },
     {
-      "event_id": "evt-1504496b-3360-42c9-83ed-fb0e55f25302",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-43767e52-128f-47d6-8e06-cdaf33c7c736",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 21,
-      "transaction_id": "txn-c46e7369-495b-4ad4-ab56-986f434ebad8",
+      "transaction_id": "txn-5158a755-3dff-40ad-8679-dac716edf449",
       "event_type": "raw_data_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:13.191Z",
+      "timestamp_utc": "2026-10-14T14:55:06.538Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1863,13 +1863,13 @@
       }
     },
     {
-      "event_id": "evt-9af8316e-93a0-4daa-a9ee-140daf7c1344",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-1655cd44-fd4a-46b7-92e7-ac775b061ccf",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 22,
-      "transaction_id": "txn-2a466fb0-f6cb-4220-8441-2ada3c9f5f10",
+      "transaction_id": "txn-2648da9d-bc38-4551-a9c1-34f0996a8303",
       "event_type": "asset_notice",
       "source": "system",
-      "timestamp_utc": "2026-10-14T14:35:13.199Z",
+      "timestamp_utc": "2026-10-14T14:55:06.546Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1882,13 +1882,13 @@
       }
     },
     {
-      "event_id": "evt-90c50015-9fa4-4f28-b402-ec0c448e5473",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-fecff1ed-4929-4ff9-96cd-5b671b3ac687",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 23,
-      "transaction_id": "txn-ad4b627a-2456-4259-99e4-a144c885b78f",
+      "transaction_id": "txn-66c6c9e6-7700-46d6-a360-59fc973ba899",
       "event_type": "interpretation_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:13.256Z",
+      "timestamp_utc": "2026-10-14T14:55:06.620Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1897,18 +1897,18 @@
       "payload": {
         "investigation_id": "dynamic_xr",
         "text": "My interpretation of Flexion and extension lateral radiographs",
-        "reasoning_version_id": "rv-42b2064a-dd3a-4a01-8399-19939d47f3b7",
+        "reasoning_version_id": "rv-fde859dc-80be-4fa4-ac93-c936701809be",
         "confidence": null
       }
     },
     {
-      "event_id": "evt-3a47058b-c5af-41f0-81a2-e47b66b95a76",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-a606430e-c38c-4927-b4a5-49fa48eb1e4e",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 24,
-      "transaction_id": "txn-ad4b627a-2456-4259-99e4-a144c885b78f",
+      "transaction_id": "txn-66c6c9e6-7700-46d6-a360-59fc973ba899",
       "event_type": "report_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:13.256Z",
+      "timestamp_utc": "2026-10-14T14:55:06.620Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1942,13 +1942,13 @@
       }
     },
     {
-      "event_id": "evt-859c9fb7-d6b5-4a15-861d-d3053dcc6c89",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-c5cd7733-b858-476a-ad03-2c0a231f4ca1",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 25,
-      "transaction_id": "txn-4779cd4f-edbf-4bda-be2e-f13667c402df",
+      "transaction_id": "txn-d898f0fe-c8b0-4ef5-8a37-b1dad45e6cc4",
       "event_type": "model_update_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:13.473Z",
+      "timestamp_utc": "2026-10-14T14:55:06.854Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1961,17 +1961,17 @@
         "decision": "maintain",
         "confidence": null,
         "management_thinking": "unchanged",
-        "resulting_model_id": "model-2457e83f-ad83-4659-a4a5-6aaa1a7f228e"
+        "resulting_model_id": "model-884a8aa8-6831-4c20-b9d6-72edfcc8fe33"
       }
     },
     {
-      "event_id": "evt-5d3c04aa-568a-446a-911b-65a73e25c7a9",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-812e3f22-36ed-4242-b77b-e2a59f1a4f47",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 26,
-      "transaction_id": "txn-78e3b0d8-9e97-460a-b9a4-b3c55fb34773",
+      "transaction_id": "txn-682c33dc-566f-4b13-82ad-ca4c1dd541a3",
       "event_type": "investigation_requested",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:13.607Z",
+      "timestamp_utc": "2026-10-14T14:55:07.037Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1984,13 +1984,13 @@
       }
     },
     {
-      "event_id": "evt-9b62c9b9-79aa-44b5-8eae-6ef639432b71",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-cec01280-c752-4b0c-8252-c0315b16000e",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 27,
-      "transaction_id": "txn-78e3b0d8-9e97-460a-b9a4-b3c55fb34773",
+      "transaction_id": "txn-682c33dc-566f-4b13-82ad-ca4c1dd541a3",
       "event_type": "rationale_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:13.607Z",
+      "timestamp_utc": "2026-10-14T14:55:07.037Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -1999,17 +1999,17 @@
       "payload": {
         "investigation_id": "emg_ncs",
         "text": "Why EMG and nerve conduction studies",
-        "reasoning_version_id": "rv-26fd2442-8394-471f-a8e9-d97fa4cd66f4"
+        "reasoning_version_id": "rv-64624674-9d49-4cbc-a5f9-f1932a9ccafc"
       }
     },
     {
-      "event_id": "evt-5ac7cb2c-a14f-48b4-bb49-749c6b03f3af",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-95b5db2c-2887-4aea-8a0a-4313a78afd84",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 28,
-      "transaction_id": "txn-78e3b0d8-9e97-460a-b9a4-b3c55fb34773",
+      "transaction_id": "txn-682c33dc-566f-4b13-82ad-ca4c1dd541a3",
       "event_type": "expectation_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:13.607Z",
+      "timestamp_utc": "2026-10-14T14:55:07.037Z",
       "simulated_time": "T+10d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2018,18 +2018,18 @@
       "payload": {
         "investigation_id": "emg_ncs",
         "text": "Expect EMG and nerve conduction studies",
-        "reasoning_version_id": "rv-dce11875-75a1-4510-86de-31b38babbc94",
+        "reasoning_version_id": "rv-7a7d1a58-b545-46b2-9165-ba9dccfd0188",
         "confidence": null
       }
     },
     {
-      "event_id": "evt-87c27cf3-55a9-4529-91b8-5fd797988c3c",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-24517926-0a33-4d00-ac67-226aef5f961d",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 29,
-      "transaction_id": "txn-78e3b0d8-9e97-460a-b9a4-b3c55fb34773",
+      "transaction_id": "txn-682c33dc-566f-4b13-82ad-ca4c1dd541a3",
       "event_type": "clock_advanced",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:13.607Z",
+      "timestamp_utc": "2026-10-14T14:55:07.037Z",
       "simulated_time": "T+12d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2044,13 +2044,13 @@
       }
     },
     {
-      "event_id": "evt-8a7ea9c3-cb25-4177-855a-5ba00dc8d5fd",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-965e4e6e-76c4-4f84-ab4e-3277dd893d60",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 30,
-      "transaction_id": "txn-78e3b0d8-9e97-460a-b9a4-b3c55fb34773",
+      "transaction_id": "txn-682c33dc-566f-4b13-82ad-ca4c1dd541a3",
       "event_type": "report_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:13.607Z",
+      "timestamp_utc": "2026-10-14T14:55:07.037Z",
       "simulated_time": "T+12d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2084,13 +2084,13 @@
       }
     },
     {
-      "event_id": "evt-ac9c8bcd-e4c4-4795-90d9-0e883a31c012",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-e7b6302c-3f54-4f55-9691-3150a07d99b2",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 31,
-      "transaction_id": "txn-f40cc693-7568-4769-9b97-f04aeb5c96a6",
+      "transaction_id": "txn-4ea08971-c3b3-4a3e-9892-ea6d55e568b5",
       "event_type": "interpretation_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:13.691Z",
+      "timestamp_utc": "2026-10-14T14:55:07.103Z",
       "simulated_time": "T+12d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2099,18 +2099,18 @@
       "payload": {
         "investigation_id": "emg_ncs",
         "text": "My interpretation of EMG and nerve conduction studies",
-        "reasoning_version_id": "rv-ef5e592b-b400-4f53-a251-617a3f6770de",
+        "reasoning_version_id": "rv-dc9b3d26-b5cd-4d70-8863-57751712c40b",
         "confidence": null
       }
     },
     {
-      "event_id": "evt-9c975365-0f9d-4793-85cc-89d84350fd0d",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-c24ed674-4247-4387-bca1-e5ccda246cf0",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 32,
-      "transaction_id": "txn-0fbea30f-c79e-4636-ac60-5b0c3a854a18",
+      "transaction_id": "txn-06acb4c9-3865-4cc1-8954-230d05955eae",
       "event_type": "model_update_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:13.907Z",
+      "timestamp_utc": "2026-10-14T14:55:07.355Z",
       "simulated_time": "T+12d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2123,17 +2123,17 @@
         "decision": "maintain",
         "confidence": null,
         "management_thinking": "unchanged",
-        "resulting_model_id": "model-2457e83f-ad83-4659-a4a5-6aaa1a7f228e"
+        "resulting_model_id": "model-884a8aa8-6831-4c20-b9d6-72edfcc8fe33"
       }
     },
     {
-      "event_id": "evt-9c90bbf5-3ca8-41e9-848a-6eedc616ed81",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-8d6599c3-809e-43e2-bbb1-a003ca236ab9",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 33,
-      "transaction_id": "txn-c94c2db2-12a7-4ae0-afee-f2fd2ac00189",
+      "transaction_id": "txn-a658495f-a684-4779-9671-296623477a17",
       "event_type": "working_model_revised",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:14.123Z",
+      "timestamp_utc": "2026-10-14T14:55:07.636Z",
       "simulated_time": "T+12d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2141,10 +2141,10 @@
       "state_after": "N2.workup",
       "payload": {
         "model": {
-          "version_id": "model-f00453d4-21b3-4e97-ad64-959e71b2dc38",
+          "version_id": "model-0201c1df-411d-4f0d-8c0c-4a7de35f8b36",
           "chain": "preop",
           "version": 3,
-          "predecessor_id": "model-2457e83f-ad83-4659-a4a5-6aaa1a7f228e",
+          "predecessor_id": "model-884a8aa8-6831-4c20-b9d6-72edfcc8fe33",
           "trigger": "workup_conclusion",
           "problem_representation": "Integrated model",
           "hypotheses": [
@@ -2157,13 +2157,13 @@
       }
     },
     {
-      "event_id": "evt-b0b5f180-81c6-495a-b1b0-630bf84bb24a",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-2587ef60-c0e6-46c4-a11c-10e510bc42b0",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 34,
-      "transaction_id": "txn-c94c2db2-12a7-4ae0-afee-f2fd2ac00189",
+      "transaction_id": "txn-a658495f-a684-4779-9671-296623477a17",
       "event_type": "workup_concluded",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:14.123Z",
+      "timestamp_utc": "2026-10-14T14:55:07.636Z",
       "simulated_time": "T+12d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2174,17 +2174,17 @@
         "confidence": 55,
         "enough_information": true,
         "open_cycles": [],
-        "model_id": "model-f00453d4-21b3-4e97-ad64-959e71b2dc38"
+        "model_id": "model-0201c1df-411d-4f0d-8c0c-4a7de35f8b36"
       }
     },
     {
-      "event_id": "evt-acac9297-7281-4bb7-8a79-c4cb09efa49a",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-43911ddd-fb0e-4ec6-b584-cfd7314f710e",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 35,
-      "transaction_id": "txn-c94c2db2-12a7-4ae0-afee-f2fd2ac00189",
+      "transaction_id": "txn-a658495f-a684-4779-9671-296623477a17",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:14.123Z",
+      "timestamp_utc": "2026-10-14T14:55:07.636Z",
       "simulated_time": "T+14d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2200,13 +2200,13 @@
       }
     },
     {
-      "event_id": "evt-e5fc7b3b-4172-4129-9d79-27c1060c85c6",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-3723db93-ca3a-4616-b11f-6c0198063c9f",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 36,
-      "transaction_id": "txn-df4810cb-a4af-45e9-a576-5ab2c14f80bf",
+      "transaction_id": "txn-6f6d50ff-daf0-4326-921b-4aa4e16b6250",
       "event_type": "tutor_message",
       "source": "tutor",
-      "timestamp_utc": "2026-10-14T14:35:14.131Z",
+      "timestamp_utc": "2026-10-14T14:55:07.642Z",
       "simulated_time": "T+14d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2225,13 +2225,13 @@
       }
     },
     {
-      "event_id": "evt-52ebd11c-434b-4c2c-88a1-a4ca3c8ac2a1",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-ce5c3522-8156-4cd0-8c83-4450b824b842",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 37,
-      "transaction_id": "txn-3670f526-942c-4ff8-801e-1e42ec6c270f",
+      "transaction_id": "txn-62f3bd38-a611-46d5-8fd5-d0aad5bc79a4",
       "event_type": "recommendation_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:14.390Z",
+      "timestamp_utc": "2026-10-14T14:55:07.888Z",
       "simulated_time": "T+14d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2257,17 +2257,17 @@
           "confidence": 55,
           "comparison": []
         },
-        "reasoning_version_id": "rv-6da47f7a-9cae-413e-981d-f5803c8889bb"
+        "reasoning_version_id": "rv-b9f0f046-de62-4600-96c7-f3360c1f0f73"
       }
     },
     {
-      "event_id": "evt-24847478-03b4-475a-84b1-2939889b004a",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-7d49915b-5639-4848-acbc-7d8e1326d89d",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 38,
-      "transaction_id": "txn-3670f526-942c-4ff8-801e-1e42ec6c270f",
+      "transaction_id": "txn-62f3bd38-a611-46d5-8fd5-d0aad5bc79a4",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:14.390Z",
+      "timestamp_utc": "2026-10-14T14:55:07.888Z",
       "simulated_time": "T+14d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2279,13 +2279,13 @@
       }
     },
     {
-      "event_id": "evt-a5b606fc-b059-42d2-ac96-5751e58e4109",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-65f48d7c-210b-461a-9ce0-d237ea639801",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 39,
-      "transaction_id": "txn-3670f526-942c-4ff8-801e-1e42ec6c270f",
+      "transaction_id": "txn-62f3bd38-a611-46d5-8fd5-d0aad5bc79a4",
       "event_type": "canonical_continuation_explained",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:14.390Z",
+      "timestamp_utc": "2026-10-14T14:55:07.888Z",
       "simulated_time": "T+14d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2296,13 +2296,13 @@
       }
     },
     {
-      "event_id": "evt-a10eff1f-b54c-4c7e-b842-f17e40cdf91c",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-3893fbc9-7ac1-449f-89fa-ae82700536db",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 40,
-      "transaction_id": "txn-1507db15-f0dd-47ac-9f0b-fea5f70c8ab2",
+      "transaction_id": "txn-b873df6a-24ce-4bec-a903-2a725958e508",
       "event_type": "canonical_continuation_acknowledged",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:14.507Z",
+      "timestamp_utc": "2026-10-14T14:55:08.037Z",
       "simulated_time": "T+14d",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2314,13 +2314,13 @@
       }
     },
     {
-      "event_id": "evt-6460d468-d365-4fa6-97fe-c03be30121b9",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-9ead55c2-ba82-42e9-9f7f-c0ef79bf5e13",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 41,
-      "transaction_id": "txn-1507db15-f0dd-47ac-9f0b-fea5f70c8ab2",
+      "transaction_id": "txn-b873df6a-24ce-4bec-a903-2a725958e508",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:14.507Z",
+      "timestamp_utc": "2026-10-14T14:55:08.037Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2336,13 +2336,13 @@
       }
     },
     {
-      "event_id": "evt-ba6da492-5240-4e38-a521-c2abc848417b",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-b05cce04-9ae8-420e-b4b5-f976785ea1dd",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 42,
-      "transaction_id": "txn-1507db15-f0dd-47ac-9f0b-fea5f70c8ab2",
+      "transaction_id": "txn-b873df6a-24ce-4bec-a903-2a725958e508",
       "event_type": "procedure_started",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:14.507Z",
+      "timestamp_utc": "2026-10-14T14:55:08.037Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2360,13 +2360,13 @@
       }
     },
     {
-      "event_id": "evt-16fe3f0d-3053-4731-aad5-d4538d63486c",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-1d08e199-1dd5-4d6a-93d1-97405ff33f25",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 43,
-      "transaction_id": "txn-1021dde9-dd0a-4978-9f36-e9ab90e9f1c7",
+      "transaction_id": "txn-e94f7357-9cf2-45a0-be62-f13c0c2b0121",
       "event_type": "intraop_checkpoint_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:14.559Z",
+      "timestamp_utc": "2026-10-14T14:55:08.086Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2395,13 +2395,13 @@
       }
     },
     {
-      "event_id": "evt-84dd75ea-a4fa-4634-b8e2-44c93976db39",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-b3349677-1eb2-469c-88c6-835d9e980569",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 44,
-      "transaction_id": "txn-1021dde9-dd0a-4978-9f36-e9ab90e9f1c7",
+      "transaction_id": "txn-e94f7357-9cf2-45a0-be62-f13c0c2b0121",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:14.559Z",
+      "timestamp_utc": "2026-10-14T14:55:08.086Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2413,13 +2413,13 @@
       }
     },
     {
-      "event_id": "evt-fdf8f1e2-ef22-4fff-9ba5-d01d36efbdc2",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-47c68a0e-72d7-4609-85a1-10cf58c9daf8",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 45,
-      "transaction_id": "txn-8b4eea35-4b62-4a32-af69-ef5865362507",
+      "transaction_id": "txn-aa6de552-591d-4a6e-abe7-799e97f5e3ab",
       "event_type": "intraop_proposal_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:14.763Z",
+      "timestamp_utc": "2026-10-14T14:55:08.310Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2433,13 +2433,13 @@
       }
     },
     {
-      "event_id": "evt-347c772c-b4d0-4ac1-88f1-900f7fb61161",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-28822b3e-f207-4e89-9cc2-31078615b806",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 46,
-      "transaction_id": "txn-8b4eea35-4b62-4a32-af69-ef5865362507",
+      "transaction_id": "txn-aa6de552-591d-4a6e-abe7-799e97f5e3ab",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:14.763Z",
+      "timestamp_utc": "2026-10-14T14:55:08.310Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2451,13 +2451,13 @@
       }
     },
     {
-      "event_id": "evt-0f3bcf90-7a19-4b57-a376-b3e57c472f2f",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-12ed06b6-2042-4e6c-ad1b-c32d651a6d70",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 47,
-      "transaction_id": "txn-4653d7bc-fff6-494b-9325-c784cb963b09",
+      "transaction_id": "txn-5947d1d7-6d6c-4e2a-a26f-3f58aba41372",
       "event_type": "team_action_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:14.807Z",
+      "timestamp_utc": "2026-10-14T14:55:08.357Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2494,13 +2494,13 @@
       }
     },
     {
-      "event_id": "evt-71aa246f-fb0d-483f-a25a-02796976ff95",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-1f887ed4-67e5-4206-b5d7-48688bbbbcac",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 48,
-      "transaction_id": "txn-4653d7bc-fff6-494b-9325-c784cb963b09",
+      "transaction_id": "txn-5947d1d7-6d6c-4e2a-a26f-3f58aba41372",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:14.807Z",
+      "timestamp_utc": "2026-10-14T14:55:08.357Z",
       "simulated_time": "POD0",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2512,13 +2512,13 @@
       }
     },
     {
-      "event_id": "evt-b57ee0a5-c629-44dd-9b96-4a541fde40ea",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-197cbc7d-beab-4842-b244-4c7e14d5d25a",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 49,
-      "transaction_id": "txn-7102153c-bf26-42d3-92b5-3020cf5f0b16",
+      "transaction_id": "txn-f0c756ba-b566-49a1-a9d9-faa8320cd581",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:14.857Z",
+      "timestamp_utc": "2026-10-14T14:55:08.403Z",
       "simulated_time": "POD1",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2534,13 +2534,13 @@
       }
     },
     {
-      "event_id": "evt-d20ba5e5-30a8-4548-ae7b-9f1323f0f5cc",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-7d241bf8-39d5-4668-8562-2ae4f2ec6ee7",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 50,
-      "transaction_id": "txn-7102153c-bf26-42d3-92b5-3020cf5f0b16",
+      "transaction_id": "txn-f0c756ba-b566-49a1-a9d9-faa8320cd581",
       "event_type": "clinical_update_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:14.857Z",
+      "timestamp_utc": "2026-10-14T14:55:08.403Z",
       "simulated_time": "POD1",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2569,13 +2569,13 @@
       }
     },
     {
-      "event_id": "evt-504894da-0d80-4719-b959-69b2a1d2ea9c",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-3693db31-0dc6-44db-825a-cc6b734e4f47",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 51,
-      "transaction_id": "txn-2ede2bb9-8094-47b1-bec8-f4c1f569be2c",
+      "transaction_id": "txn-9f6dfad9-772c-4232-8c9a-7c465808f1e4",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:14.906Z",
+      "timestamp_utc": "2026-10-14T14:55:08.454Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2591,13 +2591,13 @@
       }
     },
     {
-      "event_id": "evt-ea590112-36fe-4a1b-b13a-6958e9a87896",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-3b5c6ac1-fbe6-4179-af8c-0ad61bc35c76",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 52,
-      "transaction_id": "txn-2ede2bb9-8094-47b1-bec8-f4c1f569be2c",
+      "transaction_id": "txn-9f6dfad9-772c-4232-8c9a-7c465808f1e4",
       "event_type": "clinical_update_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:14.906Z",
+      "timestamp_utc": "2026-10-14T14:55:08.454Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2635,13 +2635,13 @@
       }
     },
     {
-      "event_id": "evt-3a511842-2545-44bf-b31c-498408a845c7",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-4b3bc717-df37-4086-a65e-c906b8db45ea",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 53,
-      "transaction_id": "txn-bbde3158-2d08-47fe-820e-c7d261b728d3",
+      "transaction_id": "txn-45bb1bdb-d70c-4b35-a222-6c5e23e5b815",
       "event_type": "postop_reassessment_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:15.139Z",
+      "timestamp_utc": "2026-10-14T14:55:08.687Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2649,7 +2649,7 @@
       "state_after": "N4.pod3_reassessment",
       "payload": {
         "model": {
-          "version_id": "model-baf181b8-a5ef-4af7-b632-f04dc12965dd",
+          "version_id": "model-ae2369fc-61c4-4a14-aa1c-54528c3ea732",
           "chain": "postop",
           "version": 1,
           "predecessor_id": null,
@@ -2667,13 +2667,13 @@
       }
     },
     {
-      "event_id": "evt-c46d1cec-adeb-45c5-9ea7-3e329e08c03b",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-8210c436-d7d6-4bdb-98b6-6bd1b1b97f8c",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 54,
-      "transaction_id": "txn-bbde3158-2d08-47fe-820e-c7d261b728d3",
+      "transaction_id": "txn-45bb1bdb-d70c-4b35-a222-6c5e23e5b815",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:15.139Z",
+      "timestamp_utc": "2026-10-14T14:55:08.687Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2685,13 +2685,13 @@
       }
     },
     {
-      "event_id": "evt-4a69d9a7-f3f3-4393-a958-1d1f2699cb35",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-acd31a13-c614-4736-8dc1-d73b0bd25d39",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 55,
-      "transaction_id": "txn-583d0aa3-68c2-46a8-9a65-b3b8faeea6f6",
+      "transaction_id": "txn-61c70175-55ed-4d60-8bd3-8b99cbaa32ba",
       "event_type": "investigation_requested",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:15.258Z",
+      "timestamp_utc": "2026-10-14T14:55:08.804Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2704,13 +2704,13 @@
       }
     },
     {
-      "event_id": "evt-bf4e194f-ab1e-482a-baa1-59270cff426a",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-174d9308-2ca7-455d-8179-ddbfb80818d9",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 56,
-      "transaction_id": "txn-583d0aa3-68c2-46a8-9a65-b3b8faeea6f6",
+      "transaction_id": "txn-61c70175-55ed-4d60-8bd3-8b99cbaa32ba",
       "event_type": "rationale_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:15.258Z",
+      "timestamp_utc": "2026-10-14T14:55:08.804Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2719,17 +2719,17 @@
       "payload": {
         "investigation_id": "postop_labs",
         "text": "Why Postoperative laboratory studies",
-        "reasoning_version_id": "rv-12b6c136-8ace-4c70-baa7-b35e7459dbb7"
+        "reasoning_version_id": "rv-9f097981-99b8-46bd-b993-2304a387afb6"
       }
     },
     {
-      "event_id": "evt-f4e9c446-b78d-4d53-92a4-fca85ac6150d",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-45fa3fcf-c82c-43ee-8117-d2d8ddfed836",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 57,
-      "transaction_id": "txn-583d0aa3-68c2-46a8-9a65-b3b8faeea6f6",
+      "transaction_id": "txn-61c70175-55ed-4d60-8bd3-8b99cbaa32ba",
       "event_type": "expectation_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:15.258Z",
+      "timestamp_utc": "2026-10-14T14:55:08.804Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2738,18 +2738,18 @@
       "payload": {
         "investigation_id": "postop_labs",
         "text": "Expect Postoperative laboratory studies",
-        "reasoning_version_id": "rv-3590aa74-4a5b-40fe-84c1-436bc8746c05",
+        "reasoning_version_id": "rv-1dae1f5c-a54d-4b7d-b295-48a781bcb3de",
         "confidence": null
       }
     },
     {
-      "event_id": "evt-4ae14769-761b-4b04-a16a-c4db317702d0",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-1405e16c-5748-41ee-b600-d254e6c64626",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 58,
-      "transaction_id": "txn-583d0aa3-68c2-46a8-9a65-b3b8faeea6f6",
+      "transaction_id": "txn-61c70175-55ed-4d60-8bd3-8b99cbaa32ba",
       "event_type": "report_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:15.258Z",
+      "timestamp_utc": "2026-10-14T14:55:08.804Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2788,13 +2788,13 @@
       }
     },
     {
-      "event_id": "evt-4824c960-0613-44ef-8873-c511611ea87a",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-02764534-9545-48f4-90b7-c6df5791503f",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 59,
-      "transaction_id": "txn-ec381af8-aabc-42b3-97d7-847af1621cb6",
+      "transaction_id": "txn-52935d54-73d2-4483-9180-d8438be2db3b",
       "event_type": "tutor_message",
       "source": "tutor",
-      "timestamp_utc": "2026-10-14T14:35:15.260Z",
+      "timestamp_utc": "2026-10-14T14:55:08.807Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2813,13 +2813,13 @@
       }
     },
     {
-      "event_id": "evt-675f566d-e692-4708-9d80-7ef313c73d98",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-59c244a4-ead4-4b68-a7a3-e8eeddff7099",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 60,
-      "transaction_id": "txn-03f9b195-9eb7-4338-9162-7b17500e66f2",
+      "transaction_id": "txn-40cce09b-db79-4990-ac3a-4b5326ba13b1",
       "event_type": "interpretation_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:15.324Z",
+      "timestamp_utc": "2026-10-14T14:55:08.886Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2828,18 +2828,18 @@
       "payload": {
         "investigation_id": "postop_labs",
         "text": "My interpretation of Postoperative laboratory studies",
-        "reasoning_version_id": "rv-94723ac7-b2a9-4b00-9ef0-0965058a28f8",
+        "reasoning_version_id": "rv-b854a561-23a0-445a-9c77-882b6d3d8ed9",
         "confidence": null
       }
     },
     {
-      "event_id": "evt-72853b3a-85ef-4eda-9e25-e0c8238697b0",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-faae4738-f0ba-494b-ab04-49ce17dde7cc",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 61,
-      "transaction_id": "txn-44f77b5c-7947-4713-aed5-5597b797e6d0",
+      "transaction_id": "txn-3002daa9-1cc8-4ae3-85e6-12c6749db87d",
       "event_type": "model_update_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:15.573Z",
+      "timestamp_utc": "2026-10-14T14:55:09.137Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2852,17 +2852,17 @@
         "decision": "maintain",
         "confidence": null,
         "management_thinking": "unchanged",
-        "resulting_model_id": "model-baf181b8-a5ef-4af7-b632-f04dc12965dd"
+        "resulting_model_id": "model-ae2369fc-61c4-4a14-aa1c-54528c3ea732"
       }
     },
     {
-      "event_id": "evt-29a48390-18ce-425a-bdbf-e139ce542775",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-96f6fcd6-be07-43bb-8e2f-f5bf5fdf9438",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 62,
-      "transaction_id": "txn-50a2481a-0cd9-46b8-a799-a69223425d34",
+      "transaction_id": "txn-f6c3097f-5362-44c1-9aeb-4066ee1657aa",
       "event_type": "investigation_requested",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:15.706Z",
+      "timestamp_utc": "2026-10-14T14:55:09.302Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2875,13 +2875,13 @@
       }
     },
     {
-      "event_id": "evt-874d849f-d08b-462b-a7d8-9da9939fbb44",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-0fb730a5-cb73-4e0d-a41f-1ae3771e3757",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 63,
-      "transaction_id": "txn-50a2481a-0cd9-46b8-a799-a69223425d34",
+      "transaction_id": "txn-f6c3097f-5362-44c1-9aeb-4066ee1657aa",
       "event_type": "rationale_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:15.706Z",
+      "timestamp_utc": "2026-10-14T14:55:09.302Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2890,17 +2890,17 @@
       "payload": {
         "investigation_id": "postop_mri",
         "text": "Why Lumbar MRI (postoperative)",
-        "reasoning_version_id": "rv-941639d4-cf61-459f-9805-96f8c0fa5f3b"
+        "reasoning_version_id": "rv-5083ec6e-43db-4177-9890-fac722e9d0c3"
       }
     },
     {
-      "event_id": "evt-3c2059b6-0752-4998-9143-cb3ad068a247",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-68437cad-04bb-4ffd-b973-ae03d40495d9",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 64,
-      "transaction_id": "txn-50a2481a-0cd9-46b8-a799-a69223425d34",
+      "transaction_id": "txn-f6c3097f-5362-44c1-9aeb-4066ee1657aa",
       "event_type": "expectation_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:15.706Z",
+      "timestamp_utc": "2026-10-14T14:55:09.302Z",
       "simulated_time": "POD3",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2909,18 +2909,18 @@
       "payload": {
         "investigation_id": "postop_mri",
         "text": "Expect Lumbar MRI (postoperative)",
-        "reasoning_version_id": "rv-dd83ddbb-6ab6-491d-99e6-8cb240dd9482",
+        "reasoning_version_id": "rv-59aa54d0-0961-4ca0-a737-07c58ead7e68",
         "confidence": null
       }
     },
     {
-      "event_id": "evt-62dc5eb6-e157-42eb-8158-1c100b22fd6f",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-d12d9912-02d5-4174-a5ba-a54d6214e051",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 65,
-      "transaction_id": "txn-50a2481a-0cd9-46b8-a799-a69223425d34",
+      "transaction_id": "txn-f6c3097f-5362-44c1-9aeb-4066ee1657aa",
       "event_type": "clock_advanced",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:15.706Z",
+      "timestamp_utc": "2026-10-14T14:55:09.302Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2935,13 +2935,13 @@
       }
     },
     {
-      "event_id": "evt-3864a782-1cc9-49c0-a4cd-ec350b60d3ab",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-10ff527e-1c32-4809-8b84-da336db7b2f7",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 66,
-      "transaction_id": "txn-50a2481a-0cd9-46b8-a799-a69223425d34",
+      "transaction_id": "txn-f6c3097f-5362-44c1-9aeb-4066ee1657aa",
       "event_type": "raw_data_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:15.706Z",
+      "timestamp_utc": "2026-10-14T14:55:09.302Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -2989,13 +2989,13 @@
       }
     },
     {
-      "event_id": "evt-21209da0-1e5d-421b-8df0-b368b9709c17",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-6ee7c5f3-c6d4-4883-96f1-966c5c727333",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 67,
-      "transaction_id": "txn-f3d1faaf-c1fc-4172-ae7e-825e67f87dd1",
+      "transaction_id": "txn-1c044dba-aeaf-4b2c-8949-dcc48fa1d54a",
       "event_type": "asset_notice",
       "source": "system",
-      "timestamp_utc": "2026-10-14T14:35:15.712Z",
+      "timestamp_utc": "2026-10-14T14:55:09.310Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3008,13 +3008,13 @@
       }
     },
     {
-      "event_id": "evt-9bad22c7-c496-478b-b5b2-fd89642a7dd8",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-812fe9e8-ad68-4c0a-8323-d161f66922ab",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 68,
-      "transaction_id": "txn-5538392b-5654-4f16-b4a2-2bec32e882c1",
+      "transaction_id": "txn-ead70636-36cc-4181-9a46-6c0aa24d846e",
       "event_type": "interpretation_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:15.790Z",
+      "timestamp_utc": "2026-10-14T14:55:09.372Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3023,18 +3023,18 @@
       "payload": {
         "investigation_id": "postop_mri",
         "text": "My interpretation of Lumbar MRI (postoperative)",
-        "reasoning_version_id": "rv-6e070fcc-0839-4fae-a657-ebaa6be267b0",
+        "reasoning_version_id": "rv-8fd3f4f5-832c-41c9-833a-8c78b20a9176",
         "confidence": null
       }
     },
     {
-      "event_id": "evt-b0d97f88-b705-4f1f-bdc1-796d8848accf",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-10d63acc-8cd4-4a81-bab1-669c9dc6e1c8",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 69,
-      "transaction_id": "txn-5538392b-5654-4f16-b4a2-2bec32e882c1",
+      "transaction_id": "txn-ead70636-36cc-4181-9a46-6c0aa24d846e",
       "event_type": "report_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:15.790Z",
+      "timestamp_utc": "2026-10-14T14:55:09.372Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3082,13 +3082,13 @@
       }
     },
     {
-      "event_id": "evt-5e88794f-97d6-44ba-8879-b74b05a6c44c",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-cd20b530-1f63-43be-918c-da4fd0ecf37c",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 70,
-      "transaction_id": "txn-d09c2f8b-16c6-4f77-afb2-2211c20a8294",
+      "transaction_id": "txn-eece5c6d-6d72-44fe-8c24-caf2f9605561",
       "event_type": "model_update_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:15.973Z",
+      "timestamp_utc": "2026-10-14T14:55:09.603Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3101,17 +3101,17 @@
         "decision": "maintain",
         "confidence": null,
         "management_thinking": "unchanged",
-        "resulting_model_id": "model-baf181b8-a5ef-4af7-b632-f04dc12965dd"
+        "resulting_model_id": "model-ae2369fc-61c4-4a14-aa1c-54528c3ea732"
       }
     },
     {
-      "event_id": "evt-9649fd48-deff-45d8-a35d-1e57f73ed15c",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-6ba3fe3b-d974-4884-8c59-bd01a24e25a3",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 71,
-      "transaction_id": "txn-d2d05bf8-ba9f-48d8-a5f3-0e9167a00fee",
+      "transaction_id": "txn-7f85f0f7-d65d-4f94-a48b-9f53969bc0c7",
       "event_type": "postop_plan_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:16.157Z",
+      "timestamp_utc": "2026-10-14T14:55:09.838Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3125,19 +3125,19 @@
           "threshold": "",
           "confidence": 55
         },
-        "plan_version_id": "plan-5aaf7087-211a-4e3f-87ca-75b44c25e8c7",
+        "plan_version_id": "plan-70318754-00d5-4c57-89d4-7bba9e60f09c",
         "predecessor_id": null,
         "decision_point": "initial_postoperative_plan"
       }
     },
     {
-      "event_id": "evt-92b4fa66-72be-4d53-8157-070a71a55a0d",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-6c357b9f-feeb-43fe-89df-4013da32c9ae",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 72,
-      "transaction_id": "txn-d2d05bf8-ba9f-48d8-a5f3-0e9167a00fee",
+      "transaction_id": "txn-7f85f0f7-d65d-4f94-a48b-9f53969bc0c7",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:16.157Z",
+      "timestamp_utc": "2026-10-14T14:55:09.838Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3149,13 +3149,13 @@
       }
     },
     {
-      "event_id": "evt-ea2339cf-2c3b-4060-9055-f3caea11336c",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-25ddd778-bd67-4a07-a952-1cca096d9b4f",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 73,
-      "transaction_id": "txn-49dd5d6f-513c-4b9a-9fc9-91b39e1f0118",
+      "transaction_id": "txn-57df623b-04ea-4d76-9c2e-1d60d1536675",
       "event_type": "postop_branch_confirmed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:16.375Z",
+      "timestamp_utc": "2026-10-14T14:55:10.035Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3169,13 +3169,13 @@
       }
     },
     {
-      "event_id": "evt-42cf85ac-0cf5-479e-96bb-e6373044aecd",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-7ad11e58-cbcf-4f3d-b6ef-9e686c22b1b9",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 74,
-      "transaction_id": "txn-49dd5d6f-513c-4b9a-9fc9-91b39e1f0118",
+      "transaction_id": "txn-57df623b-04ea-4d76-9c2e-1d60d1536675",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:16.375Z",
+      "timestamp_utc": "2026-10-14T14:55:10.035Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3191,13 +3191,13 @@
       }
     },
     {
-      "event_id": "evt-21edfaea-f0a1-4f26-b32f-4e2af9d6a172",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-828aaf50-558d-4a30-a671-25e90e09fcf5",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 75,
-      "transaction_id": "txn-49dd5d6f-513c-4b9a-9fc9-91b39e1f0118",
+      "transaction_id": "txn-57df623b-04ea-4d76-9c2e-1d60d1536675",
       "event_type": "branch_consequence_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:16.375Z",
+      "timestamp_utc": "2026-10-14T14:55:10.035Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3226,13 +3226,13 @@
       }
     },
     {
-      "event_id": "evt-cf22bf6c-dbb2-4b69-9a68-25acbdeaeb56",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-35130154-b75f-4f20-91fa-5c476985a0c2",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 76,
-      "transaction_id": "txn-8a258f93-0790-43b4-bed6-14ce51b9f00d",
+      "transaction_id": "txn-c29353c4-5bbf-4aca-9174-0f3ee0c7003f",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:16.427Z",
+      "timestamp_utc": "2026-10-14T14:55:10.086Z",
       "simulated_time": "POD4",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3244,13 +3244,13 @@
       }
     },
     {
-      "event_id": "evt-6494a8ff-fd4a-4fa3-b1f5-2a870626aecb",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-c8b2e459-da01-48e3-b479-8a6102fbfd65",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 77,
-      "transaction_id": "txn-8a258f93-0790-43b4-bed6-14ce51b9f00d",
+      "transaction_id": "txn-c29353c4-5bbf-4aca-9174-0f3ee0c7003f",
       "event_type": "branch_consequence_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:16.427Z",
+      "timestamp_utc": "2026-10-14T14:55:10.086Z",
       "simulated_time": "POD7",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3281,13 +3281,13 @@
       }
     },
     {
-      "event_id": "evt-dde68b8a-e9b5-4c4c-b11c-2e6e7f26cbcb",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-78dc0589-a68b-43ae-826f-0242b436568e",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 78,
-      "transaction_id": "txn-3ef105e8-209c-4c7f-a210-30ba15de5aa8",
+      "transaction_id": "txn-26532692-cffc-43a6-b7d4-1aaec130be44",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:16.574Z",
+      "timestamp_utc": "2026-10-14T14:55:10.219Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3303,13 +3303,13 @@
       }
     },
     {
-      "event_id": "evt-270dd880-ebb7-41e9-810c-596bec93674c",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-0a71ddb2-0c55-4abe-948c-f30910104ee4",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 79,
-      "transaction_id": "txn-3ef105e8-209c-4c7f-a210-30ba15de5aa8",
+      "transaction_id": "txn-26532692-cffc-43a6-b7d4-1aaec130be44",
       "event_type": "followup_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:16.574Z",
+      "timestamp_utc": "2026-10-14T14:55:10.219Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3368,13 +3368,13 @@
       }
     },
     {
-      "event_id": "evt-8df6207c-29ac-410f-88fd-a2748c03af56",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-8433037e-5a07-41ad-9d50-625feebd9f6d",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 80,
-      "transaction_id": "txn-1c665f79-de8b-4bd0-aa72-ef69c576bf71",
+      "transaction_id": "txn-fc5137b1-953d-4682-ad73-2039a1244083",
       "event_type": "investigation_requested",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:16.823Z",
+      "timestamp_utc": "2026-10-14T14:55:10.420Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3387,13 +3387,13 @@
       }
     },
     {
-      "event_id": "evt-c769b23b-9450-4ac2-b306-f3ca171357f8",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-920de985-d457-4b9d-a965-2d6e7b684ac8",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 81,
-      "transaction_id": "txn-1c665f79-de8b-4bd0-aa72-ef69c576bf71",
+      "transaction_id": "txn-fc5137b1-953d-4682-ad73-2039a1244083",
       "event_type": "rationale_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:16.823Z",
+      "timestamp_utc": "2026-10-14T14:55:10.420Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3402,17 +3402,17 @@
       "payload": {
         "investigation_id": "followup_xr",
         "text": "Why Standing lumbar AP and lateral radiographs (follow-up)",
-        "reasoning_version_id": "rv-f92656a3-06c2-4841-9b3b-0d2bc135bb88"
+        "reasoning_version_id": "rv-87235004-7fb5-41c6-adb3-80480054f2f1"
       }
     },
     {
-      "event_id": "evt-71becc8d-22dd-47eb-8120-ae929472fbd2",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-e95187f3-30b2-4658-85df-7c36e306d0b5",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 82,
-      "transaction_id": "txn-1c665f79-de8b-4bd0-aa72-ef69c576bf71",
+      "transaction_id": "txn-fc5137b1-953d-4682-ad73-2039a1244083",
       "event_type": "expectation_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:16.823Z",
+      "timestamp_utc": "2026-10-14T14:55:10.420Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3421,18 +3421,18 @@
       "payload": {
         "investigation_id": "followup_xr",
         "text": "Expect Standing lumbar AP and lateral radiographs (follow-up)",
-        "reasoning_version_id": "rv-6d0d5196-8a9b-46b2-a5e6-ec40b7ab9287",
+        "reasoning_version_id": "rv-99100c45-180f-49ca-8b1b-51b446115094",
         "confidence": null
       }
     },
     {
-      "event_id": "evt-9ff322e2-3eba-4384-b387-ff3d2005279d",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-e4ba05e3-14b7-461d-b22b-d80c3cc6f12f",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 83,
-      "transaction_id": "txn-1c665f79-de8b-4bd0-aa72-ef69c576bf71",
+      "transaction_id": "txn-fc5137b1-953d-4682-ad73-2039a1244083",
       "event_type": "raw_data_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:16.823Z",
+      "timestamp_utc": "2026-10-14T14:55:10.420Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3470,13 +3470,13 @@
       }
     },
     {
-      "event_id": "evt-6a41753c-211a-496d-b885-e2a2027ee6b5",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-a18f5cf5-a86b-4acd-ac98-7452cc1f6155",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 84,
-      "transaction_id": "txn-8b4ddd2b-cb7f-4661-8dae-989bf545a2d2",
+      "transaction_id": "txn-e67cf769-f593-41e8-8bf7-22b0d75a2457",
       "event_type": "asset_notice",
       "source": "system",
-      "timestamp_utc": "2026-10-14T14:35:16.830Z",
+      "timestamp_utc": "2026-10-14T14:55:10.428Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3489,13 +3489,13 @@
       }
     },
     {
-      "event_id": "evt-1d644ca7-9720-4e38-9a84-b0cea1017124",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-e20c8073-f89b-4e23-871b-30eac1640f1a",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 85,
-      "transaction_id": "txn-ef60a1e7-7f65-4b93-a660-fcda3f287f42",
+      "transaction_id": "txn-8c781888-8bbb-4d62-ad18-edc012c5aa1a",
       "event_type": "interpretation_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:16.891Z",
+      "timestamp_utc": "2026-10-14T14:55:10.503Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3504,18 +3504,18 @@
       "payload": {
         "investigation_id": "followup_xr",
         "text": "My interpretation of Standing lumbar AP and lateral radiographs (follow-up)",
-        "reasoning_version_id": "rv-9e1817a2-b545-4675-97e6-8d91ddb1f1b8",
+        "reasoning_version_id": "rv-e709dda8-942b-46b0-b312-0d813587dc21",
         "confidence": null
       }
     },
     {
-      "event_id": "evt-5486f1b5-9279-4464-870f-624fad39385a",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-e8ce91eb-9e3c-4f3d-adee-b97a06248a42",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 86,
-      "transaction_id": "txn-ef60a1e7-7f65-4b93-a660-fcda3f287f42",
+      "transaction_id": "txn-8c781888-8bbb-4d62-ad18-edc012c5aa1a",
       "event_type": "report_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:16.891Z",
+      "timestamp_utc": "2026-10-14T14:55:10.503Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3553,13 +3553,13 @@
       }
     },
     {
-      "event_id": "evt-7386f151-5c9d-4009-977b-6e09d9d76bbb",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-95b4009d-955a-4d04-a31c-e291064c69e9",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 87,
-      "transaction_id": "txn-f539c5d9-e224-49ed-b8bd-40cd26066aed",
+      "transaction_id": "txn-ab460490-e846-4117-b983-03aa59097cfa",
       "event_type": "tutor_message",
       "source": "tutor",
-      "timestamp_utc": "2026-10-14T14:35:16.895Z",
+      "timestamp_utc": "2026-10-14T14:55:10.507Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3578,13 +3578,13 @@
       }
     },
     {
-      "event_id": "evt-c74af89b-ab23-4a6c-9288-669b1c085065",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-92bfd730-fe93-4865-bee3-3eed2ef005c3",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 88,
-      "transaction_id": "txn-a971ed73-81ce-4b99-af2e-918970176285",
+      "transaction_id": "txn-9167b479-377e-45ce-b67f-e64df49c528d",
       "event_type": "model_update_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:17.105Z",
+      "timestamp_utc": "2026-10-14T14:55:10.754Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3597,17 +3597,17 @@
         "decision": "maintain",
         "confidence": null,
         "management_thinking": "unchanged",
-        "resulting_model_id": "model-baf181b8-a5ef-4af7-b632-f04dc12965dd"
+        "resulting_model_id": "model-ae2369fc-61c4-4a14-aa1c-54528c3ea732"
       }
     },
     {
-      "event_id": "evt-00ee25c8-74f3-4773-abf0-7b2cccb1dffa",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-6151db80-2875-44ae-a23e-34227c982e56",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 89,
-      "transaction_id": "txn-1b2d4a1a-665c-4522-9c36-4c2a49ef209c",
+      "transaction_id": "txn-ab64a658-7224-4c24-ac97-9489b5495995",
       "event_type": "comparisons_released",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:17.189Z",
+      "timestamp_utc": "2026-10-14T14:55:10.853Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3700,13 +3700,13 @@
       }
     },
     {
-      "event_id": "evt-ec9c0ecf-0d67-42a7-8b2d-03df2fdeb627",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-82edda87-e9b1-4b68-9a7c-928a00093bb2",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 90,
-      "transaction_id": "txn-1b2d4a1a-665c-4522-9c36-4c2a49ef209c",
+      "transaction_id": "txn-ab64a658-7224-4c24-ac97-9489b5495995",
       "event_type": "stage_transition",
       "source": "engine",
-      "timestamp_utc": "2026-10-14T14:35:17.189Z",
+      "timestamp_utc": "2026-10-14T14:55:10.853Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3718,13 +3718,13 @@
       }
     },
     {
-      "event_id": "evt-817811ca-baf9-457b-92f3-23c7083aeef9",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-c2d37f46-5cb9-4c54-8e5b-3745d5379d73",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 91,
-      "transaction_id": "txn-74e1e818-1509-4acb-b084-784b9ec179c2",
+      "transaction_id": "txn-99bc27bc-962a-43da-ba4a-2429f22875c4",
       "event_type": "reflection_committed",
       "source": "learner",
-      "timestamp_utc": "2026-10-14T14:35:17.457Z",
+      "timestamp_utc": "2026-10-14T14:55:11.154Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3734,17 +3734,17 @@
         "answers": {
           "r1": "Reflection text"
         },
-        "reflection_version_id": "refl-99e71846-d1a8-4d46-a19c-06793db340bc"
+        "reflection_version_id": "refl-eb907bee-3f71-47bd-9b97-953900fb27cd"
       }
     },
     {
-      "event_id": "evt-b8dc68f8-a358-4887-b0c1-69970f736954",
-      "session_id": "session-06232f66-8616-41e9-9101-a914349d217d",
+      "event_id": "evt-a409ecbb-71fb-4dd0-883b-3c04aad5725e",
+      "session_id": "session-8f4f8b32-828c-4bd8-83af-312f8f0e267c",
       "sequence": 92,
-      "transaction_id": "txn-4ba2f120-8a25-4895-8d4b-a6160a36b05f",
+      "transaction_id": "txn-fa2681e9-de82-46d8-92e2-5caa7414ed33",
       "event_type": "session_completed",
       "source": "system",
-      "timestamp_utc": "2026-10-14T14:35:17.506Z",
+      "timestamp_utc": "2026-10-14T14:55:11.207Z",
       "simulated_time": "W6",
       "case_id": "EDT-LUM-DUMMY-001",
       "content_version": "edt-lum-dummy-001-handoff-1.1",
@@ -3759,6 +3759,6 @@
     "event_count": 92,
     "first_sequence": 1,
     "last_sequence": 92,
-    "checksum_fnv1a": "8b8c2dde"
+    "checksum_fnv1a": "1e60581f"
   }
 }

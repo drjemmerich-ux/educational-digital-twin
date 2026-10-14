@@ -419,3 +419,8 @@ figcaption { font-size: 13px; margin-top: 6px; }
 .consent-list input { width: 18px; height: 18px; margin-top: 2px; flex: 0 0 auto; }
 .code-chip { font-family: 'Courier New', monospace; background: var(--surface); padding: 2px 8px; border-radius: 4px; }
 @media (max-width: 860px) { .consent-info { grid-template-columns: 1fr; } }
+
+/* Facilitator page */
+.created-link { margin-top: var(--s2); padding: var(--s2); border: 1px solid var(--accent); border-radius: var(--radius); background: var(--surface); }
+.link-field { width: 100%; font-family: 'Courier New', monospace; font-size: 13px; padding: 8px; margin: 0 0 var(--s1); }
+#fac-label { min-width: 220px; padding: 8px; }

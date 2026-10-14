@@ -1,0 +1,5 @@
+{
+  "comment": "Public values for the pilot build. The API key is Supabase's publishable key (safe to publish). The server engine authenticates participants by personal-link token.",
+  "apiUrl": "https://aczupeihejdguwipqcfz.supabase.co/functions/v1/edt-engine",
+  "apiKey": "sb_publishable_wxE9lx9WeOMq-4I2RHYpJw_EK4n178K"
+}
