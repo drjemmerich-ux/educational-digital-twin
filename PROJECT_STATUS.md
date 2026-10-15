@@ -5,7 +5,7 @@
 | Current version | Prototype 1.7 (`ui-1.7.0`, `engine-1.7.0`, content `edt-lum-dummy-001-handoff-1.1`) |
 | Case | `EDT-LUM-DUMMY-001`, fictional lumbar degenerative spondylolisthesis sandbox |
 | Updated | 14 October 2026 |
-| Stage | Pilot server built and tested locally; live deployment waiting on three one-time setup steps |
+| Stage | Pilot live at https://educational-digital-twin.vercel.app; ready for a facilitator dry run |
 
 ## Completed
 
@@ -13,21 +13,19 @@
 | --- | --- |
 | Prototype 1.6 (five nodes, branches, consent, debrief, scripted tutor, local persistence, export) | Implemented, tested |
 | Gateway refactor: interface reaches the engine by command name only | Implemented, tested (local suite unchanged, 17/17) |
-| Server engine handler, Supabase store, append-only schema, atomic append | Implemented; handler tested with memory store; **live database not yet exercised** |
+| Server engine handler, Supabase store, append-only schema, atomic append | Implemented, tested locally and live (15 October) |
 | Personal links, participant pilot page, facilitator page (create/disable links, progress, JSON export) | Implemented, tested in browser against local server |
 | Hidden-content build check for pilot bundles | Implemented, passing |
 | GitHub repository, private, `main` | Live: source pushed |
-| Supabase project (Frankfurt) | Created; schema not applied |
-| Edge Function deployment workflow (GitHub Actions) | Written; needs `SUPABASE_ACCESS_TOKEN` secret |
-| Vercel configuration | Written; project not created |
+| Supabase project (Frankfurt) | Live: schema applied, security advisor shows only the intended "RLS without policies" notice |
+| Edge Function `edt-engine` | Live, deployed by GitHub Actions on each push to `main` (tests run first) |
+| Vercel site | Live: https://educational-digital-twin.vercel.app and `/facilitator` |
 
-## Waiting on Dr Emmerich (one-time, see `docs/DEPLOYMENT.md`)
+## Live verification (15 October 2026)
 
-1. Run `deploy/setup-database.sql` in the Supabase SQL editor (creates the schema and returns the facilitator key).
-   Applying it from this session was attempted three times and the approval was cancelled each time.
-2. Add the `SUPABASE_ACCESS_TOKEN` repository secret on GitHub, then run the "Deploy server engine" workflow.
-3. Import the repository in Vercel, or re-authorize the Vercel connector for the `educamy` team
-   (the connector was refused: "Not authorized: Trying to access resource under scope educamy").
+Link creation, consent, initial assessment, a study request with the interpretation gate, reload and resume, stale-write
+refusal, facilitator overview and the absence of hidden strings in the served pages were verified on the live service with
+a temporary key (revoked). Details in `docs/DEPLOYMENT.md`. Test residue: run `deploy/cleanup-live-test.sql`.
 
 ## Placeholder or awaiting expert review
 
@@ -37,7 +35,8 @@
 
 ## Not verified
 
-- Live Supabase, Edge Function and Vercel behaviour (not deployed yet).
+- Full five-node journey and JSON download on the live service (verified on the local pilot server only).
+- Behaviour under several simultaneous participants (free-plan limits not load-tested).
 - Screen readers, non-Chromium browsers, phones.
 
 ## Tests
@@ -46,5 +45,6 @@ Type-check against real React types: pass (GitHub Actions) · unit 50/50 (38 acc
 
 ## Next step
 
-Complete the three setup steps; then Claude verifies the live service end to end (link → encounter → facilitator export),
-runs the security advisors, and publishes the pilot URL.
+1. Dr Emmerich: facilitator dry run (create one link, complete the case once end to end, download the JSON).
+2. Complete the consent placeholders (retention, withdrawal date, coordinator, contact) before inviting fellows.
+3. Approved images for batch 1, then batches 2-4.

@@ -11,7 +11,7 @@ Raw logs: `docs/verification/`. Screenshots: `docs/screenshots/`.
 | Browser walkthroughs (`npm run test:browser`) | 22 of 22 pass (17 local build + 5 pilot build), three consecutive full runs. AT31 was intermittent after commits became asynchronous (the test read state before the commit resolved); it now waits for the commit and still asserts focus return |
 | Hidden-content check on pilot bundles | Pass: 212 hidden case strings, none in the participant or facilitator page |
 | Reference-path export regenerated and replayed | Pass: 96 events, `clinical_pathway_completed`, checksum `7a9c021c` (version labels changed to 1.7) |
-| Live Supabase database, Edge Function, Vercel site | **Not tested**: not yet deployed (see `docs/DEPLOYMENT.md`) |
+| Live Supabase database, Edge Function, Vercel site | Pass for the checks listed in `docs/DEPLOYMENT.md` (15 October); full five-node journey not repeated live |
 | Horizontal overflow at 420, 768, 900, 1024, 1280 px | None |
 | Published Artifact preview opened and exercised in claude.ai | **Not verified** from this session |
 
@@ -74,8 +74,7 @@ Raw logs: `docs/verification/`. Screenshots: `docs/screenshots/`.
 | PIL05 | Wrong facilitator key refused | Pass |
 
 The pilot browser tests use the local development server, which runs the same handler as the Edge Function with an
-in-memory store. The Supabase store (`supabaseStore.ts`) and the SQL functions have not been exercised against the
-live database yet.
+in-memory store. The Supabase store and SQL functions were exercised live on 15 October (link creation, appends, conflict, overview, withdrawal path not yet run live).
 
 ## Required walkthroughs
 

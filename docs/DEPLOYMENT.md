@@ -3,9 +3,21 @@
 | Part | Where | Status |
 | --- | --- | --- |
 | Source | GitHub `drjemmerich-ux/educational-digital-twin` (private), branch `main` | Live |
-| Database | Supabase project `educational-digital-twin` (`aczupeihejdguwipqcfz`, Frankfurt eu-central-1, free plan) | Project created; schema **not yet applied** |
-| Server engine | Supabase Edge Function `edt-engine`, deployed by `.github/workflows/deploy-edge.yml` | **Not yet deployed** (needs `SUPABASE_ACCESS_TOKEN` secret) |
-| Participant and facilitator pages | Vercel project linked to the GitHub repository (`vercel.json`) | **Not yet created** |
+| Database | Supabase project `educational-digital-twin` (`aczupeihejdguwipqcfz`, Frankfurt eu-central-1, free plan) | Live: schema applied 15 October 2026; one facilitator key (Dr Emmerich) |
+| Server engine | Supabase Edge Function `edt-engine` (verify_jwt off; link/key auth), deployed by `.github/workflows/deploy-edge.yml` on push | Live: version 1 deployed 15 October 2026 |
+| Participant and facilitator pages | Vercel project `educational-digital-twin` (team `educamy`), auto-deploys from `main` | Live: https://educational-digital-twin.vercel.app (facilitator: `/facilitator`) |
+
+## Live verification (15 October 2026, in the Claude desktop browser)
+
+Using a temporary facilitator key created for the test (revoked afterwards):
+facilitator sign-in → personal link created (P-FU5FZR) → participant consent → initial assessment →
+standing radiograph request with both commitments → report hidden before interpretation and shown after →
+reload → "Continue encounter" restored the same 15 events → a stale write was refused with CONFLICT and appended
+nothing → facilitator overview listed the encounter with training level → served pages contained none of the
+checked hidden strings → test key revoked (KEY_INVALID) and test link disabled (LINK_INVALID).
+The full five-node journey and the JSON download were verified on the local pilot server, not live.
+
+Test residue to remove (needs confirmation, so run it in the SQL editor): `deploy/cleanup-live-test.sql`.
 
 ## One-time setup (Dr Emmerich)
 
